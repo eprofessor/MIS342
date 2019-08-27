@@ -8,6 +8,9 @@ var xLastName = "MyLastName";
 
 var xStarID = "MyStarID";
 
-
+// PgP 8/13/2019
+// these variables are used to identify your assignments, attendance and projects for both submission and retrieval
+// entering the wrong values, or changing values after original submission can result in unexpected assignment behavior and other problems-
+// you are advised to get this right the first time!
 
 // *** end of file***

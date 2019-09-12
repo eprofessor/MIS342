@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <title>MIS342Summative02</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- PgP 6/15/2019 update page, added integral check web db submissions, split constants into two files, one for students, one for course -->
+    <!-- Bootstrap -->
+    <link href="../../ReadOnly/bootstrap.css" rel="stylesheet">
+
+    <!-- constant file for student firstname, lastname, starid on students' pages -->
+    <script src="../constants.js"></script>
+
+    <!-- course constant file that contains semester, class, section pages -->
+    <script src="../../ReadOnly/CourseConstants.js"></script>
+
+    <!-- model assignment file, version 1 released 2018/02/18 PgP -->
+
+</head>
+
+<body onload="setVariables()">
+    <form class="container-fluid" action="https://eprofessor.azurewebsites.net/code/ProcessFormData.asp" method="post" name="frmAssignment" id="frmAssignment">
+        <input name="InstID" id="InstID" value="00617282" type="hidden">
+
+        <h1 class=" text-center">Tables</h1>
+
+        <!-- -start-Student, class and assignment information. Assignment hard-coded, other values from constants.js file-start -->
+        <div class="row col-lg-12">
+            <div class="col-lg-3">
+                <label class="text-primary" for="FirstName">First Name:</label>
+                <input class="form-control" name="FirstName" id="FirstName" type="text" value="default first name" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="LastName">Last Name:</label>
+                <input class="form-control" name="LastName" id="LastName" type="text" value="default last name" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="pin">StarID:</label>
+                <input class="form-control" name="pin" id="pin" type="text" value="default StarID" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="email">Email:</label>
+                <input class="form-control" name="email" id="email" type="email" value="default email address" readonly="readonly">
+            </div>
+        </div>
+
+        <div class="row col-lg-12">
+            <div class="col-lg-3">
+                <label class="text-primary" for="semester">Semester:</label>
+                <input class="form-control" name="semester" id="semester" type="text" value="default" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="class">Class:</label>
+                <input class="form-control" name="class" id="class" value="xClass" type="text" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="section">Section:</label>
+                <input class="form-control" name="section" id="section" value="default" type="text" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="assignment">Assignment:</label>
+                <input class="form-control" name="assignment" id="assignment" value="Summative02" type="text" readonly="readonly">
+            </div>
+        </div>
+        <!-- -end-Student, class and assignment information-end -->
+
+        <!-- Calculate the correct path for saving the files -->
+        <script>Path = "&#92;OneDrive - MNSCU&#92;" + xClass + "&#92;" + document.getElementById("assignment").value + "&#92;"; </script>
+
+
+        <div class="col-lg-12">
+            <br />
+            <input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit">
+            <br />
+        </div>
+
+        <div class="col-lg-12 h3 text-danger">
+            500 Points
+            <hr />
+        </div>
+        <!-- -start-objectives-start -->
+        <div class="col-lg-12"><a href="#Objectives" class="btn btn-info" data-toggle="collapse">Learning Objectives</a></div>
+        <div id="Objectives" class=" collapse in col-lg-12">
+
+            <!--Above this line similar except for Assignment number and title   -->
+
+            <hr />
+            <h2>Concepts</h2>
+            <p>Sample focus question: What are the key components and uses of  Tables?</p>
+            <p>Sample concept list (not exclusive-refer to the chapter introduction for additional concepts):</p>
+            <ul>
+                <li>Fields</li>
+                <li>Data Types</li>
+                <li>Primary Key</li>
+                <li>Table Structure</li>
+                <li>Relationships</li>
+                <li>Records</li>
+                <li>Importing data</li>
+                <li>File types</li>
+                <li>Relationships</li>
+                <li>One to many</li>
+                <li>Referential integrity</li>
+            </ul>
+            <hr />
+
+            <hr />
+
+        </div>
+
+        <div class=" col-lg-12"><a href="#Exercise01" class="btn btn-info" data-toggle="collapse">Exercise 1- Movie Table</a></div>
+
+        <div id="Exercise01" class="collapse in  col-lg-12">
+
+            <br />
+
+            <p>
+                You are taking  a course on Oscar-winning movies. The scope of the course covers ten movies from 1990 through the present that won Oscars for Best Director. 
+       In order to prepare for the class you decide to organize the movies in a simple database that you will create. 
+       The Internet has all the information you need for the  database; you just need to research the movies at several sites, organize, and  then enter the data. 
+       The database will include two tables. 
+       The Movie table will  include data such as the movie title, release date, number of Oscar nominations, number of Oscar wins, and category (such as whether it is a  comedy, drama, horror, documentary, or other category you decide). 
+       The Director table will include the data about the director of those movies.
+            </p>
+
+
+            Start Access and open a new blank database. Name the database <strong>Oscars</strong>.<br />
+            Use your favorite search engine to research information to find ten movies that won Oscars in the Best Director category since 1990.<br />
+            Use Web sites, including <a href="http://www.imdb.com/" class="bg-info text-white" target="_blank">www.imdb.com</a> and <a href="http://www.oscars.org/" class="bg-info text-white" target="_blank">www.oscars.org</a> to find the information you need for the database.<br />
+            Create a table called <strong>Movie</strong>. Accept the default ID primary key field with the AutoNumber data type, renaming it as Movie ID. Create the fields, such as title, release date, number of Oscar nominations, number of Oscar wins, category, and director ID. Be sure to define the data type appropriate for each field and to use appropriate field naming techniques. Enter a custom format for the release date field.<br />
+            Create a table called <strong>Director</strong> that has the fields director ID, first name, last name, and any other fields of your choice based on the research that you collected. Consider that you do not want redundant data between the two tables. The director ID is the common field between the two tables.<br />
+            Review the data types and field properties for the fields in the two tables and change any that are not appropriate.<br />
+            Enter ten records into the Movie table.<br />
+            View the records in the Movie table in datasheet view. Sort the datasheet in descending order by number of nominations, and then save the table.<br />
+            <br />
+
+            (50)  1. Use the Snipping tool to  provide a screen shot of the Movie table, <strong>datasheet view</strong>.<br />
+            <!--  PgP 2/4/2018 create path using constants and current document assignment -->
+            Save the screen shot  as &quot;Ex1&quot; in your ' 
+                 <code><span id="aaPath"></span></code>
+            <script>document.getElementById("aaPath").innerHTML = Path; </script>
+            ' folder.<br />
+
+
+        </div>
+
+        <div class="col-lg-12 text-danger">
+            <h2>Screen Shot Ex1</h2>
+            <hr />
+        </div>
+
+        <!--Exercise 2-->
+
+        <div class=" col-lg-12"><a href="#Exercise02" class="btn btn-info" data-toggle="collapse">Exercise 2-Director Table</a></div>
+
+        <div id="Exercise02" class="collapse in  col-lg-12">
+
+            <br />
+
+            <p>
+                Enter five records in the Director table.
+                <br />
+                View the records in the Director table in datasheet view. In datasheet view, move the first name field to  follow the last name field, and then save the table.<br />
+            </p>
+
+            (50) 2. Use the Snipping tool to  provide a screen shot of the Director table, <strong>datasheet view</strong>.<br />
+            <!--  PgP 2/4/2018 create path using constants and current document assignment -->
+            Save the screen shot  as &quot;Ex2&quot; in your ' 
+             <code><span id="abPath"></span></code>
+            <script>document.getElementById("abPath").innerHTML = Path; </script>
+            ' folder.<br />
+
+
+        </div>
+
+        <div class="col-lg-12 text-danger">
+            <h2>Screen Shot Ex2</h2>
+            <hr />
+        </div>
+
+
+        <!--Exercise 3-->
+
+        <div class=" col-lg-12"><a href="#Exercise03" class="btn btn-info" data-toggle="collapse">Exercise 3-Excel Worksheet</a></div>
+
+        <div id="Exercise03" class="collapse in  col-lg-12">
+
+            <br />
+
+            <p>
+                Create an Excel worksheet, adding data for three additional directors to the worksheet. The columns in the worksheet should be the same as the columns in the Director table and in the same order. Save and close the Excel workbook, and then import the Excel director data into the Director table.<br />
+                <br />
+            </p>
+            (50) 3. Use the Snipping tool to provide a screen shot of the <strong>dialog box</strong> showing the import of the Excel worksheet data into Access.
+            <br />
+            <!--  PgP 2/4/2018 create path using constants and current document assignment -->
+            Save the screen shot  as &quot;Ex3&quot; in your ' 
+                 <code><span id="acPath"></span></code>
+            <script>document.getElementById("acPath").innerHTML = Path; </script>
+            ' folder.<br />
+
+
+        </div>
+
+        <div class="col-lg-12 text-danger">
+            <h2>Screen Shot Ex3</h2>
+            <hr />
+        </div>
+
+        <!--Exercise 4-->
+
+        <div class=" col-lg-12"><a href="#Exercise04" class="btn btn-info" data-toggle="collapse">Exercise 4-Relationships Window</a></div>
+
+        <div id="Exercise04" class="collapse in  col-lg-12">
+
+            <br />
+
+            <p>
+                Use the Relationships window to join the two tables based on the director ID field.<br />
+                Enforce referential integrity.
+            </p>
+
+            (50) 4. Use the Snipping tool to  provide a screen shot of the <strong>Relationships window</strong>.
+            <br />
+            <!--  PgP 2/4/2018 create path using constants and current document assignment -->
+            Save the screen shot  as &quot;Ex4&quot; in your ' 
+                 <code><span id="adPath"></span></code>
+            <script>document.getElementById("adPath").innerHTML = Path; </script>
+            ' folder.<br />
+
+
+        </div>
+
+        <div class="col-lg-12 text-danger">
+            <h2>Screen Shot Ex4</h2>
+            <hr />
+        </div>
+
+        <!--Exercise 5-->
+
+        <div class=" col-lg-12"><a href="#Exercise05" class="btn btn-info" data-toggle="collapse">Exercise 5-Flat Files</a></div>
+
+        <div id="Exercise05" class="collapse in  col-lg-12">
+
+            <br />
+
+            <p>
+                Close the database and then exit Access.<br />
+
+                (100) 5.Briefly explain why it is better to spend the time creating separate Access tables (such as Movie and Director) instead of simply using one Excel spreadsheet to enter all of the Movie and Director information (aka 'flatfile').
+
+             <!-- Enter your answer in the VALUE field below   GROK -->
+                <input name="q5" id="q5" size="120" maxlength="120" class="form-control" value="Separate Access tables versus flatfile:" type="text">
+                <br />
+            </p>
+
+        </div>
+
+        <hr />
+
+        <!--Exercise 6-->
+
+
+        <div class=" col-lg-12"><a href="#Exercise06" class="btn btn-info" data-toggle="collapse">Exercise-PDF File Creation</a></div>
+
+        <div id="Exercise06" class="collapse in  col-lg-12">
+
+            <br />
+
+            <div id="ExercisePDF" class="collapse in  col-lg-12">
+                <p>
+                    Use a web browser to verify that you have published your website to https://classes.winona.edu/...
+                    <br />
+                    Check that your name, StarID, email, class, semester, section and all of your answers are correct and visible.
+                    <br />
+                    From the menu choose File&gt;Print... and using &quot;Microsoft Print to PDF&quot; save a copy of this assignment as a .pdf file in your   ' 
+                 <code><span id="dPath"></span></code>
+                    <script>document.getElementById("dPath").innerHTML = Path; </script>
+                    ' folder.<br />
+                </p>
+                <br />
+
+                <p>
+                    (50) 6. Save your file 'WebPage.pdf' to the ' 
+               <code><span id="ePath"></span></code>
+                    <script>document.getElementById("ePath").innerHTML = Path; </script>
+                    ' folder.<br />
+
+
+                </p>
+
+                <div class="text-danger">
+                    <h2>WebPage.pdf</h2>
+                    <hr />
+                </div>
+
+                <p>Create one .pdf (portable document format) file from the screen shots that you have taken by following these steps.</p>
+
+                <ol>
+                    <li>Open File Explorer, make sure the screen shot files are properly named(Ex1, Ex2 , Ex3.. ) &nbsp; </li>
+                    <li>Select all of the screen shots to be combined. </li>
+                    <li>Right Click and select &#39;Print&#39; from the short-cut menu.      </li>
+                    <li>In the bottom center of the &#39;Print Pictures&#39; dialog box uncheck the box &quot;Fit picture to frame&quot;</li>
+                    <li>Click on &#39;Print&#39; and save the file with the name&nbsp; &quot;ScreenShots.pdf&quot; in your '
+             <code><span id="fPath"></span></code>
+                        <script>document.getElementById("fPath").innerHTML = Path; </script>
+                        ' folder.<br />
+                    </li>
+                </ol>
+
+
+                <p>
+                    (50) 7. Save your file 'ScreenShots.pdf' to the ' 
+                  <code><span id="gPath"></span></code>
+                    <script>document.getElementById("gPath").innerHTML = Path; </script>
+                    ' folder.<br />
+
+                </p>
+
+                <div class="text-danger">
+                    <h2>ScreenShots.pdf</h2>
+                    <hr />
+                </div>
+
+
+                <p>&nbsp;</p>
+                <p>
+                    Use PDFill to merge the <strong>WebPage.pdf</strong> file with the <strong>ScreenShots.pdf </strong>file, and save it as &#39;<strong>Summative02.pdf</strong>&#39; in ' 
+                  <code><span id="hPath"></span></code>
+                    <script>document.getElementById("hPath").innerHTML = Path; </script>
+                    ' folder.<br />
+
+                </p>
+
+
+                <p>(50) 8. Upload your file 'Summative02.pdf' to the D2L 'Summative02' Assignment folder.</p>
+
+                <div class="text-danger">
+                    <h2>Summative02.pdf</h2>
+                </div>
+                <hr />
+
+            </div>
+
+
+        </div>
+
+
+
+
+        <!--Exercise 7-->
+
+        <div class=" col-lg-12"><a href="#Exercise07" class="btn btn-info" data-toggle="collapse">Exercise-Assignment Submission</a></div>
+
+        <div id="Exercise07" class="collapse in  col-lg-12">
+
+            <br />
+
+            <p>
+                Use a browser to view your completed and published website at: https://classes.winona.edu/...     
+                <br />
+                Ensure that you have linked this assignment on your home page.
+                Note that your screen shots do not have to be completed to perform this step.<br>
+            </p>
+
+            (50) 9. Home Page Hyperlink<br />
+            Check and verify that this assignment is hyperlinked on your home page.<br />
+            <br />
+
+            (50) 10. Assignment submission<br />
+            Press the Submit button at the top or bottom of this page.
+                Read and follow instructions on the confirmation page.&nbsp; Correct any errors.
+        </div>
+        <hr />
+
+
+
+
+        <div class="col-lg-12">
+            <br />
+            <input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit">
+            <br />
+        </div>
+
+
+    </form>
+
+
+
+    <!-- Creative Commons License Info -->
+    <div id="xLicense" class=" col-lg-12 text-muted"></div>
+
+    <div id="xfooter" class=" col-lg-12 text-muted"></div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="../../ReadOnly/jquery-1.js"></script>
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../../ReadOnly/bootstrap.js"></script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

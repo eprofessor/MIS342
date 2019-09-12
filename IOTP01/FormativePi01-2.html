@@ -1,0 +1,366 @@
+﻿<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Formative Pi 01</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   
+    <!-- PgP 7/11/2019 summative assignment for Raspberry Pi, Arduino Uno, micro:bit -->
+    <!-- Bootstrap -->
+    <link href="../../ReadOnly/bootstrap.css" rel="stylesheet">
+
+    <!-- constant file for student firstname, lastname, starid on students' pages -->
+    <script src="../constants.js"></script>
+
+    <!-- course constant file that contains semester, class, section pages -->
+    <script src="../../ReadOnly/CourseConstants.js"></script>
+
+</head>
+
+<body onload="setVariables()">
+    <form class="container-fluid" action="https://eprofessor.azurewebsites.net/code/ProcessFormData.asp" method="post" name="frmAssignment" id="frmAssignment">
+
+        <input name="InstID" type="hidden" id="InstID" value="00617282">
+
+        <h1 class="text-center">Setting Up a Raspberry Pi</h1>
+
+
+        <!-- -start-Student, class and assignment information. Assignment hard-coded, other values from constants.js file-start -->
+        <div class="row col-lg-12">
+            <div class="col-lg-3">
+                <label class="text-primary" for="FirstName">First Name:</label>
+                <input class="form-control" name="FirstName" id="FirstName" type="text" value="default first name" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="LastName">Last Name:</label>
+                <input class="form-control" name="LastName" id="LastName" type="text" value="default last name" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="pin">StarID:</label>
+                <input class="form-control" name="pin" id="pin" type="text" value="default StarID" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="email">Email:</label>
+                <input class="form-control" name="email" id="email" type="email" value="default email address" readonly="readonly">
+            </div>
+        </div>
+
+        <div class="row col-lg-12">
+            <div class="col-lg-3">
+                <label class="text-primary" for="semester">Semester:</label>
+                <input class="form-control" name="semester" id="semester" type="text" value="default" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="class">Class:</label>
+                <input class="form-control" name="class" id="class" value="xClass" type="text" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="section">Section:</label>
+                <input class="form-control" name="section" id="section" value="default" type="text" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="assignment">Assignment:</label>
+                <input class="form-control" name="assignment" id="assignment" value="FormativePi01" type="text" readonly="readonly">
+            </div>
+        </div>
+        <!-- -end-Student, class and assignment information-end -->
+        <br />
+
+        <!-- Calculate the correct path for saving the files -->
+        <script>Path = "&#92;OneDrive - MNSCU&#92;" + xClass + "&#92;" + document.getElementById("assignment").value + "&#92;"; </script>
+
+
+        <div class="col-lg-12">
+            <br />
+            <input class=" text-danger btn-block btn-lg" type="submit" name="Submit" value="SUBMIT -once you have entered your first name, last name, StarID, email, class and section- SUBMIT"><br />
+        </div>
+
+        <div class="h3 text-danger">
+            100 Points<hr />
+        </div>
+
+
+        <div class="col-lg-12"><a href="#Objectives" class="btn btn-info" data-toggle="collapse">Learning Objectives</a></div>
+        <div id="Objectives" class=" collapse in col-lg-12">
+            <p>
+                These instructions will show you how to download and create the operating system for a Raspberry Pi single-board computer; and then start up the device.<br />
+                Later you will configure and add various software applications to the Raspberry Pi.
+            </p>
+            <p>After completing this assignment you will be able to:</p>
+            <ol>
+                <li>Obtain latest Raspbian operating system</li>
+                <li>Create a bootable micro-SD card containing the operating system</li>
+                <li>Boot the Raspberry Pi</li>
+                <li>Connect to the WSU Guest wireless network</li>
+                <li>Use a web browser and other software on the Raspberry Pi</li>
+                <li>Install an application on the Raspberry Pi to take screen shots</li>
+                <li>Do other marvelous things.....</li>
+            </ol>
+            <hr />
+        </div>
+
+
+
+        <div class="col-lg-12"><a href="#Overview" class="btn btn-info" data-toggle="collapse">Assignment Overview</a></div>
+
+        <div id="Overview" class="collapse in  col-lg-12">
+            This assignment reviews basic computer concepts that you will need in this course and throughout your career.
+            <br />
+            <p>
+                You are expected to have a working knowledge of the following utilities.<br />
+                If you do not understand how to use an item, perform a Google Search, 
+                refer to the <a href="https://learn.winona.edu/WSU_Technology_Knowledge_Base" class="bg-info text-white" target="_blank">WSU Technology Knowledge Base</a>,&nbsp; ask a teaching assistant, or ask the instructor:
+            </p>
+            <ol>
+                <li>Microsoft Windows 10 (need Print to PDF and other features-if not you must figure out work arounds)</li>
+                <li>Set your primary email address to Winona State University.
+                                        <ol>
+                                            <li>Go to the <a href="https://starid.minnstate.edu/" class="bg-info text-white" target="_blank">StarID self-service site</a></li>
+                                            <li>Select the 'Sign in to Profile' tab</li>
+                                            <li>Login with your StarID and password</li>
+                                            <li>Click the 'Office 365 Contact' tab</li>
+                                            <li>Click the 'Select New Student Contact Card' button</li>
+                                            <li>Select the corrrect version of your Winona State email address
+                            <ol>
+                                <li>CORRECT--&gt;firstname.lastname @go.winona.edu</li>
+                                <li>DO NOT SELECT--&gt; starID@go.winona.edu</li>
+                            </ol>
+                                            </li>
+                                        </ol>
+                </li>
+                <li>Have the <a href="http://learn.winona.edu/Setting_Up_Microsoft_Outlook_2016" class="bg-info text-white" target="_blank">Outlook Desktop Client installed</a> and configured on your laptop.</li>
+                <li>Install and configure <a href="https://learn.winona.edu/Microsoft_Office_365" class="bg-info text-white" target="_blank">One Drive for Business. </a>
+                    <br />
+                    Your username is: <code>StarID@go.minnstate.edu </code>
+                    <br />
+                    If you encounter problems, search online for, and install the latest version of &quot;<a href="Office365RecoveryAssistant.PNG" class="bg-info text-white" target="_blank">Microsoft Support and Recovery Assistant for Office 365</a>&quot;<br />
+                    Again, login using your <a href="Office365RecoveryAssistantSignIn.PNG" class="bg-info text-white" target="_blank">StarID@go.minnstate.edu</a>
+                    <br />
+                    See Tech Support in Somsen 207 if you still have problems. </li>
+                <li>Configure your <a href="https://learn.winona.edu/Creating_a_new_lynda_account" class="bg-info text-white" target="_blank">Lynda.com account.</a> Be mindful of the login email that you use.</li>
+                <li><a href="https://www.lynda.com/Windows-tutorials/Browsing-through-folders/605283/608749-4.html" class="bg-info text-white" target="_blank">File Explorer</a>-to create and modify files and folders.</li>
+                <li><a href="https://www.lynda.com/Windows-tutorials/Browsing-through-folders/605283/608749-4.html" class="bg-info text-white" target="_blank">Libraries</a>-to organize your work into virtual folders.</li>
+                <li>Context sensitive shortcut menus are activated by <a href="https://www.lynda.com/Windows-tutorials/Understand-right-click/449032/479033-4.html" class="bg-info text-white" target="_blank">right-clicking</a> various objects in a window.</li>
+                <li>Tool bars, menu bars, status bars can be turned on and off using context sensitive menus.</li>
+
+                <li>Use of common <a href="https://www.lynda.com/Windows-tutorials/Keyboard-shortcuts-organizing-navigating-apps/417146/454823-4.html" class="bg-info text-white" target="_blank">
+                    <abbr title="Search Lynda for 'Keyboard shortcuts for organizing and navigating' ">shortcuts </abbr>
+                </a>, these will often work even when the menu options will not-
+              <ol>
+                  <li>Ctrl+A to select All</li>
+                  <li>Ctrl+C to Copy</li>
+                  <li>Ctrl+V to Paste</li>
+                  <li>Ctrl+Z to Undo</li>
+                  <li>Windows+L to lock screen</li>
+                  <li><a href="WindowsKey.jpg" class="bg-info text-white" target="_blank">Windows Key</a></li>
+              </ol>
+                </li>
+
+                <li>Use of the help screen to learn terminology</li>
+                <li>Appropriate browser/application pairings. Note these can and do change!
+              <ol>
+                  <li>Chrome-Google Drive, YouTube, D2L</li>
+                  <li>FireFox-???, general web browsing?</li>
+                  <li>Internet Explorer, Edge-One Drive for Business, Office365</li>
+              </ol>
+                </li>
+
+                <li>Useful browser add-ins: Chris Pedrick's <a href="https://addons.mozilla.org/en-US/firefox/addon/web-developer/" target="_blank" class="bg-info text-white">Web Developer Toolbar</a> for FireFox</li>
+                <li>Know basic HTML tags
+              <ol>
+                  <li>in FireFox menu select View&gt;Page Source</li>
+                  <li>in IE menu select View&gt;Source</li>
+                  <li>refer to <a href="http://www.w3schools.com/tags" target="_blank" class="bg-info text-white">W3Schools</a></li>
+              </ol>
+                </li>
+                <li>Validating HTML code-<a href="http://validator.w3.org/" target="_blank" class="bg-info text-white">refer to the W3C Markup Service</a></li>
+                <li>Using browser to print web pages as .pdf file
+                    <ol>
+                        <li>Make sure url appears in the Header or Footer-<br />
+                            <a href="WebPageAsPdfShowingUrl_Firefox.PNG" target="_blank" class="bg-info text-white">see Firefox example</a>
+                            <br />
+                            <a href="WebPageAsPdfShowingUrl_Chrome.PNG" target="_blank" class="bg-info text-white">see Chrome example</a>
+                        </li>
+                    </ol>
+                </li>
+                <li>Troubleshooting advice-at first try finding a solution yourself
+              <ol>
+                  <li>Learn to Google any error message before asking anyone else</li>
+                  <li>Refer to <a href="https://www.lynda.com/" class="bg-info text-white">Lynda.com</a> (NOTE:AS OF 7/9/19 THIS BECOMES MICROSOFT LINKEDIN LEARNING- UPDATE INFO AND CHECK LEARN.WINONA&nbsp; Make sure you have your account setup, if not, refer to D2L for instructions)</li>
+                  <li>Learn to use <a href="http://stackoverflow.com/" target="_blank" class="bg-info text-white">Stack Overflow</a></li>
+                  <li>Learn to use Tutor.com; see D2L for more info</li>
+              </ol>
+                </li>
+                <li>When seeking advice from teaching assistants or professor via email use proper etiquette
+              <ol>
+                  <li>subject line identifying course, section, assignment</li>
+                  <li>use of accurate terminology</li>
+                  <li>use complete sentences and proofread</li>
+                  <li>provide screen shots of error messages-use the Snipping Tool</li>
+              </ol>
+                </li>
+            </ol>
+            <hr />
+        </div>
+
+        <!--Exercise 1-->
+
+        <div class="col-lg-12"><a href="#Exercise01" class="btn btn-info" data-toggle="collapse">Exercise 1-Etcher</a></div>
+
+        <div id="Exercise01" class="collapse in  col-lg-12">
+            <ol>
+
+            <li>Etcher can be found here: https://www.balena.io/etcher/ </li>
+            <li>Download etcher and make sure you save it to your desktop for easy access.</li>
+            <li>Downloading the newest Raspbian Operating System (OS).</li>
+            <li>To download the Raspbian OS go here: https://www.raspberrypi.org/downloads/raspbian/ </li>
+            <li>Make sure to download the version that says <b>with</b> desktop. (have screenshot)</li>
+            <li>Save the ZIP file to your desktop to make the next steps easier. </li>
+            <li>Using Etcher to flash your SD Card</li>
+
+                </ol>
+            </div>
+
+        <!--Exercise 2-->
+
+         <div class="col-lg-12"><a href="#Exercise02" class="btn btn-info" data-toggle="collapse">Exercise 2- SD card</a></div>
+
+        <div id="Exercise02" class="collapse in  col-lg-12">
+
+            <ol>
+                <li>You will need to take your SD card and put it in your SD card slot which is located on the right side of your laptop. You should feel and hear a click when the SD card is properly seated. It should be flush with the side of your laptop.</li>
+                <li>If you do not have a SD card slot see Paulson or a TA to get a SD card reader.</li>
+                <li>Open Etcher and make sure you see that it recognizes that you have an SD card in. (screenshot)</li>
+                <li>If you do not see it you will need to restart your laptop.</li>
+                <li>Take the ZIP file that your downloaded earlier and Drag and Drop it into etcher where it says select image. </li>
+                <li>Then hit Flash (it will take a few minutes).</li>
+            </ol>
+            </div>
+
+        <!--Exercise 3-->
+
+           <div class="col-lg-12"><a href="#Exercise03" class="btn btn-info" data-toggle="collapse">Exercise 3- Raspberry PI</a></div>
+
+        <div id="Exercise03" class="collapse in  col-lg-12">
+
+            <ol>
+                <li>While that is flashing you will need to locate a keyboard and mouse and plug them into the Pi at your station (We may not have keyboards and mice for everyone so please share). </li>
+                <li>Once the flash is complete, remove the SD card and put it into the Pi. (gif)</li>
+                <li>Plug your Keyboard and mouse into the Pi and hit the power button, which should be on top or around the monitor in front of you. You should see lights on the Pi.</li>
+                <li>Press the button with the purple dot on it.</li>
+                <li>Follow the on-screen instructions to set your country, language and Time-zone. Check the boxes that say Use English language and Use US keyboard.</li>
+                <li>Make a password and write it down. If you forget it you will need to start over.</li>
+                <li>Check “This screen shows a black border around the desktop” if you have a black border.</li>
+                <li>CONNECT TO WSU GUEST ONLY!!! If prompted make an account and log in.</li>
+                <li>When asked to update, click next. The update will begin, this make take a few minutes. If asked to restart, do so.</li>
+                <li>In the upper right corner of the desktop hover over the Wi-Fi signal to determine the IP address. </li>
+                <li>Write this IP down in the same place as your password. The IP should look something like 10.20.xx.xx</li>
+                <li>In the upper left corner, you will see the raspberry icon. Click the raspberry icon, then preferences, and Raspberry Pi Configuration.</li>
+                <li>Click the interfaces tab and Enable SSH and VNC.</li>
+
+            </ol>
+
+            </div>
+
+       <!--Exercise  4-->
+
+             <div class="col-lg-12"><a href="#Exercise04" class="btn btn-info" data-toggle="collapse">Exercise 4- Installing Scrot</a></div>
+
+        <div id="Exercise04" class="collapse in  col-lg-12">
+
+            <ol>
+                <li>In the upper left corner you will see a black icon with >_ written on it. It is called a Terminal. Open the Terminal. </li>
+                <li>Once the Terminal is open type “sudo apt-get install scrot”.</li>
+                <li>Once that is complete, open up the browser and navigate to the onedrive website where you will sign into your StarID and password.</li>
+                <li>Then reopen the terminal if you closed it, type in “scrot”. Make sure that the terminal does not cover your entire screen and that onedrive can be seen in the background.</li> </ol>
+
+                <p>
+               <a href="FormativePi01-2.html" class="img-responsive img-rounded" target="popup" onclick="window.open('Inked2019-07-24-121810_1920x1080_scrot_LI.jpg', 'popup'); return false;">
+                <img src="Inked2019-07-24-121810_1920x1080_scrot_LI.jpg" class="img-responsive img-rounded" alt="File Manager" width="300" /> </a>
+                <span class="text-center"></span><br />
+            </p>
+                <ol>
+                <li>Close the Terminal and open up File Manager, it should be the icon to the left of the terminal and look like a file .</li>
+                <li>In your file manager you should a file named something like 2019-mm-dd.</li></ol>
+
+            <p>
+                <a href="FormativePi01-2.html" class="img-responsive img-rounded" target="popup" onclick="window.open('2019-07-24-122130_1920x1080_scrot.png', 'popup'); return false;">
+                <img src="2019-07-24-122130_1920x1080_scrot.png" class="img-responsive img-rounded" alt="Scrot File" width="300" />  </a>
+                <span class="text-center"></span><br />
+            </p>
+                <ol>
+                <li>Drag and drop that file into your onedrive.</li>
+                <li>Once that is completed you can close all windows.</li>
+                <li>Click the raspberry icon in the upper left and click shutdown.</li>
+                <li>When the monitor switches back to your lap top desktop you can power off the Pi.</li>
+                <li>When you no longer see the red light you can safely remove you SD card.</li>
+                <li>DO NOT REMOVE THE SD CARD WITH THE POWER ON! You can corrupt your SD card and lose everything. </li>
+                <li>Find the screenshot that you took and upload it to the proper D2L submission folder.</li>
+
+            </ol>
+
+            </div>
+
+
+
+                       
+            
+
+            
+
+
+
+
+        <div class="col-lg-12"><a href="#ExerciseSubmit" class="btn btn-info" data-toggle="collapse">Exercise 5-Submit Your Assignment</a></div>
+
+        <div id="ExerciseSubmit" class="collapse in  col-lg-12">
+            <p>
+                For this final Exercise, and to complete this assignment please read all of these instructions.<br />
+                Make sure that you have
+            </p>
+            <ul>
+                <li>completed all the exercises,</li>
+                <li>taken all the screen shots,</li>
+                <li>combined the screen shots into one .pdf file,</li>
+                <li>merged the screen shot .pdf file with the VPN .pdf file,</li>
+                <li>uploaded the .pdf file to the D2L  'Formative00' Assignment folder,</li>
+                <li>and sent a confirming professional email to Professor Paulson.</li>
+            </ul>
+            When these tasks are completed press the Submit button below.
+
+        <div>
+            <div class="col-lg-12 text-primary">
+                (10) 13. Assignment submission<br />
+                <!-- Enter your answer in the VALUE field below   GROK -->
+                <input class="form-control" name="q10" type="text" id="q10" value="I have completed all the exercises.">
+            </div>
+        </div>
+            <hr />
+        </div>
+
+
+
+        <div class=" col-lg-12">
+            <br />
+            <input class=" text-danger btn-block btn-lg" type="submit" name="Submit" value="SUBMIT -once you have entered your first name, last name, StarID, email, class and section- SUBMIT">
+            <br />
+        </div>
+
+    </form>
+
+    <!-- Creative Commons License Info -->
+    <div id="xLicense" class=" col-lg-12 text-muted"></div>
+
+    <div id="xfooter" class=" col-lg-12 text-muted"></div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="../js/jquery-1.11.3.min.js"></script>
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../js/bootstrap.js"></script>
+
+
+</body>
+</html>

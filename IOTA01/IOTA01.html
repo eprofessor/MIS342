@@ -1,0 +1,381 @@
+﻿<!doctype html>
+<html lang="en">
+
+<head>
+    <title>IOT Arduino 01</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- PgP 7/11/2019 summative assignment for Raspberry Pi, Arduino Uno, micro:bit -->
+    <!-- Bootstrap -->
+    <link href="../../ReadOnly/bootstrap.css" rel="stylesheet">
+
+    <!-- constant file for student firstname, lastname, starid on students' pages -->
+    <script src="../constants.js"></script>
+
+    <!-- course constant file that contains semester, class, section pages -->
+    <script src="../../ReadOnly/CourseConstants.js"></script>
+
+</head>
+
+<body onload="setVariables()">
+    <form class="container-fluid" action="https://eprofessor.azurewebsites.net/code/ProcessFormData.asp" method="post" name="frmAssignment" id="frmAssignment">
+
+        <input name="InstID" type="hidden" id="InstID" value="00617282">
+
+        <h1 class="text-center">Setting Up an Arduino Uno</h1>
+
+
+        <!-- -start-Student, class and assignment information. Assignment hard-coded, other values from constants.js file-start -->
+        <div class="row col-lg-12">
+            <div class="col-lg-3">
+                <label class="text-primary" for="FirstName">First Name:</label>
+                <input class="form-control" name="FirstName" id="FirstName" type="text" value="default first name" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="LastName">Last Name:</label>
+                <input class="form-control" name="LastName" id="LastName" type="text" value="default last name" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="pin">StarID:</label>
+                <input class="form-control" name="pin" id="pin" type="text" value="default StarID" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="email">Email:</label>
+                <input class="form-control" name="email" id="email" type="email" value="default email address" readonly="readonly">
+            </div>
+        </div>
+
+        <div class="row col-lg-12">
+            <div class="col-lg-3">
+                <label class="text-primary" for="semester">Semester:</label>
+                <input class="form-control" name="semester" id="semester" type="text" value="default" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="class">Class:</label>
+                <input class="form-control" name="class" id="class" value="xClass" type="text" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="section">Section:</label>
+                <input class="form-control" name="section" id="section" value="default" type="text" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="assignment">Assignment:</label>
+                <input class="form-control" name="assignment" id="assignment" value="IOTA01" type="text" readonly="readonly">
+            </div>
+        </div>
+        <!-- -end-Student, class and assignment information-end -->
+        <br />
+
+        <!-- Calculate the correct path for saving the files -->
+        <script>Path = "&#92;OneDrive - MNSCU&#92;" + xClass + "&#92;" + document.getElementById("assignment").value + "&#92;"; </script>
+
+
+        <div class="col-lg-12">
+            <br />
+            <input class=" text-danger btn-block btn-lg" type="submit" name="Submit" value="SUBMIT -once you have completed this assignment- SUBMIT"><br />
+        </div>
+
+        <div class="h3 text-danger col-lg-12">
+            100 Points<hr />
+        </div>
+
+
+        <div class="col-lg-12"><a href="#Objectives" class="btn btn-info" data-toggle="collapse">Learning Objectives</a></div>
+        <div id="Objectives" class=" collapse in col-lg-12">
+
+            <p>
+                <a href="Uno.jpg" class="img-responsive img-rounded" target="popup" onclick="window.open('uno.jpg', 'popup'); return false;">
+                    <img src="Uno.jpg" width="300" alt="Inland UNO R3" class="img-responsive img-responsive" /></a>Arduino UNO R3
+            </p>
+
+
+            <p>
+                These instructions will show you how to create 
+                and upload &#39;sketches&#39; or programs onto an <a href="https://en.wikipedia.org/wiki/Arduino_Uno" class="bg-info text-white" target="_blank">Arduino UNO microcontroller</a>.<br />
+                Microcontrollers are becoming common-they control automobile engines and many other complex systems.<br />
+                They automate tasks to save time. <a href="https://www.elprocus.com/different-microcontrollers-used-in-automobiles/" class="bg-info text-white" target="_blank">Examples</a>.<br />
+                They are going to provide substantial cost savings in automobiles, like <a href="https://evannex.com/blogs/news/tesla-designs-a-new-wiring-architecture-that-could-greatly-streamline-production" class="bg-info text-white" target="_blank">Teslas, when used effectively</a>.<br />
+                In later assignments you will continue working with and experiencing the capabilities of the Arduino UNO.
+            </p>
+            <p>After completing this assignment you will be able to:</p>
+            <ol>
+                <li>Obtain, modify or create a sketch</li>
+                <li>Connect the Raspberry Pi to the Arduino UNO</li>
+                <li>Upload the sketch to the UNO</li>
+                <li>Test and debug the sketch</li>
+                <li>Upload a screen shot to D2L.</li>
+            </ol>
+            <hr />
+        </div>
+
+        <p>
+            <a href="ArduinoPinout.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('ArduinoPinout.png', 'popup'); return false;">
+                <img src="ArduinoPinout.PNG" width="300" alt="Arduino Pinout" class="img-responsive img-responsive" /></a>Arduino Pinout
+        </p>
+
+
+        <div class="col-lg-12"><a href="#Overview" class="btn btn-info" data-toggle="collapse">Assignment Overview</a></div>
+
+        <div id="Overview" class="collapse in  col-lg-12">
+            This assignment reviews basic computer concepts that you will need in this course and throughout your career.<br />
+            For this assignment, you will install the Arduino IDE to a Raspberry Pi.<br />
+            Then you will learn to work with the Arduino IDE and upload sketches.<br />
+            Later assignments will show you how to modify, create and debug these sketches.
+            <p>
+                You are expected to have a working knowledge of microcontroller hardware and software.<br />
+                If you do not understand how to use an item, perform a Google Search, 
+                refer to the <a href="https://learn.winona.edu/WSU_Technology_Knowledge_Base" class="bg-info text-white" target="_blank">WSU Technology Knowledge Base</a>,&nbsp; ask a teaching assistant, or ask the instructor.
+            </p>
+
+
+
+
+            <hr />
+        </div>
+
+        <!--Exercise 1-->
+
+        <div class="col-lg-12"><a href="#Exercise01" class="btn btn-info" data-toggle="collapse">Exercise 1-Arduino UNO IDE</a></div>
+
+        <div id="Exercise01" class="collapse in  col-lg-12">
+
+            <p>
+                The &#39;sketches&#39; or programs that run on an Arduino Uno can be created on many devices-a laptop or Raspberry Pi.<br />
+                In this exercise you will install the Arduino UNO Integrated Development Environment (IDE) onto your Raspberry Pi.
+            </p>
+            <ol>
+
+                <li>Make sure to connect the Raspberry Pi to the Arduino UNO using a USB A to B cable.</li>
+                <li>Boot the Raspberry Pi, and ensure it has internet access.</li>
+                <li>You may notice that after the Raspberry Pi boots, that an orange light on the Arduino UNO begins flashing.<br />
+                    This is not a problem, the UNO is running a default sketch that was uploaded previously.
+                </li>
+                <li>Open a terminal window.<br />
+                    Type in <code>sudo apt-get update</code>, press Enter.<br />
+                    When that completes, type in <code>sudo apt-get upgrade</code>, press Enter, and update the Raspberry Pi.
+                </li>
+                <li>To install the Arduino IDE, in the terminal window type <code>sudo apt-get install arduino</code>, and press Enter.<br />
+                    Type 
+                    &#39;y&#39; and press Enter when asked to continue with the install, which is about 130MB.</li>
+                <li>When done, the Arduino IDE can be accessed from Menu&gt;Programming<br />
+                    <p>
+                        <a href="UnoIDE.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('UnoIDE.PNG', 'popup'); return false;">
+                            <img src="UnoIDE.PNG" width="300" alt="Arduino UNO IDE" class="img-responsive img-responsive" /></a>Arduino UNO IDE
+                    </p>
+
+                </li>
+                <li>On the Raspberry Pi open the Arduino IDE<br />
+                    It will display a blank sketch, with a name based on the current date.
+                </li>
+
+                <li>In the lower right corner you will see &#39;Arduino Uno on COM1&#39;.<br />
+                    From the menu choose Tools&gt;Serial Port&gt;/dev/ttyACM0<br />
+                    If this does not show up, you may need to try again later when you compile and try to upload.<br />
+                    This connects the Raspberry Pi to the Arduino UNO via the USB cable.
+                </li>
+
+                <li>From the menu choose File&gt;Examples&gt;01.Basics&gt;Blink<br />
+                    The code that appears is well commented.<br />
+                    Read the comments and the code.<br />
+                    The program creates a variable to manipulate an LED, then enters an infinite loop that turns the LED on for 1 second, and off for 1 second, ad infinitum.
+                </li>
+
+                <li>To verify the code syntax is correct, from the menu choose Sketch&gt;Verify / Compile.<br />
+                    In the status window at the bottom you should see a &#39;Done compiling&#39; message.<br />
+                    If not, time to trouble-shoot.
+                    <p>
+                        <a href="VerifySketch.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('VerifySketch.PNG', 'popup'); return false;">
+                            <img src="VerifySketch.PNG" width="300" alt="compiled sketch" class="img-responsive img-responsive" /></a> Sketch Compiled Properly
+                    </p>
+                </li>
+
+            </ol>
+            <hr />
+        </div>
+
+
+
+        <!--Exercise 2-->
+
+        <div class="col-lg-12"><a href="#Exercise02" class="btn btn-info" data-toggle="collapse">Exercise 2-Upload a Sketch</a></div>
+
+        <div id="Exercise02" class="collapse in  col-lg-12">
+
+            <p>
+                Once a sketch is verified and compiled, the next step is to transfer (upload) it to the Arduino UNO.<br />
+                A microcontroller is designed to run one sketch at a time, and is simple to use.<br />
+                <a href="https://makezine.com/2015/12/04/admittedly-simplistic-guide-raspberry-pi-vs-arduino/" class="bg-info text-white" target="_blank">Pi or Arduino?</a>
+
+            </p>
+
+            <ol>
+                <li>From the Arduino IDE choose File&gt;Upload
+                    <br />
+                    After a few seconds the status bar will display the message 
+                    &#39;Done uploading.&#39;<br />
+                    The orange light will be blinking-on 1 second, off 1 second, until power is removed, or another sketch is uploaded.<br />
+                    <p>
+                        <a href="BlinkyLight.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('BlinkyLight.PNG', 'popup'); return false;">
+                            <img src="BlinkyLight.PNG" width="300" alt="Blinking Light" class="img-responsive img-responsive" /></a> Blinking Light
+                    </p>
+                    <br />
+                    Note: the green light at the right side of the UNO indicates power is applied to the board.
+
+                </li>
+
+            </ol>
+            <hr />
+        </div>
+
+        <!--Exercise 3-->
+
+        <div class="col-lg-12"><a href="#Exercise03" class="btn btn-info" data-toggle="collapse">Exercise 3-Test and Debug</a></div>
+
+        <div id="Exercise03" class="collapse in  col-lg-12">
+            <p>
+                You will next modify the sketch and save it with a new name.<br />
+                Then you will upload the sketch and make sure it works.
+            </p>
+
+            <ol>
+                <li>In the Arduino IDE, Blink sketch, choose File&gt;Save As... name it Blink01, saving it in the \pi\sketchbook\ folder as suggested.
+                    <br />
+                </li>
+
+                <li>Note that the sketch name, Blink01, appears in the Arduino IDE title bar.<br />
+                </li>
+
+                <li>Modify the sketch.<br />
+                    Copy the four lines of code that turn the LED on and off.<br />
+                    Paste those four lines below where they currently end, being careful not to delete the brace &#39;}&#39; character.<br />
+                    Modify the On/Off timings, noting that 1000 represents 1000 milliseconds or 1 second.<br />
+                    Update the comments to reflect the timings that you chose.<br />
+                    Review and then &#39;Verify&#39; your code by pressing the check in the left end of the toolbar.<br />
+                    Your sketch will look something like this:<br />
+
+                    <p>
+                        <a href="Blink01.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('Blink01.PNG', 'popup'); return false;">
+                            <img src="Blink01.PNG" width="300" alt="Modified Blinking Light Program" class="img-responsive img-responsive" /></a>Modified Blinking Light Program<br />
+                    </p>
+
+                </li>
+
+                <li>When you are satisfied that your sketch works, choose File&gt;Upload to compile and upload the new sketch to the UNO.<br />
+                    Note that if you get an error message, you may need to choose Tools
+                    &gt;Serial Port&gt;/dev/tty/ACM0
+                    <br />
+                    Or you may need to do some troubleshooting.
+                </li>
+            </ol>
+            <hr />
+        </div>
+
+
+
+        <!--Exercise 4-->
+
+        <div class="col-lg-12"><a href="#Exercise04" class="btn btn-info" data-toggle="collapse">Exercise 4-Screen Shots</a></div>
+
+        <div id="Exercise04" class="collapse in  col-lg-12">
+
+            <ol>
+                <li>On the Raspberry Pi make sure the Arduino IDE and your name on the desktop are visible.</li>
+
+                <li>In the terminal window type in 
+                    <code>scrot -s</code>
+                    then click and drag the mouse to select an area from the top left showing the VNC icon and title bar, also include your name on the desktop and the Arduino IDE.
+                </li>
+                <li>Open File Manager, navigate to the /home/pi directory and rename the screen shot <strong>IOTA01.png</strong></li>
+                <li>
+                    <p>
+                        Your screen shot will look something like this:<br />
+                        <a href="IOTA01.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('IOTA01.PNG', 'popup'); return false;">
+                            <img src="IOTA01.PNG" width="300" alt="screen shot format" class="img-responsive img-responsive" /></a>Screen Shot Format<br />
+                    </p>
+                </li>
+            </ol>
+            <hr />
+        </div>
+
+
+
+
+
+
+        <div class="col-lg-12"><a href="#UploadScreenShot" class="btn btn-info" data-toggle="collapse">Upload Screenshot</a></div>
+
+        <div id="UploadScreenShot" class="collapse in  col-lg-12">
+            <p>
+                For this final Exercise, and to complete this assignment please read all of these instructions.<br />
+                You are submitting a screen shot of your work to the appropriate D2L Assignment folder.<br />
+            </p>
+            <br />
+        </div>
+
+        <div class="col-lg-12 text-primary">
+            <p>
+                (90) 1. On the Raspberry Pi, use the Chromium browser to <a href="https://winona.learn.minnstate.edu/" class="bg-info text-white" target="_blank">login to D2L</a>.<br />
+                Upload your screenshot to the &#39;IOTA01&#39; D2L Assignment Folder.
+            </p>
+
+            <div class="col-lg-12 text-danger">
+                <h2>Screen Shot IOTA01</h2>
+                <hr />
+            </div>
+        </div>
+
+
+
+        <div class="col-lg-12"><a href="#ExerciseSubmit" class="btn btn-info" data-toggle="collapse">Submit Assignment</a></div>
+
+
+        <div class="col-lg-12">
+            <p>
+                When all tasks are completed press the Submit button.
+            </p>
+            <hr />
+        </div>
+
+        <div class="col-lg-12 text-primary">
+            (10) 2. Assignment submission<br />
+            <!-- Enter your answer in the VALUE field below   GROK -->
+            <input class="form-control" name="q2" type="text" id="q2" value="I have completed all the exercises, and uploaded my screenshot to the D2L Assignment folder IOTA01.">
+            <hr />
+        </div>
+
+
+        <hr />
+        <div class="col-lg-12 text-danger text-center">
+            <h2>WHEN DONE<br />
+                SHUTDOWN THE RASPBERRY PI<br />
+                TURN OFF THE POWER<br />
+                REMOVE YOUR microSD CARD
+            </h2>
+        </div>
+        <hr />
+
+
+        <div class=" col-lg-12">
+            <br />
+            <input class=" text-danger btn-block btn-lg" type="submit" name="Submit" value="SUBMIT -once you have completed this assignment- SUBMIT">
+            <br />
+        </div>
+
+    </form>
+
+    <!-- Creative Commons License Info -->
+    <div id="xLicense" class=" col-lg-12 text-muted"></div>
+
+    <div id="xfooter" class=" col-lg-12 text-muted"></div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="../../ReadOnly/jquery-1.js"></script>
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../../ReadOnly/bootstrap.js"></script>
+
+
+</body>
+</html>

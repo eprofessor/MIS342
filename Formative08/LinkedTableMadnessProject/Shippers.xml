@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataroot xmlns:od="urn:schemas-microsoft-com:officedata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="Shippers.xsd" generated="2005-04-15T15:55:41">
+<Shippers>
+<ShipperID>1</ShipperID>
+<CompanyName>Speedy Express</CompanyName>
+<Phone>(503) 555-9831</Phone>
+</Shippers>
+<Shippers>
+<ShipperID>2</ShipperID>
+<CompanyName>United Package</CompanyName>
+<Phone>(503) 555-3199</Phone>
+</Shippers>
+<Shippers>
+<ShipperID>3</ShipperID>
+<CompanyName>Federal Shipping</CompanyName>
+<Phone>(503) 555-9931</Phone>
+</Shippers>
+</dataroot>

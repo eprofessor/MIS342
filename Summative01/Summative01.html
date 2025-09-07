@@ -1,0 +1,486 @@
+<!doctype html>
+<html lang="en">
+
+<!--
+    PgP 7/30/2025 add LinkedIn Learning as reflective assignment
+	PgP 3/2/2020 updating MIS202 files to align with other assignments 
+-->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap -->
+    <link href="../../ReadOnly/bootstrap.css" rel="stylesheet">
+
+    <!-- model assignment file, version 1 released 2018/02/18 PgP -->
+
+    <title>MIS342Summative01</title>
+</head>
+
+<body class="container-fluid">
+
+    <form class="container-fluid" action="https://eprofessor.azurewebsites.net/code/ProcessFormData.asp" method="post" name="frmAssignment" id="frmAssignment">
+
+        <input name="InstID" id="InstID" value="00617282" type="hidden">
+
+        <!-- had to put assignment here, because it is used in the path calculation -->
+        <!-- <input  name="assignment" id="assignment" value="Formative00" type="hidden" > -->
+
+        <h1 class=" text-center">Introduction-Database Objects </h1>
+
+        <h2 id="student-info" class="sr-only">Student Information</h2>
+        <!-- -start-Student, class and assignment information. Assignment hard-coded, other values from constants.js file-start -->
+        <div class="row" aria-labelledby="student-info">
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label for="FirstName" class="text-dark">First Name:</label>
+                    <input class="form-control"
+                        name="FirstName"
+                        id="FirstName"
+                        type="text"
+                        readonly
+                        aria-readonly="true"
+                        autocomplete="given-name"
+                        aria-label="First Name"
+                        tabindex="0" />
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label for="LastName" class="text-dark">Last Name:</label>
+                    <input class="form-control"
+                        name="LastName"
+                        id="LastName"
+                        type="text"
+                        readonly
+                        aria-readonly="true"
+                        autocomplete="family-name"
+                        aria-label="Last Name"
+                        tabindex="0" />
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label for="StarID" class="text-dark">StarID:</label>
+                    <input class="form-control"
+                        name="StarID"
+                        id="StarID"
+                        type="text"
+                        readonly
+                        aria-readonly="true"
+                        autocomplete="username"
+                        aria-label="StarID"
+                        tabindex="0" />
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label for="email" class="text-dark">Email:</label>
+                    <input class="form-control"
+                        name="email"
+                        id="email"
+                        type="email"
+                        readonly
+                        aria-readonly="true"
+                        autocomplete="email"
+                        aria-label="Email"
+                        tabindex="0" />
+                </div>
+            </div>
+        </div>
+        <input name="pin" id="pin" type="hidden" aria-hidden="true" />
+
+        <h2 id="course-info" class="sr-only">Course Information</h2>
+        <div class="row" aria-labelledby="course-info">
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label for="Semester" class="text-dark">Semester:</label>
+                    <input class="form-control"
+                        name="Semester"
+                        id="Semester"
+                        type="text"
+                        readonly
+                        aria-readonly="true"
+                        aria-label="Semester"
+                        tabindex="0" />
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label for="Class" class="text-dark">Class:</label>
+                    <input class="form-control"
+                        name="Class"
+                        id="Class"
+                        type="text"
+                        readonly
+                        aria-readonly="true"
+                        aria-label="Class"
+                        tabindex="0" />
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label for="Section" class="text-dark">Section:</label>
+                    <input class="form-control"
+                        name="Section"
+                        id="Section"
+                        type="text"
+                        readonly
+                        aria-readonly="true"
+                        aria-label="Section"
+                        tabindex="0" />
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label for="assignment" class="text-dark">Assignment:</label>
+                    <input class="form-control"
+                        name="assignment"
+                        id="assignment"
+                        type="text"
+                        readonly
+                        value="Summative01"
+                        aria-readonly="true"
+                        aria-label="Assignment"
+                        tabindex="0" />
+                </div>
+            </div>
+        </div>
+
+        <!-- -end-Student, class and assignment information-end -->
+
+
+
+
+
+        <div class="col-lg-12">
+            <br />
+            <input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit">
+            <br />
+        </div>
+
+        <div class="col-lg-12 h3 text-danger">
+            450 Points
+            <hr />
+        </div>
+
+        <!-- -start-objectives-start -->
+        <div class="col-lg-12"><a href="#Objectives" class="btn btn-info" data-toggle="collapse">Learning Objectives</a></div>
+        <div id="Objectives" class=" collapse in col-lg-12">
+
+            <!--Above this line similar except for Assignment number and title   -->
+
+<h2 >Learning Objectives</h2>
+
+   
+
+        <ol start="1" type="1">
+            <li  ><b>Understand the fundamental components of a database, including fields, records, and tables.</b>  
+                <ul type="circle">
+                    <li  ><i>Example</i>: In a customer database for a retail business, a <b>field</b> could represent individual data points like a customer's name or email address, a <b>record</b> would represent the complete set of information about one customer, and a <b>table</b> would store all customer records.  </li>
+                </ul>
+            </li>
+            <li  ><b>Define and explain the significance of a primary key in a table.</b>  
+                <ul type="circle">
+                    <li  ><i>Example</i>: In an inventory database for a store, the <b>primary key</b> could be the Item ID, ensuring each product has a unique identifier, which helps avoid confusion when managing stock levels.  </li>
+                </ul>
+            </li>
+            <li  ><b>Describe the purpose and function of queries, forms, and reports in Microsoft Access.</b>  
+                <ul type="circle">
+                    <li  ><i>Example</i>: A <b>query</b> could be used to retrieve a list of all customers who made purchases in the last month. A <b>form</b> allows employees to enter new sales transactions into the database efficiently, and a <b>report</b> can generate a summary of monthly sales figures for management review.  </li>
+                </ul>
+            </li>
+            <li  ><b>Identify the key features and benefits of a Database Management System (DBMS).</b>  
+                <ul type="circle">
+                    <li  ><i>Example</i>: A <b>DBMS</b> allows a retail chain to manage customer data centrally, ensuring consistency and accuracy across all stores, and providing insights into purchasing trends for marketing strategies.  </li>
+                </ul>
+            </li>
+            <li  ><b>Demonstrate the processes of compacting and backing up a database to ensure data integrity and recovery.</b>  
+                <ul type="circle">
+                    <li  ><i>Example</i>: Regularly <b>compacting</b> a sales database helps optimize performance by reducing file size, while <b>backing up</b> ensures that data is recoverable in case of hardware failure, protecting against data loss and ensuring business continuity.  </li>
+                </ul>
+            </li>
+        </ol>
+
+   
+
+          
+
+
+
+            <hr />
+            <h2>Concepts</h2>
+
+            <p>Sample focus question: What are the elements of a relational database?</p>
+            <p>Sample concept list (not exclusive-refer to the chapter introduction for additional concepts):</p>
+            <ul>
+                <li>Fields</li>
+                <li>Records</li>
+                <li>Primary Key</li>
+                <li>Table</li>
+                <li>Query</li>
+                <li>Form</li>
+                <li>Report</li>
+                <li>Database Management System</li>
+                <li>Compacting</li>
+                <li>Backup</li>
+            </ul>
+            <hr />
+
+        </div>
+        <!-- -end-objectives-end -->
+
+
+        <div class=" col-lg-12"><a href="#Exercise01" class="btn btn-info" data-toggle="collapse">Exercise 1-Tables</a></div>
+
+        <div id="Exercise01" class="collapse in  col-lg-12">
+            <p>You have been  hired by a local travel agency to set up tours for the coming season to the  National Parks in the United    States. The travel agency wants to be able  to access a database that will let them know about several features of each  park so they can best meet the needs of prospective travelers. As clients book  and then take the trips, the database will also include client information that  can be linked to the park information. Your job is to search the Internet for  information about the National Parks and set up the National Parks database.</p>
+
+            <p>
+                Start Access and open a new blank database. Name the database <strong>National Parks</strong>.<br />
+                Use your favorite search engine to       research information on the National Parks in the United States.
+                <br />
+                Using the <a href="http://www.nps.gov/" class="bg-info text-white" target="_blank">https://www.nps.gov</a> website, find or make up basic information on at least five parks.
+                <br />
+                Information can include the name of the park, the state in which the park is located, the size of the park in acres, adult admission fee in dollars, special features, and the date that the park opens for the season.<br />
+                Create a table named <strong>Park</strong>.
+                <br />
+                Accept the default ID primary key field with the AutoNumber data type, renaming it as Park ID.<br />
+                Enter  five  fields- Name, State, Fee, Hours, and       Date Opened, in the table based on the information you found.<br />
+                Enter other fields that you deem appropriate. Be sure to       define the data type appropriate for each field and to use appropriate       field naming techniques.<br />
+                Enter at least five records in the       Park table for the parks that you found during the Internet search.<br />
+            </p>
+            <p>
+                (50) 1. Use the Snipping Tool to make a screen shot of the Park table, datasheet view.
+                <br />
+
+                <!--  PgP 2/4/2018 create path using constants and current document assignment -->
+                Save the screen shot  as &quot;Ex1&quot; in your ' 
+                  <code><span id="Path1"></span></code>
+                ' folder.<br />
+
+                You will be combining screen shots from several exercises at the end of this assignment, just as you did in 
+                  <a href="https://eprofessor.azurewebsites.net/Formative00/Formative00.html#PDFfileCreation" class="bg-info text-white" target="_blank">Formative00</a>-PDF File Creation. 
+            </p>
+
+        </div>
+
+        <div class="col-lg-12 text-danger">
+            <h2>Screen Shot Ex1</h2>
+            <hr />
+        </div>
+
+
+        <div class=" col-lg-12"><a href="#Exercise02" class="btn btn-info" data-toggle="collapse">Exercise 2-Queries</a></div>
+
+        <div id="Exercise02" class="collapse in  col-lg-12">
+            <p>
+                Use the Simple Query Wizard to       create a query that displays only the name of the park, the state, and the       hours from the Park table in the detailed result. Give the query a       descriptive name.<br />
+                Provide a screen shot of the query, datasheet view.<br />
+            </p>
+
+            <!--  PgP 2/4/2018 create path using constants and current document assignment -->
+            (50) 2. Save the screen shot  as &quot;Ex2&quot; in your ' 
+                  <code><span id="Path2"></span></code>
+            ' folder.<br />
+            <br />
+
+        </div>
+
+
+        <div class="col-lg-12 text-danger">
+            <h2>Screen Shot Ex2</h2>
+            <hr />
+        </div>
+
+
+        <div class=" col-lg-12"><a href="#Exercise03" class="btn btn-info" data-toggle="collapse">Exercise 3-Forms</a></div>
+
+        <div id="Exercise03" class="collapse in  col-lg-12">
+            <p>
+                Use the Form tool to create a simple form based on the Park table that you can use to enter additional records into the database. Enter at least two more records.
+ Make a screen shot of the form, in form view, any record.<br />
+            </p>
+
+            <!--  PgP 2/4/2018 create path using constants and current document assignment -->
+            (50) 3. Save the screen shot  as &quot;Ex2&quot; in your ' 
+                  <code><span id="Path3"></span></code>
+            ' folder.<br />
+            <br />
+
+        </div>
+
+
+        <div class="col-lg-12 text-danger">
+            <h2>Screen Shot Ex3</h2>
+            <hr />
+        </div>
+
+
+
+        <div class=" col-lg-12"><a href="#Exercise04" class="btn btn-info" data-toggle="collapse">Exercise 4-Reports</a></div>
+
+        <div id="Exercise04" class="collapse in  col-lg-12">
+            <p>
+                Use the Report tool to create a simple report showing every field in the Park table. 
+                <br />
+                Make a screen shot of the report, in report view.     
+            </p>
+
+            <!--  PgP 2/4/2018 create path using constants and current document assignment -->
+            (50) 4. Save the screen shot  as &quot;Ex4&quot; in your ' 
+                  <code><span id="Path4"></span></code>
+            ' folder.<br />
+            <br />
+
+        </div>
+
+
+        <div class="col-lg-12 text-danger">
+            <h2>Screen Shot Ex4</h2>
+            <hr />
+        </div>
+
+
+        Compact the database and then exit Access.   
+	<hr />
+
+
+
+        <!--  From here to end difference question numbers and Summative numbering for PDF of file uploaded to D2L    -->
+
+
+        <div class="col-lg-12"><a href="#ExercisePDF" class="btn btn-info" data-toggle="collapse">Exercise-PDF File Creation</a></div>
+
+        <div id="ExercisePDF" class="collapse in  col-lg-12">
+            <p>
+                Use a web browser to verify that you have published your website to https://classes.winona.edu/...
+                <br />
+                Check that your name, StarID, email, class, semester, section and all of your answers are correct and visible.
+                <br />
+                From the menu choose File&gt;Print... and using &quot;Microsoft Print to PDF&quot; save a copy of this assignment as a .pdf file in your   ' 
+                  <code><span id="Path5"></span></code>
+                ' folder.<br />
+            </p>
+            <br />
+
+            <p>
+                (50) 5. Save your file 'WebPage.pdf' to the ' 
+                  <code><span id="Path6"></span></code>
+                ' folder.<br />
+
+
+            </p>
+
+            <div class="text-danger">
+                <h2>WebPage.pdf</h2>
+                <hr />
+            </div>
+
+			<p>
+				Create a .pdf file named &#39;screenshots.pdf&#39; by combining the above screenshots.
+			</p>
+
+            <h2>ScreenShots->Snipping Tool + OneNote</h2>
+            <ol>
+                <li>Open <strong>Microsoft OneNote</strong> on your laptop.</li>
+                <li>Create a new page and name it <code>Screenshots</code></li>
+                <li>Save this <code>Screenshots.pdf</code> file into your ' <code><span id="Path7"></span></code>
+                    ' folder.<br />
+                </li>
+                <li>Use the <strong>Snipping Tool</strong> to take each required screenshot </li>
+                <li>After each snip, press <code>Ctrl + V</code> to paste the screenshot into your OneNote page.</li>
+                <li>Label each screenshot clearly (e.g., "Ex10NYT &hyphen; New York Times").</li>
+                <li>Once all images are added, go to <strong>File &gt; Print</strong> and choose <strong>Microsoft Print to PDF</strong>.</li>
+                <li>When all screenshots are done you will upload the PDF file to the appropriate D2L Assignment folder.</li>
+            </ol>
+            <hr>
+       
+
+			<p>
+				(50) 11. Save your file 'ScreenShots.pdf' to the ' 
+                 <code><span id="Path8"></span></code>
+				' folder.<br />
+
+			</p>
+            <div class="text-danger">
+                <h2>ScreenShots.pdf</h2>
+                <hr />
+            </div>
+
+
+            <p>&nbsp;</p>
+            <p>
+                Use PDFill to merge the <strong>WebPage.pdf</strong> file with the <strong>ScreenShots.pdf </strong>file, and save it as &#39;<strong>Summative01.pdf</strong>&#39; in ' 
+                  <code><span id="Path9"></span></code>
+                ' folder.<br />
+
+            </p>
+
+
+
+
+
+            <p>(50) 7. Upload your file 'Summative01.pdf' to the D2L 'Summative01' Assignment folder.</p>
+
+            <div class="text-danger">
+                <h2>Summative01.pdf</h2>
+            </div>
+            <hr />
+
+        </div>
+
+
+
+
+        <div class="col-lg-12"><a href="#ExerciseAssignmentSubmission" class="btn btn-info" data-toggle="collapse">Exercise-Assignment Submission</a></div>
+
+        <div id="ExerciseAssignmentSubmission" class="collapse in  col-lg-12">
+            <p>
+                Use a browser to view your completed and published website at: https://classes.winona.edu/...     
+                <br />
+                Ensure that you have linked this assignment on your home page.
+                Note that your screen shots do not have to be completed to perform this step.<br>
+            </p>
+
+            (50) 8. Home Page Hyperlink<br />
+            Check and verify that this assignment is hyperlinked on your home page.<br />
+            <br />
+
+            (50) 9. Assignment submission<br />
+            Press the Submit button at the top or bottom of this page.
+                Read and follow instructions on the confirmation page.&nbsp; Correct any errors.
+        </div>
+        <hr />
+
+
+
+        <div class="col-lg-12">
+            <br />
+            <input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit">
+            <br />
+        </div>
+
+
+    </form>
+
+
+    <!-- PgP 5/31/2025 place js code at end to prevent race conditions -->
+
+    <!-- Creative Commons License Info -->
+    <footer>
+        <div id="licenseInfo" class="col-lg-12 text-muted"></div>
+        <div id="footerText" class="col-lg-12 text-muted"></div>
+    </footer>
+
+    <!-- ========== Script Includes (Order is Critical) ========== -->
+    <script src="../../ReadOnly/jquery-1.js"></script>
+    <script src="../../ReadOnly/bootstrap.js"></script>
+    <script src="../studentConstants.js"></script>
+    <script src="../../ReadOnly/courseConstants.js"></script>
+    <script src="../../ReadOnly/domForms.js"></script>
+
+
+</body>
+</html>

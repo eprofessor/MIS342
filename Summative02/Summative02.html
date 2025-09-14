@@ -1,0 +1,537 @@
+<!doctype html>
+<html lang="en">
+
+<!--
+    PgP 7/30/2025 add LinkedIn Learning as reflective assignment
+	PgP 3/2/2020 updating MIS202 files to align with other assignments 
+-->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap -->
+    <link href="../../ReadOnly/bootstrap.css" rel="stylesheet">
+
+    <!-- model assignment file, version 1 released 2018/02/18 PgP -->
+
+    <title>MIS342Summative02</title>
+</head>
+
+<body class="container-fluid">
+
+    <form class="container-fluid" action="https://eprofessor.azurewebsites.net/code/ProcessFormData.asp" method="post" name="frmAssignment" id="frmAssignment">
+
+        <input name="InstID" id="InstID" value="00617282" type="hidden">
+
+        <!-- had to put assignment here, because it is used in the path calculation -->
+        <!-- <input  name="assignment" id="assignment" value="Formative00" type="hidden" > -->
+
+        <h1 class=" text-center">Tables </h1>
+
+        <h2 id="student-info" class="sr-only">Student Information</h2>
+        <!-- -start-Student, class and assignment information. Assignment hard-coded, other values from constants.js file-start -->
+        <div class="row" aria-labelledby="student-info">
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label for="FirstName" class="text-dark">First Name:</label>
+                    <input class="form-control"
+                        name="FirstName"
+                        id="FirstName"
+                        type="text"
+                        readonly
+                        aria-readonly="true"
+                        autocomplete="given-name"
+                        aria-label="First Name"
+                        tabindex="0" />
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label for="LastName" class="text-dark">Last Name:</label>
+                    <input class="form-control"
+                        name="LastName"
+                        id="LastName"
+                        type="text"
+                        readonly
+                        aria-readonly="true"
+                        autocomplete="family-name"
+                        aria-label="Last Name"
+                        tabindex="0" />
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label for="StarID" class="text-dark">StarID:</label>
+                    <input class="form-control"
+                        name="StarID"
+                        id="StarID"
+                        type="text"
+                        readonly
+                        aria-readonly="true"
+                        autocomplete="username"
+                        aria-label="StarID"
+                        tabindex="0" />
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label for="email" class="text-dark">Email:</label>
+                    <input class="form-control"
+                        name="email"
+                        id="email"
+                        type="email"
+                        readonly
+                        aria-readonly="true"
+                        autocomplete="email"
+                        aria-label="Email"
+                        tabindex="0" />
+                </div>
+            </div>
+        </div>
+        <input name="pin" id="pin" type="hidden" aria-hidden="true" />
+
+        <h2 id="course-info" class="sr-only">Course Information</h2>
+        <div class="row" aria-labelledby="course-info">
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label for="Semester" class="text-dark">Semester:</label>
+                    <input class="form-control"
+                        name="Semester"
+                        id="Semester"
+                        type="text"
+                        readonly
+                        aria-readonly="true"
+                        aria-label="Semester"
+                        tabindex="0" />
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label for="Class" class="text-dark">Class:</label>
+                    <input class="form-control"
+                        name="Class"
+                        id="Class"
+                        type="text"
+                        readonly
+                        aria-readonly="true"
+                        aria-label="Class"
+                        tabindex="0" />
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label for="Section" class="text-dark">Section:</label>
+                    <input class="form-control"
+                        name="Section"
+                        id="Section"
+                        type="text"
+                        readonly
+                        aria-readonly="true"
+                        aria-label="Section"
+                        tabindex="0" />
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label for="assignment" class="text-dark">Assignment:</label>
+                    <input class="form-control"
+                        name="assignment"
+                        id="assignment"
+                        type="text"
+                        readonly
+                        value="Summative02"
+                        aria-readonly="true"
+                        aria-label="Assignment"
+                        tabindex="0" />
+                </div>
+            </div>
+        </div>
+
+        <!-- -end-Student, class and assignment information-end -->
+
+
+        <div class="col-lg-12">
+            <br />
+            <input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit">
+            <br />
+        </div>
+
+        <div class="col-lg-12 h3 text-danger">
+            500 Points
+            <hr />
+        </div>
+        <!-- -start-objectives-start -->
+
+        <div class="col-lg-12"><a href="#Objectives" class="btn btn-info" data-toggle="collapse">Learning Objectives</a>  </div><br />
+
+        <div id="Objectives" class=" collapse in col-lg-12">
+
+            <!--Above this line similar except for Assignment number and title   -->
+
+   <h2 ">Learning Objectives</h2>
+           
+
+
+            <br />
+            <ol start="1" type="1">
+                <li  ><b>Describe the structure and function of tables within a relational database.</b>  
+                    <ul style="margin-top:0in" type="circle">
+                        <li  ><i>Example</i>: In a human resources database, a <b>table</b> might be used to store employee details, with columns representing fields like employee ID, name, position, and department, facilitating efficient data organization and retrieval.  </li>
+                    </ul>
+                </li>
+                <li  ><b>Identify different data types and explain their usage in defining fields.</b>  
+                    <ul style="margin-top:0in" type="circle">
+                        <li  ><i>Example</i>: A sales database might use data types such as <b>text</b> for customer names, <b>number</b> for order quantities, and <b>currency</b> for prices to ensure accurate data entry and calculations.  </li>
+                    </ul>
+                </li>
+                <li  ><b>Explain the concept of primary keys and their role in table relationships.</b>  
+                    <ul style="margin-top:0in" type="circle">
+                        <li  ><i>Example</i>: In an accounts payable system, the <b>Invoice Number</b> serves as a primary key in the invoices table, allowing it to relate uniquely to payments and ensuring accurate record linkage.  </li>
+                    </ul>
+                </li>
+                <li  ><b>Demonstrate the process of importing data from various file types into Access tables.</b>  
+                    <ul style="margin-top:0in" type="circle">
+                        <li  ><i>Example</i>: A marketing team imports <b>CSV files</b> containing email lists into Access to manage and segment contacts for targeted campaigns.  </li>
+                    </ul>
+                </li>
+                <li  ><b>Define and apply the concepts of one-to-many relationships and referential integrity in table design.</b>  
+                    <ul style="margin-top:0in" type="circle">
+                        <li  ><i>Example</i>: In a university database, a <b>one-to-many relationship</b> exists between instructors and classes, with <b>referential integrity</b> ensuring that each class must be assigned to a valid instructor ID.  </li>
+                    </ul>
+                </li>
+            </ol>
+      
+
+
+
+
+            <hr />
+            <h2>Concepts</h2>
+            <p>Sample focus question: What are the key components and uses of  Tables?</p>
+            <p>Sample concept list (not exclusive-refer to the chapter introduction for additional concepts):</p>
+            <ul>
+                <li>Fields</li>
+                <li>Data Types</li>
+                <li>Primary Key</li>
+                <li>Table Structure</li>
+                <li>Relationships</li>
+                <li>Records</li>
+                <li>Importing data</li>
+                <li>File types</li>
+                <li>Relationships</li>
+                <li>One to many</li>
+                <li>Referential integrity</li>
+            </ul>
+            <hr />
+
+            <hr />
+
+        </div>
+
+        <div class=" col-lg-12"><a href="#Exercise01" class="btn btn-info" data-toggle="collapse">Exercise 1- Movie Table</a></div>
+
+        <div id="Exercise01" class="collapse in  col-lg-12">
+
+            <br />
+
+            <p>
+                You are taking  a course on Oscar-winning movies. The scope of the course covers ten movies from 1990 through the present that won Oscars for Best Director. 
+       In order to prepare for the class you decide to organize the movies in a simple database that you will create. 
+       The Internet has all the information you need for the  database; you just need to research the movies at several sites, organize, and  then enter the data. 
+       The database will include two tables. 
+       The Movie table will  include data such as the movie title, release date, number of Oscar nominations, number of Oscar wins, and category (such as whether it is a  comedy, drama, horror, documentary, or other category you decide). 
+       The Director table will include the data about the director of those movies.
+            </p>
+
+
+            Start Access and open a new blank database. Name the database <strong>Oscars</strong>.<br />
+            Use your favorite search engine to research information to find ten movies that won Oscars in the Best Director category since 1990.<br />
+            Use Web sites, including <a href="http://www.imdb.com/" class="bg-info text-white" target="_blank">www.imdb.com</a> and <a href="http://www.oscars.org/" class="bg-info text-white" target="_blank">www.oscars.org</a> to find the information you need for the database.<br />
+            Create a table called <strong>Movie</strong>. Accept the default ID primary key field with the AutoNumber data type, renaming it as Movie ID. Create the fields, such as title, release date, number of Oscar nominations, number of Oscar wins, category, and director ID. Be sure to define the data type appropriate for each field and to use appropriate field naming techniques. Enter a custom format for the release date field.<br />
+            Create a table called <strong>Director</strong> that has the fields director ID, first name, last name, and any other fields of your choice based on the research that you collected. Consider that you do not want redundant data between the two tables. The director ID is the common field between the two tables.<br />
+            Review the data types and field properties for the fields in the two tables and change any that are not appropriate.<br />
+            Enter ten records into the Movie table.<br />
+            View the records in the Movie table in datasheet view. Sort the datasheet in descending order by number of nominations, and then save the table.<br />
+            <br />
+
+            (50)  1. Use the Snipping tool to  provide a screen shot of the Movie table, <strong>datasheet view</strong>.<br />
+            <!--  PgP 2/4/2018 create path using constants and current document assignment -->
+            Save the screen shot  as &quot;Ex1&quot; in your ' 
+                 <code><span id="Path1"></span></code>
+            ' folder.<br />
+
+
+        </div>
+
+        <div class="col-lg-12 text-danger">
+            <h2>Screen Shot Ex1</h2>
+            <hr />
+        </div>
+
+        <!--Exercise 2-->
+
+        <div class=" col-lg-12"><a href="#Exercise02" class="btn btn-info" data-toggle="collapse">Exercise 2-Director Table</a></div>
+
+        <div id="Exercise02" class="collapse in  col-lg-12">
+
+            <br />
+
+            <p>
+                Enter five records in the Director table.
+                <br />
+                View the records in the Director table in datasheet view. In datasheet view, move the first name field to  follow the last name field, and then save the table.<br />
+            </p>
+
+            (50) 2. Use the Snipping tool to  provide a screen shot of the Director table, <strong>datasheet view</strong>.<br />
+            <!--  PgP 2/4/2018 create path using constants and current document assignment -->
+            Save the screen shot  as &quot;Ex2&quot; in your ' 
+             <code><span id="Path2"></span></code>
+            ' folder.<br />
+
+
+        </div>
+
+        <div class="col-lg-12 text-danger">
+            <h2>Screen Shot Ex2</h2>
+            <hr />
+        </div>
+
+
+        <!--Exercise 3-->
+
+        <div class=" col-lg-12"><a href="#Exercise03" class="btn btn-info" data-toggle="collapse">Exercise 3-Excel Worksheet</a></div>
+
+        <div id="Exercise03" class="collapse in  col-lg-12">
+
+            <br />
+
+            <p>
+                Create an Excel worksheet, adding data for three additional directors to the worksheet. The columns in the worksheet should be the same as the columns in the Director table and in the same order. Save and close the Excel workbook, and then import the Excel director data into the Director table.<br />
+                <br />
+            </p>
+            (50) 3. Use the Snipping tool to provide a screen shot of the <strong>dialog box</strong> showing the import of the Excel worksheet data into Access.
+            <br />
+            <!--  PgP 2/4/2018 create path using constants and current document assignment -->
+            Save the screen shot  as &quot;Ex3&quot; in your ' 
+                 <code><span id="Path3"></span></code>
+            ' folder.<br />
+
+
+        </div>
+
+        <div class="col-lg-12 text-danger">
+            <h2>Screen Shot Ex3</h2>
+            <hr />
+        </div>
+
+        <!--Exercise 4-->
+
+        <div class=" col-lg-12"><a href="#Exercise04" class="btn btn-info" data-toggle="collapse">Exercise 4-Relationships Window</a></div>
+
+        <div id="Exercise04" class="collapse in  col-lg-12">
+
+            <br />
+
+            <p>
+                Use the Relationships window to join the two tables based on the director ID field.<br />
+                Enforce referential integrity.
+            </p>
+
+            (50) 4. Use the Snipping tool to  provide a screen shot of the <strong>Relationships window</strong>.
+            <br />
+            <!--  PgP 2/4/2018 create path using constants and current document assignment -->
+            Save the screen shot  as &quot;Ex4&quot; in your ' 
+                 <code><span id="Path4"></span></code>
+            ' folder.<br />
+
+
+        </div>
+
+        <div class="col-lg-12 text-danger">
+            <h2>Screen Shot Ex4</h2>
+            <hr />
+        </div>
+
+        <!--Exercise 5-->
+
+        <div class=" col-lg-12"><a href="#Exercise05" class="btn btn-info" data-toggle="collapse">Exercise 5-Flat Files</a></div>
+
+        <div id="Exercise05" class="collapse in  col-lg-12">
+
+            <br />
+
+            <p>
+                Close the database and then exit Access.<br />
+
+                (100) 5.Briefly explain why it is better to spend the time creating separate Access tables (such as Movie and Director) instead of simply using one Excel spreadsheet to enter all of the Movie and Director information (aka 'flatfile').
+
+             <!-- Enter your answer in the VALUE field below   GROK -->
+                <input name="q5" id="q5" size="120" maxlength="120" class="form-control" value="Separate Access tables versus flatfile:" type="text">
+                <br />
+            </p>
+
+        </div>
+
+        <hr />
+
+        <!--Exercise 6-->
+
+
+        <div class=" col-lg-12"><a href="#Exercise06" class="btn btn-info" data-toggle="collapse">Exercise-PDF File Creation</a></div>
+
+        <div id="Exercise06" class="collapse in  col-lg-12">
+
+            <br />
+
+            <div id="ExercisePDF" class="collapse in  col-lg-12">
+                <p>
+                    Use a web browser to verify that you have published your website to https://classes.winona.edu/...
+                    <br />
+                    Check that your name, StarID, email, class, semester, section and all of your answers are correct and visible.
+                    <br />
+                    From the menu choose File&gt;Print... and using &quot;Microsoft Print to PDF&quot; save a copy of this assignment as a .pdf file in your   ' 
+                 <code><span id="Path5"></span></code>
+                    ' folder.<br />
+                </p>
+                <br />
+
+                <p>
+                    (50) 6. Save your file 'WebPage.pdf' to the ' 
+               <code><span id="Path6"></span></code>
+                    ' folder.<br />
+
+
+                </p>
+
+                <div class="text-danger">
+                    <h2>WebPage.pdf</h2>
+                    <hr />
+                </div>
+
+			<p>
+				Create a .pdf file named &#39;screenshots.pdf&#39; by combining the above screenshots.
+			</p>
+
+            <h2>ScreenShots->Snipping Tool + OneNote</h2>
+            <ol>
+                <li>Open <strong>Microsoft OneNote</strong> on your laptop.</li>
+                <li>Create a new page and name it <code>Screenshots</code></li>
+                <li>Save this <code>Screenshots.pdf</code> file into your ' <code><span id="Path7"></span></code>
+                    ' folder.<br />
+                </li>
+                <li>Use the <strong>Snipping Tool</strong> to take each required screenshot </li>
+                <li>After each snip, press <code>Ctrl + V</code> to paste the screenshot into your OneNote page.</li>
+                <li>Label each screenshot clearly (e.g., "Ex10NYT &hyphen; New York Times").</li>
+                <li>Once all images are added, go to <strong>File &gt; Print</strong> and choose <strong>Microsoft Print to PDF</strong>.</li>
+                <li>When all screenshots are done you will upload the PDF file to the appropriate D2L Assignment folder.</li>
+            </ol>
+            <hr>
+
+
+                <p>
+                    (50) 7. Save your file 'ScreenShots.pdf' to the ' 
+                  <code><span id="Path8"></span></code>
+                    ' folder.<br />
+
+                </p>
+
+                <div class="text-danger">
+                    <h2>ScreenShots.pdf</h2>
+                    <hr />
+                </div>
+
+
+                <p>&nbsp;</p>
+                <p>
+                    Use PDFill to merge the <strong>WebPage.pdf</strong> file with the <strong>ScreenShots.pdf </strong>file, and save it as &#39;<strong>Summative02.pdf</strong>&#39; in ' 
+                  <code><span id="Path9"></span></code>
+                    ' folder.<br />
+
+                </p>
+
+
+                <p>(50) 8. Upload your file 'Summative02.pdf' to the D2L 'Summative02' Assignment folder.</p>
+
+                <div class="text-danger">
+                    <h2>Summative02.pdf</h2>
+                </div>
+                <hr />
+
+            </div>
+
+
+        </div>
+
+
+
+
+        <!--Exercise 7-->
+
+        <div class=" col-lg-12"><a href="#Exercise07" class="btn btn-info" data-toggle="collapse">Exercise-Assignment Submission</a></div>
+
+        <div id="Exercise07" class="collapse in  col-lg-12">
+
+            <br />
+
+            <p>
+                Use a browser to view your completed and published website at: https://classes.winona.edu/...     
+                <br />
+                Ensure that you have linked this assignment on your home page.
+                Note that your screen shots do not have to be completed to perform this step.<br>
+            </p>
+
+            (50) 9. Home Page Hyperlink<br />
+            Check and verify that this assignment is hyperlinked on your home page.<br />
+            <br />
+
+            (50) 10. Assignment submission<br />
+            Press the Submit button at the top or bottom of this page.
+                Read and follow instructions on the confirmation page.&nbsp; Correct any errors.
+        </div>
+        <hr />
+
+
+
+
+        <div class="col-lg-12">
+            <br />
+            <input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit">
+            <br />
+        </div>
+
+
+    </form>
+
+
+
+    <!-- PgP 5/31/2025 place js code at end to prevent race conditions -->
+
+    <!-- Creative Commons License Info -->
+    <footer>
+        <div id="licenseInfo" class="col-lg-12 text-muted"></div>
+        <div id="footerText" class="col-lg-12 text-muted"></div>
+    </footer>
+
+    <!-- ========== Script Includes (Order is Critical) ========== -->
+    <script src="../../ReadOnly/jquery-1.js"></script>
+    <script src="../../ReadOnly/bootstrap.js"></script>
+    <script src="../studentConstants.js"></script>
+    <script src="../../ReadOnly/courseConstants.js"></script>
+    <script src="../../ReadOnly/domForms.js"></script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

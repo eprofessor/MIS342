@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="en">
+
+<!-- 
+	PgP 5/29/2024 created LateWork assignment  
+-->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap -->
+    <link href="../../ReadOnly/bootstrap.css" rel="stylesheet">
+
+    <!-- constant file to update email, firstname, lastname, starid, section on students' pages -->
+    <script src="../constants.js"></script>
+    <script src="../../ReadOnly/CourseConstants.js"></script>
+
+    <!-- model assignment file, version 1 released 2018/02/18 PgP -->
+
+    <title>Generative Artificial Intelligence</title>
+</head>
+
+
+
+<body class="container-fluid" onload="setVariables()">
+
+    <form class="container-fluid" action="https://eprofessor.azurewebsites.net/code/ProcessFormData.asp" method="post" name="frmAssignment" id="frmAssignment">
+        <input name="InstID" id="InstID" value="00617282" type="hidden">
+
+        <h1 class=" text-center">Generative AI</h1>
+
+        <!-- -start-Student, class and assignment information. Assignment hard-coded, other values from constants.js file-start -->
+        <div class="row col-lg-12">
+            <div class="col-lg-3">
+                <label class="text-primary" for="FirstName">First Name:</label>
+                <input class="form-control" name="FirstName" id="FirstName" type="text" value="default first name" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="LastName">Last Name:</label>
+                <input class="form-control" name="LastName" id="LastName" type="text" value="default last name" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="pin">StarID:</label>
+                <input class="form-control" name="pin" id="pin" type="text" value="default StarID" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="email">Email:</label>
+                <input class="form-control" name="email" id="email" type="email" value="default email address" readonly="readonly">
+            </div>
+        </div>
+
+        <div class="row col-lg-12">
+            <div class="col-lg-3">
+                <label class="text-primary" for="semester">Semester:</label>
+                <input class="form-control" name="semester" id="semester" type="text" value="default" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="class">Class:</label>
+                <input class="form-control" name="class" id="class" value="xClass" type="text" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="section">Section:</label>
+                <input class="form-control" name="section" id="section" value="default" type="text" readonly="readonly">
+            </div>
+            <div class="col-lg-3">
+                <label class="text-primary" for="assignment">Assignment:</label>
+                <input class="form-control" name="assignment" id="assignment" value="GenAI" type="text" readonly="readonly">
+            </div>
+        </div>
+        <!-- -end-Student, class and assignment information-end -->
+
+                     <div class="row col-lg-12">
+                    <div class="col-lg-4 h3 text-danger">250 points</div>
+                    <div class="col-lg-1"></div>
+                </div>
+
+        <!-- Calculate the correct path for saving the files -->
+        <script>Path = "&#92;OneDrive - MNSCU&#92;" + xClass + "&#92;" + document.getElementById("assignment").value + "&#92;"; </script>
+
+
+        <div class="col-lg-12">
+            <br />
+            <input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit">
+            <br />
+        </div>
+
+
+
+        <!-- -start-objectives-start -->
+        <div class="col-lg-12"><a href="#Objectives" class="btn btn-info" data-toggle="collapse">Objective</a></div>
+        <div id="Objectives" class=" collapse in col-lg-12">
+
+
+            <!--Above this line similar except for Assignment number and title   -->
+
+
+            <p>
+                You are expected and encouraged to use Generative Artificial Intelligence (genAI) as an aid in this course.<br />
+                Realize genAI is not a replacement for doing course work.<br />
+                Using genAI without an understanding of the course material will not serve you well in your career, or in your lifelong learning journey.
+            </p>
+
+            <h3>Guidelines:
+            </h3>
+
+            <ul>
+                <li>Obtain accounts with Microsoft Copilot/Bing Chat and OpenAI chatGPT.
+                </li>
+
+                <li>Setup your accounts.
+                </li>
+
+                <li>Make use of these resources to enhance and extend your learning in this course.<br />
+                    Consider genAI to be your Intelligent Assistant.
+                </li>
+
+                <li>Remember the maxim &#39;Garbage In, Garbage Out&#39; applies to using computers, and also using genAI.
+                </li>
+            </ul>
+
+            <hr />
+
+        </div>
+
+        <div class="col-lg-12">
+        </div>
+
+        <div class=" col-lg-12"><a href="#Exercise01" class="btn btn-info" data-toggle="collapse">Exercise01-Microsoft Copilot</a></div>
+
+        <div id="Exercise01" class="collapse in  col-lg-12">
+
+            <p>
+                Access your Microsoft Copilot account.
+            </p>
+
+            <ol>
+                <li>Using the Microsoft Edge browser login to Copilot:<br />
+                    <code>
+                        <a href="https://copilot.microsoft.com?FORM=undexpand&">https://copilot.microsoft.com?FORM=undexpand&
+                        </a>
+                    </code>
+                    This will open Copilot in a full screen window.<br />
+                    It is strongly suggested that you bookmark this page, and or add it as a browser start-up tab.
+                </li>
+                <li>Note-if this is the first time you have logged in, you will be prompted-enter your StarID and network password.<br />
+                    <a href="images/copilotLogin.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('Images/copilotLogin.PNG', 'popup'); return false;">
+                        <img src="images/copilotLogin.PNG" width="300" alt="copilot login" class="img-responsive img-responsive" /></a>
+                    Copilot login with StarID<br />
+                </li>
+            </ol>
+
+
+
+        </div>
+
+        <hr />
+
+
+        <div class="col-lg-12"><a href="#ExerciseAssignmentSubmission" class="btn btn-info" data-toggle="collapse">Exercise02-OpenAI-chatGPT</a></div>
+
+        <div id="ExerciseAssignmentSubmission" class="collapse in  col-lg-12">
+            <p>
+                Create an OpenAI chatGPT account.
+            </p>
+
+            <ol>
+                <li>Using a web browser create an OpenAI chatGPT account:<br />
+                    <code>
+                        <a href="https://platform.openai.com">https://platform.openai.com
+                        </a>
+                    </code>
+                    Your account does not have to be associated with WSU.<br />
+                    Feel free to use whatever email address you like.<br />
+                </li>
+                <li>Note-after you have logged in, you are encouraged to avail yourself of the tutorials, prompt examples, and other resources.<br />
+                    What you learn about prompting and using one genAI will be applicable to other genAIs.<br />
+
+                    <a href="images/openAIsignup.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('Images/openAIsignup.PNG', 'popup'); return false;">
+                        <img src="images/openAIsignup.PNG" width="300" alt="openAI signup" class="img-responsive img-responsive" /></a>
+                    OpenAI signup 
+
+                </li>
+            </ol>
+
+        </div>
+        <hr />
+
+
+
+
+
+
+
+
+        <div class="col-lg-12"><a href="#ExercisePDF" class="btn btn-info" data-toggle="collapse">Exercise03-Keep Up with genAI</a></div>
+
+        <div id="ExercisePDF" class="collapse in  col-lg-12">
+            <p>
+                Generative AI is among the fastest adopted technologies ever.             
+                <br />
+                And because of this, demand is soaring, putting pressure on genAI providers to distinguish themselves from their competition.<br />
+                This means a constant flow of new features.
+                <br />
+                As a result, it is difficult to keep up with these changes, and you are strongly encouraged to use LinkedIn Learning and periodically search for new content that can help you keep up to date in areas of interest to you.
+                <br />
+
+                                    <a href="images/Lil.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('Images/Lil.PNG', 'popup'); return false;">
+                        <img src="images/Lil.PNG" width="300" alt="search LinkedIn Learning signup" class="img-responsive img-responsive" /></a>
+                    LinkedIn Learning, search for generative AI content<br />
+                </p>
+            <p>
+                For this assignment search LinkedIn Learning for a &#39;Generative AI&#39; course of interest to you.<br />
+                Watch the course and print out the &#39;certificate of completion&#39;.
+
+
+                Save ths certificate as GenAI.pdf file in your   ' <code><span id="aaPath"></span></code>
+                <script>document.getElementById("aaPath").innerHTML = Path; </script>
+                ' folder.<br />
+            </p>
+
+            <p>
+                Reflect on what you learned watching this course.<br />
+                (50) 1. Below, briefly summarize the most important lesson learned about GenerativeAI in this course.<br />
+                <input type="text" id="q1" name="q1" size="120" maxlength="120" class="form-control" value="GenAI lesson:" />
+            </p>
+
+            <br />
+
+            <p>
+                (50) 2. Upload a copy of your file &#39;GenAI.pdf&#39; to the  
+                D2L &#39;GenAI&#39;  folder.<br />
+
+
+            </p>
+
+            <div class="text-danger">
+                <h2>GenAI.pdf</h2>
+                <hr />
+            </div>
+
+
+        </div>
+
+
+
+		<div class=" col-lg-12"><a href="#Exercise04" class="btn btn-info" data-toggle="collapse">Exercise04-Critical Thinking With AI</a> </div>
+
+		<div id="Exercise04" class="collapse in  col-lg-12">
+
+            <h3>Data Integrity</h3>
+
+			<p>Research &quot;Who is Pat Paulson at Winona State University?&quot; in threee different generative AI models of your choice.<br />
+                Reflect on the results between the models and consider:</p>
+            <ul>
+                <li>Are the answers consistent?</li>
+                <li>Are the answers accurate?</li>
+                <li>Can you prove or disprove any of the statements?</li>
+            </ul>
+			<p>
+				(50) 3. Reflect on this research process. Can you trust the results?
+				<br>
+			</p>
+
+			<!-- Enter your answer in the VALUE field below   GROK -->
+			<input name="q3" id="q3" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text">
+			<br>
+
+
+
+            <hr />
+
+            <h3>Precise Calculations</h3>
+
+			<p>Use at least three generative AI models to determine what is the Present Value (PV) of receiving a payment of $100.00/year for 5 years if the discount rate is 7.5% per year?</p>
+
+            <p>
+                Here is the correct solution using Excel:<br />
+
+                                    <a href="images/PV.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('Images/PV.PNG', 'popup'); return false;">
+                        <img src="images/PV.PNG" width="300" alt="Present Value" class="img-responsive img-responsive" /></a><br />
+                    PV of $100.00/year for 5 years at 7.5%<br />
+            </p>
+
+			<p>
+				(50) 4. Did any of the models provide the correct answer ($404.59)?
+				<br>
+			</p>
+
+			<!-- Enter your answer in the VALUE field below   GROK -->
+			<input name="q4" id="q4" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text">
+			<br>
+
+
+
+        <hr />
+
+
+
+
+
+            <h3>Bias</h3>
+
+			<p>Use at least 3 different generative AI models to "Create a picture containing 10 typical college students".</p>
+
+            <p>
+                Study the results carefully, discuss with classmates.  <br />
+            </p>
+
+			<p>
+				(50) 5. Do all the pictures  depict typical college students? <br />
+                Do some models produce more diverse results?<br />
+                Any thoughts on bias or diversity?
+				<br>
+			</p>
+
+			<!-- Enter your answer in the VALUE field below   GROK -->
+			<input name="q5" id="q5" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text">
+			<br>
+
+
+		</div>
+
+        <hr />
+
+
+
+
+
+
+
+
+        <div class="col-lg-12">
+            <br />
+            <input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit">
+            <br />
+        </div>
+
+
+    </form>
+
+    <hr />
+    <h3>
+        Next Steps
+    </h3>
+
+    <div class="col-lg-12">
+        <p>
+            With Generative AI being so prominent in our lives, you may want to consider signing up for the University of Helsinki Course, '<a href="https://www.classcentral.com/course/independent-elements-of-ai-12469"> 
+                <code>
+                Elements of AI 
+                </code> </a>'.<br />
+
+
+
+
+
+        </p>
+
+
+ 
+       <p>
+                    The goal of this course is to demystify AI</p>
+                <p style="background: transparent; border: 0px; margin: 0px 0px 1em; outline: 0px; padding: 0px; vertical-align: baseline;">
+                    The elements of AI is a free online course for everyone interested in learning what AI is, what is possible (and not possible) with AI, and how it affects our lives&nbsp; - with no complicated math or programming required. By completing the course you can earn a LinkedIn certificate.&nbsp; The course is available from May 14, 2018.</p>
+                <p style="background: transparent; border: 0px; margin: 0px 0px 1em; outline: 0px; padding: 0px; vertical-align: baseline;">
+                    After taking the course, you will be able to:</p>
+                <ul style="background: transparent; border: 0px; margin: 1em 0px 1em 1.1em; outline: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px !important; vertical-align: baseline;">
+                    <li style="background: transparent; border: 0px; margin: 0px; outline: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px !important; vertical-align: baseline; list-style: circle !important;">Understand some of the major implications of AI</li>
+                    <li style="background: transparent; border: 0px; margin: 0px; outline: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px !important; vertical-align: baseline; list-style: circle !important;">Think critically about AI news and claims&nbsp;</li>
+                    <li style="background: transparent; border: 0px; margin: 0px; outline: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px !important; vertical-align: baseline; list-style: circle !important;">Define and discuss what AI is</li>
+                    <li style="background: transparent; border: 0px; margin: 0px; outline: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px !important; vertical-align: baseline; list-style: circle !important;">Explain the methods that make AI possible</li>
+                </ul>
+                <p style="background: transparent; border: 0px; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline;">
+                    &nbsp;</p>
+            </div>
+       
+        <p>
+            &nbsp;</p>
+
+   
+
+
+    <!-- Creative Commons License Info -->
+    <div id="xLicense" class=" col-lg-12 text-muted"></div>
+
+    <div id="xfooter" class=" col-lg-12 text-muted"></div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="../../ReadOnly/jquery-1.js"></script>
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../../ReadOnly/bootstrap.js"></script>
+
+</body>
+</html>

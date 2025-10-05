@@ -1,0 +1,606 @@
+<!doctype html>
+<html lang="en">
+
+<!--
+    PgP 7/30/2025 add LinkedIn Learning as reflective assignment
+	PgP 3/2/2020 updating MIS202 files to align with other assignments 
+-->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap -->
+    <link href="../../ReadOnly/bootstrap.css" rel="stylesheet">
+
+    <!-- model assignment file, version 1 released 2018/02/18 PgP -->
+
+    <title>MIS342Summative05</title>
+</head>
+
+<body class="container-fluid">
+
+    <form class="container-fluid" action="https://eprofessor.azurewebsites.net/code/ProcessFormData.asp" method="post" name="frmAssignment" id="frmAssignment">
+
+        <input name="InstID" id="InstID" value="00617282" type="hidden">
+
+        <!-- had to put assignment here, because it is used in the path calculation -->
+        <!-- <input  name="assignment" id="assignment" value="Formative00" type="hidden" > -->
+
+        <h1 class=" text-center">Queries and Advanced Tables </h1>
+
+        <h2 id="student-info" class="sr-only">Student Information</h2>
+        <!-- -start-Student, class and assignment information. Assignment hard-coded, other values from constants.js file-start -->
+        <div class="row" aria-labelledby="student-info">
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label for="FirstName" class="text-dark">First Name:</label>
+                    <input class="form-control"
+                        name="FirstName"
+                        id="FirstName"
+                        type="text"
+                        readonly
+                        aria-readonly="true"
+                        autocomplete="given-name"
+                        aria-label="First Name"
+                        tabindex="0" />
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label for="LastName" class="text-dark">Last Name:</label>
+                    <input class="form-control"
+                        name="LastName"
+                        id="LastName"
+                        type="text"
+                        readonly
+                        aria-readonly="true"
+                        autocomplete="family-name"
+                        aria-label="Last Name"
+                        tabindex="0" />
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label for="StarID" class="text-dark">StarID:</label>
+                    <input class="form-control"
+                        name="StarID"
+                        id="StarID"
+                        type="text"
+                        readonly
+                        aria-readonly="true"
+                        autocomplete="username"
+                        aria-label="StarID"
+                        tabindex="0" />
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label for="email" class="text-dark">Email:</label>
+                    <input class="form-control"
+                        name="email"
+                        id="email"
+                        type="email"
+                        readonly
+                        aria-readonly="true"
+                        autocomplete="email"
+                        aria-label="Email"
+                        tabindex="0" />
+                </div>
+            </div>
+        </div>
+        <input name="pin" id="pin" type="hidden" aria-hidden="true" />
+
+        <h2 id="course-info" class="sr-only">Course Information</h2>
+        <div class="row" aria-labelledby="course-info">
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label for="Semester" class="text-dark">Semester:</label>
+                    <input class="form-control"
+                        name="Semester"
+                        id="Semester"
+                        type="text"
+                        readonly
+                        aria-readonly="true"
+                        aria-label="Semester"
+                        tabindex="0" />
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label for="Class" class="text-dark">Class:</label>
+                    <input class="form-control"
+                        name="Class"
+                        id="Class"
+                        type="text"
+                        readonly
+                        aria-readonly="true"
+                        aria-label="Class"
+                        tabindex="0" />
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label for="Section" class="text-dark">Section:</label>
+                    <input class="form-control"
+                        name="Section"
+                        id="Section"
+                        type="text"
+                        readonly
+                        aria-readonly="true"
+                        aria-label="Section"
+                        tabindex="0" />
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label for="assignment" class="text-dark">Assignment:</label>
+                    <input class="form-control"
+                        name="assignment"
+                        id="assignment"
+                        type="text"
+                        readonly
+                        value="Summative05"
+                        aria-readonly="true"
+                        aria-label="Assignment"
+                        tabindex="0" />
+                </div>
+            </div>
+        </div>
+
+        <!-- -end-Student, class and assignment information-end -->
+
+
+
+        <div class="col-lg-12">
+            <br />
+            <input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit">
+            <br />
+        </div>
+
+        <div class="col-lg-12 h3 text-danger">
+            700 Points
+            <hr />
+        </div>
+
+        <!-- -start-objectives-start -->
+        <div class="col-lg-12"><a href="#Objectives" class="btn btn-info" data-toggle="collapse">Learning Objectives</a></div>
+
+        <div id="Objectives" class=" collapse in col-lg-12">
+
+            <!--Above this line similar except for Assignment number and title   -->
+                        <h2 >Learning Objectives</h2>
+            <ol start="1" type="1">
+                <li  ><b>Apply pattern matching and list-of-values techniques to filter data.</b>  
+                    <ul type="circle">
+                        <li  ><i>Example</i>: An email marketing specialist uses pattern matching to find all email addresses ending with a specific domain for a targeted campaign.  </li>
+                    </ul>
+                </li>
+                <li  ><b>Use logical operators and parameter queries to enhance query functionality.</b>  
+                    <ul type="circle">
+                        <li  ><i>Example</i>: A project manager runs a parameter query to list tasks due within a specified date range, using logical operators to refine the results.  </li>
+                    </ul>
+                </li>
+                <li  ><b>Design crosstab queries and identify duplicate and unmatched records.</b>  
+                    <ul type="circle">
+                        <li  ><i>Example</i>: A sales analyst creates a crosstab query to compare monthly sales by product category and identify duplicate entries to clean the data.  </li>
+                    </ul>
+                </li>
+                <li  ><b>Implement lookup fields and input masks for data validation.</b>  
+                    <ul type="circle">
+                        <li  ><i>Example</i>: A HR department uses lookup fields to ensure consistent entry of department names and input masks for phone numbers to maintain data integrity.  </li>
+                    </ul>
+                </li>
+            </ol>
+
+
+
+
+
+
+
+            <hr />
+            <h2 class=" text-center">Concepts</h2>
+
+            <p>Sample focus question: How can advanced queries and good table design enhance a database?</p>
+            <p>Sample concept list (not exclusive-refer to the chapter introduction for additional concepts):</p>
+            <ul>
+                <li>Pattern match</li>
+                <li>List-of-values</li>
+                <li>Logical operators</li>
+                <li>Filtering</li>
+                <li>Parameter query</li>
+                <li>Crosstab query</li>
+                <li>Finding duplicate records</li>
+                <li>Finding unmatched records</li>
+                <li>Top values</li>
+                <li>Lookup fields</li>
+                <li>Input masks</li>
+                <li>Data validation</li>
+            </ul>
+            <hr />
+            <hr />
+
+        </div>
+
+
+        <!--Exercise 1-->
+
+        <div class=" col-lg-12"><a href="#Exercise01" class="btn btn-info" data-toggle="collapse">Exercise 1- Input Mask</a></div>
+
+        <div id="Exercise01" class="collapse in  col-lg-12">
+            <br />
+
+            <p>
+                Adventure  Outdoors, a youth-oriented travel company, has hired you to develop a database  that the staff can use to quickly access information about National Parks. 
+         Adventure  Outdoors uses grant money to pay the way for teens who cannot afford to take  trips. 
+         They intend to use the database to help plan teen travel during the summer months. 
+         The database will also include the names of the United States  Senators from each of the states. Adventure Outdoors contacts senators to ask  for grant money for the programs. 
+         Three basic tables are in the rough draft of the  database to get you started. Open the database and see which fields and tables  have been created. 
+         Based on research on the Internet, you will add fields that  you think will be useful, relate the tables, and enter data for several states.  
+         You will share your work with the staff at Adventure Outdoors and then, over  time, you will complete the database. To begin, you will research and enter data for five states.
+
+
+            </p>
+
+            <p>
+                Data Files needed for this Tutorial Project:<br />
+                <a href="AdventureOutdoors.accdb" class="bg-info text-white" target="_blank">AdventureOutdoors.accdb</a>
+                <br />
+                Answer the following questions using a copy of the <strong>AdventureOutdoors.accdb</strong> database file also located on the class network drive at:  \\store\classes\ YearTerm&nbsp; &amp; courseid &amp; &quot;\ReadOnly\&quot; ) 
+                <br />
+            </p>
+
+
+
+
+            <br />
+
+            <ul>
+
+                <li>Start Access and then open the Adventure Outdoors database file.</li>
+                <li>Open the <strong>tblPark</strong>, <strong>tblSenator</strong>, and <strong>tblState</strong> tables. Become familiar with the fields in these tables. (<em>Note</em>: The State, Town, and Phone fields  in the tblPark table pertain to the park&rsquo;s headquarters location.)</li>
+                <li>Consider and add any additional fields. Include a  Long Text field in one of the tables, and include a data validation rule for at  least one field in one of the tables. Create an input mask for the Phone field  in the tblPark and tblSenator tables</li>
+
+            </ul>
+
+
+            <p>
+                (<strong>50</strong>) 1.  Use the Snipping tool to  provide a screen shot of the Phone field input mask, from the table properties in design view.<br />
+                <!--  PgP 2/4/2018 create path using constants and current document assignment -->
+                Save the screen shot  as &quot;Ex1&quot; in your ' 
+                 <code><span id="Path1"></span></code>
+                ' folder.<br />
+
+            </p>
+
+        </div>
+
+        <div class="col-lg-12 text-danger">
+            <h2>Screen Shot Ex1</h2>
+            <hr />
+        </div>
+
+
+        <!--Exercise 2-->
+
+
+        <div class=" col-lg-12"><a href="#Exercise02" class="btn btn-info" data-toggle="collapse">Exercise 2- Tables</a></div>
+
+        <div id="Exercise02" class="collapse in  col-lg-12">
+            <br />
+
+
+            <ul>
+                <li>Open your Internet browser and search for the  information you will need to fill in the fields in the tblPar<strong>k </strong>table; this information is readily  available over the Internet. You can begin your search at <a href="http://www.nps.gov/">www.nps.gov</a>. Find information about at least ten  parks. Then use the Internet to find information for the tblSenator and tblState  tables. You should obtain information for MN and for the states  that contain the headquarters for the National Parks you selected.</li>
+                <li>Enter the data you found into the tblState table,  the tblSenator table, and then the tblPark table. Resize the datasheet columns  to their best fit in each table.</li>
+
+            </ul>
+
+            <p>
+                Use the Snipping tool to  provide  screen shots of the tables tblState, tblSenator and tblPark, datasheet view.
+            </p>
+        </div>
+
+
+        <p>
+            <!--  PgP 2/4/2018 create path using constants and current document assignment -->
+            (50) 2. Save the tblState screen shot  as &quot;Ex2&quot; in your ' 
+                 <code><span id="Path2"></span></code>
+            ' folder.<br />
+
+        </p>
+
+        <div class="col-lg-12 text-danger">
+            <h2>Screen Shot Ex2</h2>
+            <hr />
+        </div>
+
+        <p>
+            <!--  PgP 2/4/2018 create path using constants and current document assignment -->
+            (50) 3. Save the tblSenator screen shot  as &quot;Ex3&quot; in your ' 
+                 <code><span id="Path3"></span></code>
+            ' folder.<br />
+
+        </p>
+
+        <div class="col-lg-12 text-danger">
+            <h2>Screen Shot Ex3 </h2>
+            <hr />
+        </div>
+
+
+
+        <p>
+            <!--  PgP 2/4/2018 create path using constants and current document assignment -->
+            (50) 4. Save the tblPark screen shot  as &quot;Ex4&quot; in your ' 
+                <code><span id="Path4"></span></code>
+            ' folder.<br />
+
+        </p>
+
+        <div class="col-lg-12 text-danger">
+            <h2>Screen Shot Ex4 </h2>
+            <hr />
+        </div>
+
+
+
+        <!--Exercise 3-->
+
+
+
+        <div class=" col-lg-12"><a href="#Exercise03" class="btn btn-info" data-toggle="collapse">Exercise 3-Parameter Query</a></div>
+
+        <div id="Exercise03" class="collapse in  col-lg-12">
+            <br />
+
+            <ul>
+                <li>Create a parameter query that will display the  senators&rsquo; information for a state based on the state value entered by the user.<br />
+                    The query should show the parks in the senators&rsquo; state.
+                    <br />
+                    Name the query <strong>qrySenatorsParameter.</strong></li>
+                <li>Run the qrySenatorsParameter query with a state parameter to make sure it works.&nbsp; Then switch to Design view.</li>
+
+            </ul>
+
+            <p>
+                <!--  PgP 2/4/2018 create path using constants and current document assignment -->
+                (50) 5. Save the tblSenator screen shot  as &quot;Ex5&quot; in your ' 
+                <code><span id="Path5"></span></code>
+                ' folder.<br />
+
+            </p>
+            <hr />
+        </div>
+
+        <div class="col-lg-12 text-danger">
+            <h2>Screen Shot Ex5 </h2>
+            <hr />
+        </div>
+
+
+
+
+        <!--Exercie 4-->
+
+
+
+        <div class=" col-lg-12"><a href="#Exercise04" class="btn btn-info" data-toggle="collapse">Exercise 4- Select Queries</a></div>
+
+        <div id="Exercise04" class="collapse in  col-lg-12">
+            <br />
+
+            <p>Create at least three other queries of the type indicated below, to extract  information that would be useful in planning trips and getting grants.</p>
+
+
+
+            <p>
+                Create a query that returns only the unique states from the tblState.<br />
+                (50) 6. Remove line breaks, and paste the SQL statement below
+            </p>
+
+            <!-- Enter your answer in the VALUE field below   GROK -->
+            <input name="q6" id="q6" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text">
+            <br />
+            <hr />
+
+            <p>
+                Create a query that returns only the Senator's first and last names.
+                <br />
+                (50) 7. Remove line breaks, and paste the SQL statement below
+            </p>
+
+            <!-- Enter your answer in the VALUE field below   GROK -->
+            <input name="q7" id="q7" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text">
+            <br />
+            <hr />
+
+            <p>
+                Create a query that have a park name that begins with 'S'.<br />
+                (50) 8. Remove line breaks, and paste the SQL statement below
+            </p>
+
+            <!-- Enter your answer in the VALUE field below   GROK -->
+            <input name="q8" id="q8" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text">
+            <br />
+            <hr />
+
+
+        </div>
+
+        <!--Exercies 5-->
+
+        <div class=" col-lg-12"><a href="#Exercise05" class="btn btn-info" data-toggle="collapse">Exercise 5- Database Queries</a></div>
+
+        <div id="Exercise05" class="collapse in  col-lg-12">
+            <br />
+
+            <p>
+                Create a trusted folder to store the Adventure  Outdoors database. Make a backup copy of the database, and then compact and repair the database.<br />
+                Close the database and exit Access. 
+            </p>
+
+            <p>(<strong>50</strong>) 9. What is the benefit to organizations of employees who have learned to create database queries?</p>
+
+            <!-- Enter your answer in the VALUE field below   GROK -->
+            <input name="q9" id="q9" size="120" maxlength="120" class="form-control" value="Query Writing Value: " type="text">
+            <br />
+        </div>
+
+
+
+
+        <!--Exercise 6-->
+
+        <div class=" col-lg-12"><a href="#Exercise06" class="btn btn-info" data-toggle="collapse">Exercise-PDF File Creation</a></div>
+
+        <div id="Exercise06" class="collapse in  col-lg-12">
+
+            <br />
+
+            <div id="ExercisePDF" class="collapse in  col-lg-12">
+                <p>
+                    Use a web browser to verify that you have published your website to https://classes.winona.edu/...
+                    <br />
+                    Check that your name, StarID, email, class, semester, section and all of your answers are correct and visible.
+                    <br />
+                    From the menu choose File&gt;Print... and using &quot;Microsoft Print to PDF&quot; save a copy of this assignment as a .pdf file in your   ' 
+                <code><span id="Path6"></span></code>
+                    ' folder.<br />
+                </p>
+                <br />
+
+                <p>
+                    (50) 10. Save your file 'WebPage.pdf' to the ' 
+                 <code><span id="Path7"></span></code>
+                    ' folder.<br />
+
+
+                </p>
+
+                <div class="text-danger">
+                    <h2>WebPage.pdf</h2>
+                    <hr />
+                </div>
+
+			<p>
+				Create a .pdf file named &#39;screenshots.pdf&#39; by combining the above screenshots.
+			</p>
+
+            <h2>ScreenShots->Snipping Tool + OneNote</h2>
+            <ol>
+                <li>Open <strong>Microsoft OneNote</strong> on your laptop.</li>
+                <li>Create a new page and name it <code>Screenshots</code></li>
+                <li>Save this <code>Screenshots.pdf</code> file into your ' <code><span id="Path8"></span></code>
+                    ' folder.<br />
+                </li>
+                <li>Use the <strong>Snipping Tool</strong> to take each required screenshot </li>
+                <li>After each snip, press <code>Ctrl + V</code> to paste the screenshot into your OneNote page.</li>
+                <li>Label each screenshot clearly (e.g., "Ex10NYT &hyphen; New York Times").</li>
+                <li>Once all images are added, go to <strong>File &gt; Print</strong> and choose <strong>Microsoft Print to PDF</strong>.</li>
+                <li>When all screenshots are done you will upload the PDF file to the appropriate D2L Assignment folder.</li>
+            </ol>
+            <hr>
+
+
+                <p>
+                    (50) 11. Save your file 'ScreenShots.pdf' to the ' 
+                 <code><span id="Path9"></span></code>
+                    ' folder.<br />
+
+                </p>
+
+                <div class="text-danger">
+                    <h2>ScreenShots.pdf</h2>
+                    <hr />
+                </div>
+
+
+                <p>&nbsp;</p>
+                <p>
+                    Use PDFill to merge the <strong>WebPage.pdf</strong> file with the <strong>ScreenShots.pdf </strong>file, and save it as &#39;<strong>Summative05.pdf</strong>&#39; in ' 
+               <code><span id="Path10"></span></code>
+                    ' folder.<br />
+
+                </p>
+
+
+                <p>(50) 12. Upload your file 'Summative05.pdf' to the D2L 'Summative05' Assignment folder.</p>
+
+                <div class="text-danger">
+                    <h2>Summative05.pdf</h2>
+                </div>
+                <hr />
+
+            </div>
+
+
+        </div>
+
+
+
+
+        <!--Exercise 7-->
+
+        <div class=" col-lg-12"><a href="#Exercise7" class="btn btn-info" data-toggle="collapse">Exercise-Assignment Submission</a></div>
+
+        <div id="Exercise7" class="collapse in  col-lg-12">
+
+            <br />
+
+            <p>
+                Use a browser to view your completed and published website at: https://classes.winona.edu/...     
+                <br />
+                Ensure that you have linked this assignment on your home page.
+                Note that your screen shots do not have to be completed to perform this step.<br>
+            </p>
+
+            (50) 13. Home Page Hyperlink<br />
+            Check and verify that this assignment is hyperlinked on your home page.<br />
+            <br />
+
+            (50) 14. Assignment submission<br />
+            Press the Submit button at the top or bottom of this page.
+                Read and follow instructions on the confirmation page.&nbsp; Correct any errors.
+        </div>
+        <hr />
+
+
+
+
+
+
+
+
+
+        <div class="col-lg-12">
+            <br />
+            <input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit">
+            <br />
+        </div>
+
+
+    </form>
+
+
+
+    <!-- PgP 5/31/2025 place js code at end to prevent race conditions -->
+
+    <!-- Creative Commons License Info -->
+    <footer>
+        <div id="licenseInfo" class="col-lg-12 text-muted"></div>
+        <div id="footerText" class="col-lg-12 text-muted"></div>
+    </footer>
+
+    <!-- ========== Script Includes (Order is Critical) ========== -->
+    <script src="../../ReadOnly/jquery-1.js"></script>
+    <script src="../../ReadOnly/bootstrap.js"></script>
+    <script src="../studentConstants.js"></script>
+    <script src="../../ReadOnly/courseConstants.js"></script>
+    <script src="../../ReadOnly/domForms.js"></script>
+
+</body>
+</html>
+
+

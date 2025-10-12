@@ -1,0 +1,610 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <!--
+        PgP 5/28/2025 update to html and javascript to coincide with best coding practices
+        Formative00 split into 3 separate html files instead of using tabs, too unwieldly
+		PgP 7/17/2020  Final version, with all updates for fall 2020
+		-->
+
+    <!-- With this version going to put the firstname, lastname... on the first page.
+		This will allow student to see assignment with blank fields.  Then when they get to Part 2 and do Exercise 1, put in
+		-->
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap -->
+    <link href="../../ReadOnly/bootstrap.css" rel="stylesheet">
+
+    <!-- model assignment file, version 1 released 2018/02/18 PgP -->
+
+    <title>MIS342Project2 Part1</title>
+
+</head>
+
+
+<body>
+
+
+    <form class="container-fluid" action="https://eprofessor.azurewebsites.net/code/ProcessFormData.asp" method="post" name="frmAssignment" id="frmAssignment">
+
+        <input name="InstID" id="InstID" value="00617282" type="hidden">
+
+        <!-- had to put assignment here, because it is used in the path calculation -->
+        <!-- <input  name="assignment" id="assignment" value="Formative00" type="hidden" > -->
+
+		<h1 class=" text-center">Part 1- Access and MySQL</h1>
+
+<h2 id="student-info" class="sr-only">Student Information</h2>
+<!-- -start-Student, class and assignment information. Assignment hard-coded, other values from constants.js file-start -->
+<div class="row" aria-labelledby="student-info">
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="form-group">
+            <label for="FirstName" class="text-dark">First Name:</label>
+            <input class="form-control"
+                   name="FirstName"
+                   id="FirstName"
+                   type="text"
+                   readonly
+                   aria-readonly="true"
+                   autocomplete="given-name"
+                   aria-label="First Name"
+                   tabindex="0" />
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="form-group">
+            <label for="LastName" class="text-dark">Last Name:</label>
+            <input class="form-control"
+                   name="LastName"
+                   id="LastName"
+                   type="text"
+                   readonly
+                   aria-readonly="true"
+                   autocomplete="family-name"
+                   aria-label="Last Name"
+                   tabindex="0" />
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="form-group">
+            <label for="StarID" class="text-dark">StarID:</label>
+            <input class="form-control"
+                   name="StarID"
+                   id="StarID"
+                   type="text"
+                   readonly
+                   aria-readonly="true"
+                   autocomplete="username"
+                   aria-label="StarID"
+                   tabindex="0" />
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="form-group">
+            <label for="email" class="text-dark">Email:</label>
+            <input class="form-control"
+                   name="email"
+                   id="email"
+                   type="email"
+                   readonly
+                   aria-readonly="true"
+                   autocomplete="email"
+                   aria-label="Email"
+                   tabindex="0" />
+        </div>
+    </div>
+</div>
+<input name="pin" id="pin" type="hidden" aria-hidden="true" />
+
+<h2 id="course-info" class="sr-only">Course Information</h2>
+<div class="row" aria-labelledby="course-info">
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="form-group">
+            <label for="Semester" class="text-dark">Semester:</label>
+            <input class="form-control"
+                   name="Semester"
+                   id="Semester"
+                   type="text"
+                   readonly
+                   aria-readonly="true"
+                   aria-label="Semester"
+                   tabindex="0" />
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="form-group">
+            <label for="Class" class="text-dark">Class:</label>
+            <input class="form-control"
+                   name="Class"
+                   id="Class"
+                   type="text"
+                   readonly
+                   aria-readonly="true"
+                   aria-label="Class"
+                   tabindex="0" />
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="form-group">
+            <label for="Section" class="text-dark">Section:</label>
+            <input class="form-control"
+                   name="Section"
+                   id="Section"
+                   type="text"
+                   readonly
+                   aria-readonly="true"
+                   aria-label="Section"
+                   tabindex="0" />
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="form-group">
+            <label for="assignment" class="text-dark">Assignment:</label>
+            <input class="form-control"
+                   name="assignment"
+                   id="assignment"
+                   type="text"
+                   readonly
+                   value="P2_1"
+                   aria-readonly="true"
+                   aria-label="Assignment"
+                   tabindex="0" />
+        </div>
+    </div>
+</div>	
+		
+		<!-- -end-Student, class and assignment information-end -->
+
+
+
+
+		<div class="col-lg-12">
+			<br />
+			<input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit">
+			<br />
+		</div>
+
+
+		<div class="col-lg-12 h3 text-danger">
+			750 Points
+            <hr />
+		</div>
+
+		<!-- -start-objectives-start -->
+		<div class="col-lg-12"><a href="#Objectives" class="btn btn-info" data-toggle="collapse">Learning Objectives</a></div>
+		<div id="Objectives" class=" collapse in col-lg-12">
+
+			<!--Above this line similar except for Assignment number and title   -->
+			<ul>
+				<li>Demonstrate usage of MySQL</li>
+				<li>Demonstrate usage of Command Line Interface-CLI</li>
+				<li>Demonstrate ability to link Access with MySQL</li>
+				<li>Comprehend and demonstrate importance of using Access with other databases</li>
+			</ul>
+			<hr />
+		</div>
+
+
+
+		<div class="col-lg-12">
+
+			<p>
+				<a href="https://eprofessor.azurewebsites.net/MIS342/Project2/Project2.html">Project 2 Background Info </a>
+				<br />
+				Note: Background information details steps to setup and configure the required virtual machine needed for this project.<br />
+				Do NOT proceed until your Hyper-V virtual machine is ready to go!
+			</p>
+			<hr />
+
+
+			<hr />
+			<p>
+				Troubleshooting Tip: If it appears that MySQL is not running follow these steps.
+                <br />
+				Startup the Virtual Machine.<br />
+				Click Start>Administrative Tools>Services<br />
+				Find and double click the service 'MySQL'<br />
+				Click 'Start' to start the program, which will take about 2 minutes.<br />
+			</p>
+			<hr />
+		</div>
+
+		<div class="col-lg-12">
+			<p>&nbsp;</p>
+			<h2 class="text-info">Overview</h2>
+			<p>You can work together and help each other on this project, but each student must hand in their own work.</p>
+			<p>
+				The aim of this part is to establish a connection between a MySQL and Access database.
+                <br />
+				This project illustrates the use of Microsoft Access as a front end for another database server.
+			</p>
+			<hr />
+
+
+			<p>Note: For online help with MySQL 5.x see:   <a href="http://dev.mysql.com/doc/refman/5.7/en/index.html" class="bg-info text-white" target="_blank">http://dev.mysql.com/doc/refman/5.7/en/index.html</a></p>
+			<ol>
+				<li>Locate the  folder 'P2DataAndScripts' on the Virtual Machine  desktop, double click to open it up.</li>
+				<li>Find and locate the script 'MySQL-Henry' which you will use to create the database 'Henry' in MySQL.
+                    <br />
+					Note:  You could run this sql script, with some modification, in an Access Module, to create a new database also. This is why you pay $$ for Access, so that you create databases and tables using a
+                    <abbr title="Graphical User Interface"><strong>GUI</strong></abbr>, not a
+                    <abbr title="Command Line Interface"><strong>CLI</strong></abbr>.</li>
+				<li>There are other scripts and text files in this folder, some add other databases, some delete database tables, some have data from which you can create tables.<br />
+					Feel free to explore and examine these other files once you have completed Project 2.
+                    <br />
+				</li>
+				<li>In the VM choose Start&gt;All Programs&gt;MySQL&gt;MySQL Server 5.0&gt;MySQL Command Line Client&nbsp; (or click the appropriate icon in the Taskbar)</li>
+				<li>Open the MySQL5.txt file that is on the Virtual Machine desktop to find the password (mysql) for the root account of MySQL5, enter this in the CLI<br />
+					Note: for more info on the CLI see the MySQL web site: <a href="http://dev.mysql.com/doc" class="bg-info text-white" target="_blank">http://dev.mysql.com/doc</a>/<br />
+					<br />
+				</li>
+				<li>Type the password (<strong>mysql</strong>) into the command line client.
+                    <br />
+					<img src="MySQL/CLI.png" alt="CLI password" class="img-responsive" />
+					<br />
+				</li>
+				<li>Right click the file 'MySQL-Henry' and Open with &gt;Notepad.</li>
+				<li>Press Ctrl +A to select all the text, then Ctrl+C to copy it all.</li>
+				<li>Right click the Command Line Client and choose Edit&gt;Paste<br />
+					The Henry database and all tables with data will be created. When done it will look like this:<br />
+					<img src="MySQL/CreateHenry.png" alt="CLI create database" class="img-responsive" /><br />
+					<br />
+					In the MySQL Command Line Client type 'status' to make sure 'Henry' is the current database.<br />
+					Then type '<code>show tables;</code>  '
+      &nbsp;&nbsp;&nbsp;You should see a list of 6 tables: author/book/branch/inventory/publisher/wrote<br />
+					Then type ' <code>help</code>' Peruse the various commands.<br />
+					Then type '<code>quit</code>'
+      <br />
+					<br />
+				</li>
+				<li>Choose Start&gt;Administrative Tools&gt; 'Data Sources (ODBC); then choose the 'System DSN' tab,
+                    <br />
+					<img src="MySQL/ODBCAdmin.png" alt="ODBC admin" class="img-responsive" /><br />
+					<br />
+				</li>
+				<li>Choose 'Add...' and select the MySQL ODBC 5.1 Driver, then press 'Finish'
+                    <br />
+					<img src="MySQL/ODBCdriver.png" alt="Create Data Source" class="img-responsive" /><br />
+				</li>
+				<li>Enter the values shown below then press 'Test Connection' and you should see a dialog stating &quot;Success; connection was made!&quot;
+                    <br />
+					<br />
+					<img src="MySQL/Connector.png" class="img-responsive" alt="ODBC connector" />
+					<br />
+				</li>
+				<li>Press OK twice to close the ODBC Administrator. </li>
+				<li>Start up Access 2007 inside the mis342 virtual machine.<br />
+					<br />
+				</li>
+				<li>
+					<hr />
+					Create a new Access blank database.&nbsp; Name it <span class="text-info">MySQLODBC.accdb</span><br />
+					<br />
+					Save MySQLODBC to your virtual machine Desktop.
+                    <p>
+						(100) 1. Make a screen shot of the open MySQLODBC.accdb file, name it 'Ex1-MySQL', and save it to the ' 
+                 <code><span id="Path1"></span></code>
+						' folder.<br />
+
+
+					</p>
+
+					<div class="text-danger">
+						<h2>Screen Shot Ex1-MySQL</h2>
+						<hr />
+					</div>
+
+					<br />
+					<hr />
+				</li>
+				<li>On the Access menu choose  External Data&gt;Import&gt;More&gt;ODBC Database... </li>
+				<li>In the dialog box that appears, under 'Files of type:' choose 'ODBC Databases()' and a 'Select Data Source' dialog box will appear.
+                    <br />
+					Click the radio button &quot;Link to the data source by creating a linked table&quot;<br />
+					Then press OK.<br />
+					From the 'Machine Data Source' tab select &quot;HenryMySQL&quot; then press 'OK'
+                    <br />
+					<img src="MySQL/DataSource.png" alt="Select Data Source" class="img-responsive" /><br />
+					<br />
+				</li>
+				<li>Select All, make sure to check the 'Save password' box, then press 'OK'.
+                    <br />
+					<img src="MySQL/LinkTables.png" alt="Link Tables" class="img-responsive" /><br />
+					<br />
+					If a dialog box appears stating your password will not be encrypted click the 'Save Password' button.<br />
+					If the dialog box 'Select Unique Record Identifier' appears, choose the appropriate fields.<br />
+					AuthorNum for table author<br />
+					BookCode for table book<br />
+					BranchNum for table branch<br />
+					BookCode and BranchNum for table inventory<br />
+					PublisherCode for table publisher<br />
+					BookCode and AuthorNum for table wrote<br />
+					<br />
+				</li>
+				<li>Links to all these tables appear in the Navigation Pane.<br />
+					<br />
+					<img src="MySQL/DatabaseWindow.png" class="img-responsive" alt="navigation pane" />
+				</li>
+				<li>Hover over a table and the connection string will appear.<br />
+					<br />
+					<img src="MySQL/ConnectionString.png" class="img-responsive" alt="connection string" />
+					<br />
+					<br />
+				</li>
+				<li>Even though you are in Access, any changes that you make to records in a table will be reflected in the MySQL database. This is because you are Linked to the MySQL table.</li>
+				<li>Open the Author table and add two new records, one using your name, one using my name.<br />
+					<hr />
+					(50)  2. When you get an error message like this one, figure out what is causing the problem and write a brief summary of the resolution below:<br />
+					<img src="MySQL/InsertFailed.png" alt="Insert failed" class="img-responsive" />
+					<br />
+					<br />
+					<!-- Enter your answer in the VALUE field below   GROK -->
+					<input name="q2" id="q2" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text">
+					<br />
+					<hr />
+
+
+
+
+
+					<br />
+				</li>
+				<li>Once you have figure out how to insert the two records, open the MySQL CLI again and type in the following:<br />
+					<code>use henry</code>    then press Enter<br />
+					<code>select * from author;</code>   ;then press Enter
+                    <br />
+				</li>
+
+				<li>Make a screen shot of the results, making sure to show the last two records you just entered.
+                    <br />
+					<div>
+						<br />
+						<hr />
+						<br />
+						(50)  3. Save the screen shot  as &quot;Ex3-TwoRecords&quot; in your ' 
+                  <code><span id="Path2"></span></code>
+						' folder.<br />
+
+						You will be combining screen shots from several exercises at the end of this assignment, just as you did in 
+                  <a href="https://eprofessor.azurewebsites.net/Formative00/Formative00.html#PDFfileCreation" class="bg-info text-white" target="_blank">Formative00</a>-PDF File Creation. 
+            <br />
+
+					</div>
+
+					<div class="col-lg-12 text-danger">
+						<h2>Screen Shot Ex3-TwoRecords</h2>
+						<hr />
+					</div>
+
+					<br />
+					The result will look something like this:<br />
+					<img src="MySQL/SelectAuthor.png" alt="CLI Insert" class="img-responsive" /><br />
+					<br />
+				</li>
+
+
+				<li>Enter the following command in the MySQL CLI:<br />
+					<code>Insert INTO author (AUTHORNUM, AUTHORLAST, AUTHORFIRST) Values ('28', 'Simpson', 'Homer');</code><br />
+				</li>
+				<li>Type the SQL command into the CLI that will show that you have added another author.<br />
+					Verify that you can see this new author in Access also.<br />
+					Note you may need to open and close the table before you see the new record.<br />
+					Make a screen shot showing this new author in both Access and MySQL.<br />
+
+
+					<div>
+						<br />
+						<hr />
+						(50) 4. Save the screen shot  as &quot;Ex4-NewAuthor&quot; in your ' 
+                 <code><span id="Path3"></span></code>
+						' folder.<br />
+
+						You will be combining screen shots from several exercises at the end of this assignment, just as you did in 
+                  <a href="https://eprofessor.azurewebsites.net/Formative00/Formative00.html#PDFfileCreation" class="bg-info text-white" target="_blank">Formative00</a>-PDF File Creation. 
+             <br />
+
+					</div>
+
+					<div class="col-lg-12 text-danger">
+						<h2>Screen Shot Ex4-NewAuthor</h2>
+						<hr />
+					</div>
+					<hr />
+
+				</li>
+
+			</ol>
+
+
+			<hr />
+			<p>OPTIONAL/PRACTICE</p>
+			<p>
+				If you want to try creating another MySQL database, go to the MySQL web site and download the world database, available at:<br />
+				<a href="https://dev.mysql.com/doc/world-setup/en/" class="bg-info text-white" target="_blank">https://dev.mysql.com/doc/world-setup/en/</a>
+			</p>
+			<p>This is a text file. Save the file, or copy it and paste it into the CLI to create the 'world' database. </p>
+			<hr />
+
+
+
+			<p>
+				Reflect on the work that you just completed.
+                <br />
+				List three difference between Access and MySQL 5.x<br />
+				<br />
+
+				(50) 5. Difference 1:
+             <!-- Enter your answer in the VALUE field below   GROK -->
+				<input name="q5" id="q5" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text">
+				<br />
+
+				(50) 6. Difference 2:
+              <!-- Enter your answer in the VALUE field below   GROK -->
+				<input name="q6" id="q6" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text">
+				<br />
+
+
+				(50) 7. Difference 3:
+              <!-- Enter your answer in the VALUE field below   GROK -->
+				<input name="q7" id="q7" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text">
+				<br />
+
+			</p>
+			<p>&nbsp;  </p>
+			<p>
+				Reflect on what you have done, using an Access database with a MySQL database.
+                <br />
+				You may want to view the online MySQL5 documentation to get some ideas at this url: <a href="http://dev.mysql.com/doc/refman/5.0/en/index.html" class="bg-info text-white" target="_blank">http://dev.mysql.com/doc/refman/5.0/en/index.html</a><br />
+				or feel free to browse the web and Lynda.com for information on using Access, ODBC and other database systems.
+   <br />
+				(100) 8. What is the benefit of using Access as a front end for a MySQL database?
+                <br />
+				<!-- Enter your answer in the VALUE field below   GROK -->
+				<input name="q8" id="q8" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text">
+				<br />
+
+
+
+
+
+			</p>
+			<hr />
+		</div>
+
+
+		<!--  From here to end difference question numbers and Summative numbering for PDF of file uploaded to D2L    -->
+
+
+		<div class="col-lg-12"><a href="#ExercisePDF" class="btn btn-info" data-toggle="collapse">Exercise-PDF File Creation</a></div>
+
+		<div id="ExercisePDF" class="collapse in  col-lg-12">
+			<p>
+				Use a web browser to verify that you have published your website to https://classes.winona.edu/...
+                <br />
+				Check that your name, StarID, email, class, semester, section and all of your answers are correct and visible.
+                <br />
+				From the menu choose File&gt;Print... and using &quot;Microsoft Print to PDF&quot; save a copy of this assignment as a .pdf file in your   ' 
+                  <code><span id="Path4"></span></code>
+ 				' folder.<br />
+			</p>
+			<br />
+
+			<p>
+				(50) 9. Save your file 'WebPage.pdf' to the ' 
+                 <code><span id="Path5"></span></code>
+ 				' folder.<br />
+
+
+			</p>
+
+			<div class="text-danger">
+				<h2>WebPage.pdf</h2>
+				<hr />
+			</div>
+
+			<p>
+				Create a .pdf file named &#39;screenshots.pdf&#39; by combining the above screenshots.
+			</p>
+
+            <h2>ScreenShots->Snipping Tool + OneNote</h2>
+            <ol>
+                <li>Open <strong>Microsoft OneNote</strong> on your laptop.</li>
+                <li>Create a new page and name it <code>Screenshots</code></li>
+                <li>Save this <code>Screenshots.pdf</code> file into your ' <code><span id="Path20"></span></code>
+                    ' folder.<br />
+                </li>
+                <li>Use the <strong>Snipping Tool</strong> to take each required screenshot </li>
+                <li>After each snip, press <code>Ctrl + V</code> to paste the screenshot into your OneNote page.</li>
+                <li>Label each screenshot clearly (e.g., "Ex10NYT &hyphen; New York Times").</li>
+                <li>Once all images are added, go to <strong>File &gt; Print</strong> and choose <strong>Microsoft Print to PDF</strong>.</li>
+                <li>When all screenshots are done you will upload the PDF file to the appropriate D2L Assignment folder.</li>
+            </ol>
+            <hr>
+
+			<p>
+				(50) 10. Save your file 'ScreenShots.pdf' to the ' 
+               <code><span id="Path7"></span></code>
+				<script>document.getElementById("gPath").innerHTML = Path; </script>
+				' folder.<br />
+
+			</p>
+
+			<div class="text-danger">
+				<h2>ScreenShots.pdf</h2>
+				<hr />
+			</div>
+
+
+			<p>&nbsp;</p>
+			<p>
+				Use PDFill to merge the <strong>WebPage.pdf</strong> file with the <strong>ScreenShots.pdf </strong>file, and save it as &#39;<strong>Project02_1.pdf</strong>&#39; in ' 
+                 <code><span id="Path8"></span></code>
+ 				' folder.<br />
+
+			</p>
+
+
+			<p>(50) 11. Upload your file 'Project02_1.pdf' to the D2L 'Project02' Assignment folder.</p>
+
+			<div class="text-danger">
+				<h2>Project02_1.pdf</h2>
+			</div>
+			<hr />
+
+		</div>
+
+
+
+
+		<div class="col-lg-12"><a href="#ExerciseAssignmentSubmission" class="btn btn-info" data-toggle="collapse">Exercise-Assignment Submission</a></div>
+
+		<div id="ExerciseAssignmentSubmission" class="collapse in  col-lg-12">
+			<p>
+				Use a browser to view your completed and published website at: https://classes.winona.edu/...     
+                <br />
+				Ensure that you have linked this assignment on your home page.
+                Note that your screen shots do not have to be completed to perform this step.<br>
+			</p>
+
+			(50) 12. Home Page Hyperlink<br />
+			Check and verify that this assignment is hyperlinked on your home page.<br />
+			<br />
+
+			(50) 13. Assignment submission<br />
+			Press the Submit button at the top or bottom of this page.
+                Read and follow instructions on the confirmation page.&nbsp; Correct any errors.
+		</div>
+		<hr />
+
+
+
+
+		<div class="col-lg-12">
+			<br />
+			<input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit">
+			<br />
+		</div>
+
+	</form>
+
+    <!-- PgP 5/31/2025 place js code at end to prevent race conditions -->
+
+    <!-- Creative Commons License Info -->
+    <footer>
+        <div id="licenseInfo" class="col-lg-12 text-muted"></div>
+        <div id="footerText" class="col-lg-12 text-muted"></div>
+    </footer>
+
+    <!-- ========== Script Includes (Order is Critical) ========== -->
+    <script src="../../ReadOnly/jquery-1.js"></script>
+    <script src="../../ReadOnly/bootstrap.js"></script>
+    <script src="../studentConstants.js"></script>
+    <script src="../../ReadOnly/courseConstants.js"></script>
+    <script src="../../ReadOnly/domForms.js"></script>
+
+</body>
+</html>

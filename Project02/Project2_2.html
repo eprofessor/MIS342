@@ -1,0 +1,518 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <!--
+        PgP 5/28/2025 update to html and javascript to coincide with best coding practices
+        Formative00 split into 3 separate html files instead of using tabs, too unwieldly
+		PgP 7/17/2020  Final version, with all updates for fall 2020
+		-->
+
+    <!-- With this version going to put the firstname, lastname... on the first page.
+		This will allow student to see assignment with blank fields.  Then when they get to Part 2 and do Exercise 1, put in
+		-->
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap -->
+    <link href="../../ReadOnly/bootstrap.css" rel="stylesheet">
+
+    <!-- model assignment file, version 1 released 2018/02/18 PgP -->
+
+    <title>MIS342Project2 Part2</title>
+
+</head>
+
+
+<body>
+
+
+    <form class="container-fluid" action="https://eprofessor.azurewebsites.net/code/ProcessFormData.asp" method="post" name="frmAssignment" id="frmAssignment">
+
+        <input name="InstID" id="InstID" value="00617282" type="hidden">
+
+        <!-- had to put assignment here, because it is used in the path calculation -->
+        <!-- <input  name="assignment" id="assignment" value="Formative00" type="hidden" > -->
+
+		<h1 class=" text-center">Part 2- Access and SQL Server</h1>
+
+<h2 id="student-info" class="sr-only">Student Information</h2>
+<!-- -start-Student, class and assignment information. Assignment hard-coded, other values from constants.js file-start -->
+<div class="row" aria-labelledby="student-info">
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="form-group">
+            <label for="FirstName" class="text-dark">First Name:</label>
+            <input class="form-control"
+                   name="FirstName"
+                   id="FirstName"
+                   type="text"
+                   readonly
+                   aria-readonly="true"
+                   autocomplete="given-name"
+                   aria-label="First Name"
+                   tabindex="0" />
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="form-group">
+            <label for="LastName" class="text-dark">Last Name:</label>
+            <input class="form-control"
+                   name="LastName"
+                   id="LastName"
+                   type="text"
+                   readonly
+                   aria-readonly="true"
+                   autocomplete="family-name"
+                   aria-label="Last Name"
+                   tabindex="0" />
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="form-group">
+            <label for="StarID" class="text-dark">StarID:</label>
+            <input class="form-control"
+                   name="StarID"
+                   id="StarID"
+                   type="text"
+                   readonly
+                   aria-readonly="true"
+                   autocomplete="username"
+                   aria-label="StarID"
+                   tabindex="0" />
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="form-group">
+            <label for="email" class="text-dark">Email:</label>
+            <input class="form-control"
+                   name="email"
+                   id="email"
+                   type="email"
+                   readonly
+                   aria-readonly="true"
+                   autocomplete="email"
+                   aria-label="Email"
+                   tabindex="0" />
+        </div>
+    </div>
+</div>
+<input name="pin" id="pin" type="hidden" aria-hidden="true" />
+
+<h2 id="course-info" class="sr-only">Course Information</h2>
+<div class="row" aria-labelledby="course-info">
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="form-group">
+            <label for="Semester" class="text-dark">Semester:</label>
+            <input class="form-control"
+                   name="Semester"
+                   id="Semester"
+                   type="text"
+                   readonly
+                   aria-readonly="true"
+                   aria-label="Semester"
+                   tabindex="0" />
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="form-group">
+            <label for="Class" class="text-dark">Class:</label>
+            <input class="form-control"
+                   name="Class"
+                   id="Class"
+                   type="text"
+                   readonly
+                   aria-readonly="true"
+                   aria-label="Class"
+                   tabindex="0" />
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="form-group">
+            <label for="Section" class="text-dark">Section:</label>
+            <input class="form-control"
+                   name="Section"
+                   id="Section"
+                   type="text"
+                   readonly
+                   aria-readonly="true"
+                   aria-label="Section"
+                   tabindex="0" />
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="form-group">
+            <label for="assignment" class="text-dark">Assignment:</label>
+            <input class="form-control"
+                   name="assignment"
+                   id="assignment"
+                   type="text"
+                   readonly
+                   value="P2_2"
+                   aria-readonly="true"
+                   aria-label="Assignment"
+                   tabindex="0" />
+        </div>
+    </div>
+</div>	
+		
+		<!-- -end-Student, class and assignment information-end -->
+
+
+
+
+		<div class="col-lg-12">
+			<br />
+			<input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit">
+			<br />
+		</div>
+
+        <div class="col-lg-12 h3 text-danger">
+            550 Points
+            <hr />
+        </div>
+
+        <!-- -start-objectives-start -->
+        <div class="col-lg-12"><a href="#Objectives" class="btn btn-info" data-toggle="collapse">Learning Objectives</a></div>
+        <div id="Objectives" class=" collapse in col-lg-12">
+
+            <!--Above this line similar except for Assignment number and title   -->
+            <ul>
+                <li>Demonstrate usage of SQL Server</li>
+                <li>Demonstrate ability to convert database from Access to SQL Server</li>
+                <li>Demonstrate ability to link Access with SQL Server</li>
+                <li>Comprehend and demonstrate importance of using Access with other databases</li>
+            </ul>
+            <hr />
+        </div>
+
+
+
+        <p>
+            <a href="https://eprofessor.azurewebsites.net/MIS342/Project2/Project2.html">Project 2 Background Info </a>
+            <br />
+            Note: Background information details steps to setup and configure the required virtual machine needed for this project.<br />
+            Do NOT proceed until your Hyper-V virtual machine is ready to go!
+        </p>
+        <hr />
+
+
+        <p>&nbsp;</p>
+        <h2 class="text-info">Overview</h2>
+        <p>You can work together and help each other on this project, but each student must hand in their own work.</p>
+        <p>
+            The aim of this part  is to create a SQL Server database.
+            <br />
+            You will upsize the Microsoft Access Northwind database so that it is a SQL server database.<br />
+            This project illustrates the use of Microsoft Access as a front end for SQL server.
+        </p>
+        <p>You will use the same MIS342 Virtual Machine as in Part 1 to complete this project. </p>
+        <hr />
+
+        <ol>
+            <li>Open your MIS342 virtual machine </li>
+
+            <li>Open Northwind.mdb in Access 2007. (Note that the upsizing Wizard does not work correctly in Access 2000, and is not available for use after Access 2013- instead use)<br />
+                <br />
+            </li>
+
+            <li>From the menu choose Database Tools&gt;SQL Server and the Upsizing Wizard dialog box appears.<br />
+                <img src="Upsize/Upsize00.jpg" alt="Start Upsizing" class="img-responsive" /><br />
+                <br />
+            </li>
+
+            <li>Accept the default value 'Create a new database' and click Next.<br />
+                <br />
+                <img src="Upsize/Upsize01.png" class="img-responsive" alt="upsize wizard" /><br />
+                <br />
+            </li>
+
+            <li>Use 'misvm\sqlexpress' for the SQL server, and 'NorthwindSQL' as
+    the SQL Server database name.
+                <br />
+                Make sure 'Use Trusted Connection' is checked.<br />
+                <img src="Upsize/Upsize02.png" class="img-responsive" alt="trust connection" /><br />
+                <br />
+                Then click Next.<br />
+                <br />
+                If this does not work, you may need to open Microsoft SQL Server Management Studio Express.<br />
+                Expand Security and Server Roles.<br />
+                Double click 'dbcreator'<br />
+                Click the 'Add' button in the lower right, a dialog box opens<br />
+                Click the Browse button
+    <br />
+                Add 'Built-in users' and 'misvm\sqlserver2005MSSQLUser$MISVM$SQLEXPRESS<br />
+                <br />
+                stop and restart the SQL server service<br />
+                <br />
+                <br />
+            </li>
+
+            <li>Click the '&gt;&gt;' button to select all tables for export to SQL server.<br />
+                <img src="Upsize/Upsize03.png" class="img-responsive" alt="export all" /><br />
+                Then
+    click Next.<br />
+                <br />
+                <br />
+                <br />
+            </li>
+
+            <li>Accept the default values, click Next.<br />
+                <img src="Upsize/Upsize04.png" class="img-responsive" alt="default values okay" /><br />
+                <br />
+                <br />
+                <br />
+            </li>
+
+            <li>Enter an appropriate path for the ADP file, make sure to save the password and userid, then click Next.<br />
+                <img src="Upsize/Upsize05.png" class="img-responsive" alt="save password" /><br />
+                <br />
+                <br />
+                <br />
+            </li>
+
+            <li>Click Yes when this message appears:
+                <br />
+                <img src="Upsize/Upsize06.png" class="img-responsive" alt="accept message" /><br />
+                <br />
+                <br />
+            </li>
+
+            <li>Click Finish.
+                <br />
+                <img src="Upsize/Upsize07.png" class="img-responsive" alt="click finish" /><br />
+                <br />
+                <br />
+            </li>
+
+            <li>This dialog box will appear.
+                <br />
+                <img src="Upsize/Upsize08.png" class="img-responsive" alt="report dialog box" /><br />
+                <br />
+            </li>
+
+            <li>Once this is done, you will see a report of approximately 21 pages.<br />
+                Examine and then use the Snipping Tool to make a screen shot of the first page of  the report.<br />
+                <br />
+
+                <hr />
+                <div>
+                    <br />
+                    (100)  1. Save the screen shot  as &quot;Ex1-Report&quot; in your ' 
+                  <code><span id="Path1"></span></code>
+                     ' folder.<br />
+
+                    You will be combining screen shots from several exercises at the end of this assignment, just as you did in 
+                  <a href="https://eprofessor.azurewebsites.net/Formative00/Formative00.html#PDFfileCreation" class="bg-info text-white" target="_blank">Formative00</a>-PDF File Creation. 
+            <br />
+
+                </div>
+
+                <div class="col-lg-12 text-danger">
+                    <h2>Screen Shot Ex1-Report</h2>
+                    <hr />
+                </div>
+
+
+            </li>
+
+
+            <li>Choose Office Button&gt;Server&gt;Server Properties.<br />
+                A dialog box with the SQL Server properties will be displayed.<br />
+                <br />
+                <hr />
+                <div>
+                    Use the Snipping Tool to save a screen shot of the server properties dialog box.<br />
+                    <img src="Upsize/Upsize09.png" class="img-responsive" alt="server properties" />
+
+                    <br />
+                    (100)  2. Save the screen shot  as &quot;Ex2-Properties&quot; in your ' 
+                 <code><span id="Path2"></span></code>
+                    ' folder.<br />
+
+                    You will be combining screen shots from several exercises at the end of this assignment, just as you did in 
+                  <a href="https://eprofessor.azurewebsites.net/Formative00/Formative00.html#PDFfileCreation" class="bg-info text-white" target="_blank">Formative00</a>-PDF File Creation. 
+            <br />
+                </div>
+
+                <div class="col-lg-12 text-danger">
+                    <h2>Screen Shot Ex2-Properties</h2>
+                    <hr />
+                </div>
+
+
+
+
+            </li>
+
+
+        </ol>
+
+
+
+        <hr />
+        <p>When done try creating new queries or views. </p>
+        <p>
+            <img src="Upsize/View.png" class="img-responsive" alt="create query" />
+        </p>
+
+        <hr />
+        <hr />
+
+        <p>
+            Reflect on the work that you just completed.
+            <br />
+            Feel free to research the internet and Lynda.com for 'benefits of using Access with SQL Server'.<br />
+            Examine the database window in both Access and the Access Data Project.<br />
+
+            <br />
+
+            (50) 3. Briefly explain the difference(s) between the Access and Access Data Project Windows:
+             <!-- Enter your answer in the VALUE field below   GROK -->
+            <input name="q3" id="q3" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text">
+        </p>
+
+        <hr />
+        <p>
+            (50) 4. Briefly explain the benefit of developing an application in Microsoft Access, and then upsizing the application to SQL Server.<br />
+            <!-- Enter your answer in the VALUE field below   GROK -->
+            <input name="q4" id="q4" size="120" maxlength="120" class="form-control" value="Enter your brief answer here" type="text">
+            <br />
+
+        </p>
+
+
+
+
+
+        <!--  From here to end difference question numbers and Summative numbering for PDF of file uploaded to D2L    -->
+
+
+        <div class="col-lg-12"><a href="#ExercisePDF" class="btn btn-info" data-toggle="collapse">Exercise-PDF File Creation</a></div>
+
+        <div id="ExercisePDF" class="collapse in  col-lg-12">
+            <p>
+                Use a web browser to verify that you have published your website to https://classes.winona.edu/...
+                <br />
+                Check that your name, StarID, email, class, semester, section and all of your answers are correct and visible.
+                <br />
+                From the menu choose File&gt;Print... and using &quot;Microsoft Print to PDF&quot; save a copy of this assignment as a .pdf file in your   ' 
+                  <code><span id="Path3"></span></code>
+                ' folder.<br />
+            </p>
+            <br />
+
+            <p>
+                (50) 5. Save your file 'WebPage.pdf' to the ' 
+                  <code><span id="Path4"></span></code>
+                 ' folder.<br />
+
+
+            </p>
+
+            <div class="text-danger">
+                <h2>WebPage.pdf</h2>
+                <hr />
+            </div>
+
+			<p>
+				Create a .pdf file named &#39;screenshots.pdf&#39; by combining the above screenshots.
+			</p>
+
+            <h2>ScreenShots->Snipping Tool + OneNote</h2>
+            <ol>
+                <li>Open <strong>Microsoft OneNote</strong> on your laptop.</li>
+                <li>Create a new page and name it <code>Screenshots</code></li>
+                <li>Save this <code>Screenshots.pdf</code> file into your ' <code><span id="Path20"></span></code>
+                    ' folder.<br />
+                </li>
+                <li>Use the <strong>Snipping Tool</strong> to take each required screenshot </li>
+                <li>After each snip, press <code>Ctrl + V</code> to paste the screenshot into your OneNote page.</li>
+                <li>Label each screenshot clearly (e.g., "Ex10NYT &hyphen; New York Times").</li>
+                <li>Once all images are added, go to <strong>File &gt; Print</strong> and choose <strong>Microsoft Print to PDF</strong>.</li>
+                <li>When all screenshots are done you will upload the PDF file to the appropriate D2L Assignment folder.</li>
+            </ol>
+            <hr>
+
+            <p>
+                (50) 6. Save your file 'ScreenShots.pdf' in your ' 
+                 <code><span id="Path5"></span></code>
+                 ' folder.<br />
+
+            </p>
+
+            <div class="text-danger">
+                <h2>ScreenShots.pdf</h2>
+                <hr />
+            </div>
+
+
+            <p>&nbsp;</p>
+            <p>
+                Use PDFill to merge the <strong>WebPage.pdf</strong> file with the <strong>ScreenShots.pdf </strong>file, and save it as &#39;<strong>Project02_2.pdf</strong>&#39; in your ' 
+                  <code><span id="Path6"></span></code>
+                 ' folder.<br />
+
+            </p>
+
+
+            <p>(50) 7. Upload your file 'Project02_2.pdf' to the D2L 'Project02' Assignment folder.</p>
+
+            <div class="text-danger">
+                <h2>Project02_2.pdf</h2>
+            </div>
+            <hr />
+
+        </div>
+
+
+
+
+        <div class="col-lg-12"><a href="#ExerciseAssignmentSubmission" class="btn btn-info" data-toggle="collapse">Exercise-Assignment Submission</a></div>
+
+        <div id="ExerciseAssignmentSubmission" class="collapse in  col-lg-12">
+            <p>
+                Use a browser to view your completed and published website at: https://classes.winona.edu/...     
+                <br />
+                Ensure that you have linked this assignment on your home page.
+                Note that your screen shots do not have to be completed to perform this step.<br>
+            </p>
+
+            (50) 8. Home Page Hyperlink<br />
+            Check and verify that this assignment is hyperlinked on your home page.<br />
+            <br />
+
+            (50) 9. Assignment submission<br />
+            Press the Submit button at the top or bottom of this page.
+                Read and follow instructions on the confirmation page.&nbsp; Correct any errors.
+        </div>
+        <hr />
+
+
+
+		<div class="col-lg-12">
+			<br />
+			<input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit">
+			<br />
+		</div>
+
+	</form>
+
+    <!-- PgP 5/31/2025 place js code at end to prevent race conditions -->
+
+    <!-- Creative Commons License Info -->
+    <footer>
+        <div id="licenseInfo" class="col-lg-12 text-muted"></div>
+        <div id="footerText" class="col-lg-12 text-muted"></div>
+    </footer>
+
+    <!-- ========== Script Includes (Order is Critical) ========== -->
+    <script src="../../ReadOnly/jquery-1.js"></script>
+    <script src="../../ReadOnly/bootstrap.js"></script>
+    <script src="../studentConstants.js"></script>
+    <script src="../../ReadOnly/courseConstants.js"></script>
+    <script src="../../ReadOnly/domForms.js"></script>
+
+</body>
+</html>

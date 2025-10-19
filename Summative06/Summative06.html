@@ -1,0 +1,588 @@
+<!doctype html>
+<html lang="en">
+
+<!--
+    PgP 7/30/2025 add LinkedIn Learning as reflective assignment
+	PgP 3/2/2020 updating MIS202 files to align with other assignments 
+-->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap -->
+    <link href="../../ReadOnly/bootstrap.css" rel="stylesheet">
+
+    <!-- model assignment file, version 1 released 2018/02/18 PgP -->
+
+    <title>MIS342Summative06</title>
+</head>
+
+<body class="container-fluid">
+
+    <form class="container-fluid" action="https://eprofessor.azurewebsites.net/code/ProcessFormData.asp" method="post" name="frmAssignment" id="frmAssignment">
+
+        <input name="InstID" id="InstID" value="00617282" type="hidden">
+
+        <!-- had to put assignment here, because it is used in the path calculation -->
+        <!-- <input  name="assignment" id="assignment" value="Formative00" type="hidden" > -->
+
+        <h1 class=" text-center">Advanced Forms </h1>
+
+        <h2 id="student-info" class="sr-only">Student Information</h2>
+        <!-- -start-Student, class and assignment information. Assignment hard-coded, other values from constants.js file-start -->
+        <div class="row" aria-labelledby="student-info">
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label for="FirstName" class="text-dark">First Name:</label>
+                    <input class="form-control"
+                        name="FirstName"
+                        id="FirstName"
+                        type="text"
+                        readonly
+                        aria-readonly="true"
+                        autocomplete="given-name"
+                        aria-label="First Name"
+                        tabindex="0" />
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label for="LastName" class="text-dark">Last Name:</label>
+                    <input class="form-control"
+                        name="LastName"
+                        id="LastName"
+                        type="text"
+                        readonly
+                        aria-readonly="true"
+                        autocomplete="family-name"
+                        aria-label="Last Name"
+                        tabindex="0" />
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label for="StarID" class="text-dark">StarID:</label>
+                    <input class="form-control"
+                        name="StarID"
+                        id="StarID"
+                        type="text"
+                        readonly
+                        aria-readonly="true"
+                        autocomplete="username"
+                        aria-label="StarID"
+                        tabindex="0" />
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label for="email" class="text-dark">Email:</label>
+                    <input class="form-control"
+                        name="email"
+                        id="email"
+                        type="email"
+                        readonly
+                        aria-readonly="true"
+                        autocomplete="email"
+                        aria-label="Email"
+                        tabindex="0" />
+                </div>
+            </div>
+        </div>
+        <input name="pin" id="pin" type="hidden" aria-hidden="true" />
+
+        <h2 id="course-info" class="sr-only">Course Information</h2>
+        <div class="row" aria-labelledby="course-info">
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label for="Semester" class="text-dark">Semester:</label>
+                    <input class="form-control"
+                        name="Semester"
+                        id="Semester"
+                        type="text"
+                        readonly
+                        aria-readonly="true"
+                        aria-label="Semester"
+                        tabindex="0" />
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label for="Class" class="text-dark">Class:</label>
+                    <input class="form-control"
+                        name="Class"
+                        id="Class"
+                        type="text"
+                        readonly
+                        aria-readonly="true"
+                        aria-label="Class"
+                        tabindex="0" />
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label for="Section" class="text-dark">Section:</label>
+                    <input class="form-control"
+                        name="Section"
+                        id="Section"
+                        type="text"
+                        readonly
+                        aria-readonly="true"
+                        aria-label="Section"
+                        tabindex="0" />
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label for="assignment" class="text-dark">Assignment:</label>
+                    <input class="form-control"
+                        name="assignment"
+                        id="assignment"
+                        type="text"
+                        readonly
+                        value="Summative06"
+                        aria-readonly="true"
+                        aria-label="Assignment"
+                        tabindex="0" />
+                </div>
+            </div>
+        </div>
+
+        <!-- -end-Student, class and assignment information-end -->
+
+
+        <div class="col-lg-12">
+            <br />
+            <input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit">
+            <br />
+        </div>
+
+        <div class="col-lg-12 h3 text-danger">
+            575 Points
+            <hr />
+        </div>
+
+        <!-- -start-objectives-start -->
+        <div class="col-lg-12"><a href="#Objectives" class="btn btn-info" data-toggle="collapse">Learning Objectives</a></div>
+        <div id="Objectives" class=" collapse in col-lg-12">
+
+            <!--Above this line similar except for Assignment number and title   -->
+                        <h2 >Learning Objectives</h2>
+            <ol start="1" type="1">
+                <li  ><b>Design advanced forms using different form tools and types.</b>  
+                    <ul type="circle">
+                        <li  ><i>Example</i>: An event planner creates a split form to manage event registrations, displaying a list of attendees alongside detailed registration information.  </li>
+                    </ul>
+                </li>
+                <li  ><b>Implement calculated controls and manage tab order within forms.</b>  
+                    <ul type="circle">
+                        <li  ><i>Example</i>: An invoicing form includes calculated controls to automatically compute total amounts and tax, with a logical tab order to streamline data entry.  </li>
+                    </ul>
+                </li>
+                <li  ><b>Use headers, footers, and form controls to enhance form functionality.</b>  
+                    <ul type="circle">
+                        <li  ><i>Example</i>: A non-profit organization customizes forms with headers for branding and controls to toggle between donor information and donation history.  </li>
+                    </ul>
+                </li>
+                <li  ><b>Integrate subforms and control field placement for optimal data entry and display.</b>  
+                    <ul type="circle">
+                        <li  ><i>Example</i>: A construction firm uses subforms to link project details with associated tasks and materials for comprehensive project management.  </li>
+                    </ul>
+                </li>
+            </ol>
+
+
+            <hr />
+            <h2 >Concepts</h2>
+
+            <p>Sample focus question: In what ways can a database system be enhanced using advanced form functionality?</p>
+            <p>Sample concept list (not exclusive-refer to the chapter introduction for additional concepts):</p>
+            <ul>
+                <li>Form design</li>
+                <li>Lookup fields</li>
+                <li>Database documenter</li>
+                <li>Form types</li>
+                <li>Form tools</li>
+                <li>Multiple items </li>
+                <li>Split form</li>
+                <li>Field placement</li>
+                <li>Form controls</li>
+                <li>Headers and footers</li>
+                <li>Subforms</li>
+                <li>Calculated controls</li>
+                <li>Tab order</li>
+            </ul>
+            <hr />
+
+            <hr />
+
+        </div>
+
+        <!--Exercise 1-->
+
+        <div class=" col-lg-12"><a href="#Exercise01" class="btn btn-info" data-toggle="collapse">Exercise 1-Documenter HTML File</a></div>
+
+        <div id="Exercise01" class="collapse in  col-lg-12">
+            <br />
+
+            <p>
+                Data Files needed for the Tutorial Project:<br />
+                <a href="LuckyTire05.accdb" class="bg-info text-white" target="_blank">LuckyTire05.accdb</a>
+                <br />
+                Answer the following questions using a copy of the <strong><a href="LuckyTire_05.accdb">LuckyTire05.accdb</a></strong> database file also located on the class network drive at:  \\store\classes\ YearTerm&nbsp; &amp; courseid &amp; &quot;\ReadOnly\&quot;&nbsp;&nbsp; 
+                <br />
+            </p>
+
+            <p>Len Phan is  the owner of Lucky Tire, a chain of tire and auto service centers. Len would  like to create a couple forms. You&rsquo;ll do so by completing the following:</p>
+
+            <ul>
+                <li>Open the <strong>LuckyTire </strong>database from Tutorial 5. If the Security Warning appears, enable the content. </li>
+
+                <li>Remove the lookup feature from  the PartID field in the <strong>tblSales </strong>table, and then resize the Part ID column to its best fit.</li>
+
+                <li>Define a one-to-many  relationship between the primary tblTires table and the related tblSales table. Select the referential integrity option and the cascade updates option for this relationship.</li>
+            </ul>
+
+            <p>
+                Use the Documenter to document  the tblSales table. Select all table options; use the Names, Data Types, and Sizes option for fields; and use the Names and Fields option for indexes.<br />
+                Export the report produced by the Documenter as an HTML file. Place it in the same folder on your website as this assignment.
+            <br />
+                The default name will be doc_rptObjects.html, which is acceptable.
+            <br />
+                Do not select an HTML template, and use default encoding.<br />
+
+                <img src="DocumenterHTMLReport.png" class="img-responsive" alt="output options" /><br />
+            </p>
+            <p>
+                Print the HTML report as a .pdf file.<br />
+                Note that there will be several pages.
+            </p>
+            <br />
+            <p>
+                <!--  PgP 2/4/2018 create path using constants and current document assignment -->
+                (50) 1. Save the report  as &quot;Ex1&quot; in your ' 
+                 <code><span id="Path1"></span></code>
+                ' folder.<br />
+                <br />
+            </p>
+        </div>
+
+        <div class="col-lg-12 text-danger">
+            <h2>Ex1.pdf</h2>
+            <hr />
+        </div>
+
+
+        <!--Exercise 2-->
+
+        <div class=" col-lg-12"><a href="#Exercise02" class="btn btn-info" data-toggle="collapse">Exercise 2-Multiple Items Form</a></div>
+
+        <div id="Exercise02" class="collapse in  col-lg-12">
+            <br />
+
+            <p>
+                Use the Multiple Items tool to create a form based on the qryCustomersWithoutSales query.<br />
+                Change the title to Customers Who Have Not Bought Tires.<br />
+                Save the form as frmCustomersWithoutSalesMultipleItems.<br />
+                Provide a screen shot of the form in Form View below.
+            </p>
+
+            <p>
+
+                <!--  PgP 2/4/2018 create path using constants and current document assignment -->
+                (50) 2. Save the screen shot  as &quot;Ex2&quot; in your ' 
+              <code><span id="Path2"></span></code>
+                ' folder.<br />
+                <br />
+            </p>
+        </div>
+
+        <div class="col-lg-12 text-danger">
+            <h2>Screen Shot Ex2</h2>
+            <hr />
+        </div>
+
+
+        <!--Exercie 3-->
+
+
+
+        <div class=" col-lg-12"><a href="#Exercise03" class="btn btn-info" data-toggle="collapse">Exercise 3- Split Form </a></div>
+
+        <div id="Exercise03" class="collapse in  col-lg-12">
+            <br />
+            <p>
+                Use the Split Form tool to create a split form based on the tblTires table.<br />
+                Go to Layout View and make the following changes to the form.
+            </p>
+
+            <ul>
+                <li>Reduce the widths of all five text boxes to a reasonable size. (Hint: Use the longest Model Name as a guide.) </li>
+                <li>Remove the ModelName and TireType controls and their labels from the stacked layout, move these two controls to the right and then to the top of the form. Add these two controls to a new stacked layout and then anchor them to the top right.</li>
+                <li>Remove the UnitPrice control from the stacked layout, and then anchor the control to the bottom left.</li>
+                <li>Make sure the tab order is left-to-right, top-to-bottom for the main form text boxes.</li>
+                <li>Change the title to <strong>Tire Data</strong>, and then save the modified form as <strong>frmTiresSplitForm</strong>.</li>
+            </ul>
+
+            <p>
+                <!--  PgP 2/4/2018 create path using constants and current document assignment -->
+                (50) 3. Save the screen shot  as &quot;Ex3&quot; in your ' 
+                 <code><span id="Path3"></span></code>
+                ' folder.<br />
+                <br />
+            </p>
+        </div>
+
+        <div class="col-lg-12 text-danger">
+            <h2>Screen Shot Ex3</h2>
+            <hr />
+        </div>
+
+
+
+
+        <!--Exercise 4-->
+
+        <div class=" col-lg-12"><a href="#Exercise04" class="btn btn-info" data-toggle="collapse">Exercise 4- Custom Forms</a></div>
+
+        <div id="Exercise04" class="collapse in  col-lg-12">
+            <br />
+
+            <p>Use the figure below and the following steps to create a custom form named <strong>frmTireOrders </strong>based on the tblSales table.</p>
+
+            <p>
+                <img src="frmTireOrders.jpg" alt="Tire Order" class="img-responsive" />
+            </p>
+
+            <ul>
+                <li>Place the following fields from the tblCustomer table at the top of the Detail section: First, Last, Phone, Make, Model, and Year.</li>
+                <li>Move the fields into two columns in the Detail section, and apply the Stacked layout to both columns.<br />
+                    Resize and align&nbsp; controls as necessary.</li>
+                <li>Add the title <strong>Tire Order</strong> in the Form Header  section, and bold the title.</li>
+                <li>Make sure the form&rsquo;s Record Source property is set to tblCustomer.<br />
+                    Add a combo box to the Form Header section to find the field values for First, Last, Phone, Make, Model, and Year.<br />
+                    In the wizard steps, select the CustID, Last, and First fields, and do not hide the key column.
+                    <br />
+                    Label the control <strong>Select Customer</strong>.<br />
+                    Resize and position the control. </li>
+                <li>Create a simple query using all        the fields from the tblSales table and the UnitPrice fields from the        tblTires table.
+                    <br />
+                    Name this query <strong>qryInvoiceTotal</strong>.        Use the Builder to add a new field that displays the Quantity field        multiplied by the UnitPrice fields and name this field <strong>InvAmt</strong>. </li>
+                <li>Add a subform based on the <strong>qryInvoiceTotal</strong> query, name the        subform <strong>frmInvoiceTotalSubform</strong>.  
+                    <br />
+                    Change the label of InvoicePaid to <strong>Paid?</strong> And the label of InvAmt to <strong>Total</strong>. 
+                    <br />
+                    Delete the subform label, resize the columns in the subform for their        best fit, and resize and position the subform.</li>
+                <li>Add a calculated control that displays the total of the InvAmt field in the subform.
+                    <br />
+                    Set the label&rsquo;s        Caption Property to <strong>Total of        Invoices:</strong>.<br />
+                    Set the calculated control&rsquo;s Name to <strong>txtInvAmtSum</strong>, the Tab Stop property to No, the ControlTip        Text property to <strong>Calculated total        of invoices</strong>.
+                    <br />
+                    Format the calculated field as currency.</li>
+                <li>Add a rectangle around the        Total of Invoices control in the Detail section and set the line thickness        to 2 pts.</li>
+                <li>Use the Label tool to add your        name below the subform at the bottom of the Detail section.</li>
+                <li>For the labels in the Details section, except for the label displaying your name, use the Dark Label Text        font color (row 1, column 3 in the Access Theme Colors palette) or equivalent.</li>
+                <li>For the title, Select Customer        label, and the label displaying your name, use the Maroon font color (row 1, column 6 in the Standard Colors palette) or equivalent, and bold the font.</li>
+                <li>For the background color of the        Form Header section, use the Light Header Background color (row 1, column        6 in the Access Theme Colors palette) or equivalent.</li>
+                <li>Make sure the tab order is top-to-bottom, left-to-right for the main form text boxes.</li>
+
+            </ul>
+
+            <br />
+            <br />
+
+            <p>
+                Provide a screen shot of the form in Form View below.<br />
+
+
+                Select the Customer: combo box
+            <br />
+                Make sure that the total of Invoices: has the correct calculation
+            <br />
+            </p>
+
+            <p>
+                <!--  PgP 2/4/2018 create path using constants and current document assignment -->
+                (50) 4. Save the screen shot  as &quot;Ex4&quot; in your ' 
+                 <code><span id="Path4"></span></code>
+                ' folder.<br />
+                <br />
+            </p>
+        </div>
+
+        <div class="col-lg-12 text-danger">
+            <h2>Screen Shot Ex4</h2>
+            <hr />
+        </div>
+
+
+
+        <!--Exercise 5-->
+
+        <div class=" col-lg-12"><a href="#Exercise05" class="btn btn-info" data-toggle="collapse">Exercise 5- Forms</a></div>
+
+        <div id="Exercise05" class="collapse in  col-lg-12">
+            <br />
+
+            <p>
+                Close the LuckyTire database without exiting Access<br />
+                Open the <strong>LuckyTire </strong>database.<br />
+                Compact and repair the database.<br />
+                Close the database.
+                <br />
+                Exit Access.
+            </p>
+
+            <p>(<strong>75</strong>) 5. Briefly explain why forms are not the best Access database object to use when you want to create printed output.</p>
+
+            <!-- Enter your answer in the VALUE field below   GROK -->
+            <input name="q5" id="q5" size="120" maxlength="120" class="form-control" value="Forms not for Printing: " type="text">
+            <br />
+
+
+            (<strong>50</strong>) 6. For form/subform created in Exercise 4 above, describe what type of relationship must exist between the tblCustomer and tblSales.
+            <br />
+            If your answer is more than about 6 words it is too long.
+
+          <!-- Enter your answer in the VALUE field below   GROK -->
+            <input name="q6" id="q6" size="120" maxlength="120" class="form-control" value="Relationship: " type="text">
+            <br />
+
+        </div>
+
+
+
+        <!--  From here to end difference question numbers and Summative numbering for PDF of file uploaded to D2L    -->
+
+
+        <div class="col-lg-12"><a href="#ExercisePDF" class="btn btn-info" data-toggle="collapse">Exercise-PDF File Creation</a></div>
+
+        <div id="ExercisePDF" class="collapse in  col-lg-12">
+            <p>
+                Use a web browser to verify that you have published your website to https://classes.winona.edu/...
+                <br />
+                Check that your name, StarID, email, class, semester, section and all of your answers are correct and visible.
+                <br />
+                From the menu choose File&gt;Print... and using &quot;Microsoft Print to PDF&quot; save a copy of this assignment as a .pdf file in your   ' 
+                 <code><span id="Path5"></span></code>
+                ' folder.<br />
+            </p>
+            <br />
+
+            <p>
+                (50) 7. Save your file 'WebPage.pdf' to the ' 
+                 <code><span id="Path6"></span></code>
+                ' folder.<br />
+
+
+            </p>
+
+            <div class="text-danger">
+                <h2>WebPage.pdf</h2>
+                <hr />
+            </div>
+
+			<p>
+				Create a .pdf file named &#39;screenshots.pdf&#39; by combining the above screenshots.
+			</p>
+
+            <h2>ScreenShots->Snipping Tool + OneNote</h2>
+            <ol>
+                <li>Open <strong>Microsoft OneNote</strong> on your laptop.</li>
+                <li>Create a new page and name it <code>Screenshots</code></li>
+                <li>Save this <code>Screenshots.pdf</code> file into your ' <code><span id="Path7"></span></code>
+                    ' folder.<br />
+                </li>
+                <li>Use the <strong>Snipping Tool</strong> to take each required screenshot </li>
+                <li>After each snip, press <code>Ctrl + V</code> to paste the screenshot into your OneNote page.</li>
+                <li>Label each screenshot clearly (e.g., "Ex10NYT &hyphen; New York Times").</li>
+                <li>Once all images are added, go to <strong>File &gt; Print</strong> and choose <strong>Microsoft Print to PDF</strong>.</li>
+                <li>When all screenshots are done you will upload the PDF file to the appropriate D2L Assignment folder.</li>
+            </ol>
+            <hr>
+
+
+            <p>
+                (50) 8. Save your file 'ScreenShots.pdf' to the ' 
+                 <code><span id="Path8"></span></code>
+                ' folder.<br />
+
+            </p>
+
+            <div class="text-danger">
+                <h2>ScreenShots.pdf</h2>
+                <hr />
+            </div>
+
+
+            <p>&nbsp;</p>
+            <p>
+                Use PDFill to merge the <strong>WebPage.pdf</strong> file with the <strong>ScreenShots.pdf </strong>file, and save it as &#39;<strong>Summative06.pdf</strong>&#39; in ' 
+                <code><span id="Path9"></span></code>
+                ' folder.<br />
+
+            </p>
+
+
+            <p>(50) 9. Upload your file 'Summative06.pdf' to the D2L 'Summative06' Assignment folder.</p>
+
+            <div class="text-danger">
+                <h2>Summative06.pdf</h2>
+            </div>
+            <hr />
+
+        </div>
+
+
+
+
+        <div class="col-lg-12"><a href="#ExerciseAssignmentSubmission" class="btn btn-info" data-toggle="collapse">Exercise-Assignment Submission</a></div>
+
+        <div id="ExerciseAssignmentSubmission" class="collapse in  col-lg-12">
+            <p>
+                Use a browser to view your completed and published website at: https://classes.winona.edu/...     
+                <br />
+                Ensure that you have linked this assignment on your home page.
+                Note that your screen shots do not have to be completed to perform this step.<br>
+            </p>
+
+            (50) 10. Home Page Hyperlink<br />
+            Check and verify that this assignment is hyperlinked on your home page.<br />
+            <br />
+
+            (50) 11. Assignment submission<br />
+            Press the Submit button at the top or bottom of this page.
+                Read and follow instructions on the confirmation page.&nbsp; Correct any errors.
+        </div>
+        <hr />
+
+
+
+        <div class="col-lg-12">
+            <br />
+            <input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit">
+            <br />
+        </div>
+
+
+    </form>
+
+
+
+    <!-- PgP 5/31/2025 place js code at end to prevent race conditions -->
+
+    <!-- Creative Commons License Info -->
+    <footer>
+        <div id="licenseInfo" class="col-lg-12 text-muted"></div>
+        <div id="footerText" class="col-lg-12 text-muted"></div>
+    </footer>
+
+    <!-- ========== Script Includes (Order is Critical) ========== -->
+    <script src="../../ReadOnly/jquery-1.js"></script>
+    <script src="../../ReadOnly/bootstrap.js"></script>
+    <script src="../studentConstants.js"></script>
+    <script src="../../ReadOnly/courseConstants.js"></script>
+    <script src="../../ReadOnly/domForms.js"></script>
+
+</body>
+</html>

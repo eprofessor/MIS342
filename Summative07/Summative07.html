@@ -1,0 +1,554 @@
+<!doctype html>
+<html lang="en">
+
+<!--
+    PgP 7/30/2025 add LinkedIn Learning as reflective assignment
+	PgP 3/2/2020 updating MIS202 files to align with other assignments 
+-->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap -->
+    <link href="../../ReadOnly/bootstrap.css" rel="stylesheet">
+
+    <!-- model assignment file, version 1 released 2018/02/18 PgP -->
+
+    <title>MIS342Summative07</title>
+</head>
+
+<body class="container-fluid">
+
+    <form class="container-fluid" action="https://eprofessor.azurewebsites.net/code/ProcessFormData.asp" method="post" name="frmAssignment" id="frmAssignment">
+
+        <input name="InstID" id="InstID" value="00617282" type="hidden">
+
+        <!-- had to put assignment here, because it is used in the path calculation -->
+        <!-- <input  name="assignment" id="assignment" value="Formative00" type="hidden" > -->
+
+        <h1 class=" text-center">Custom Reports </h1>
+
+        <h2 id="student-info" class="sr-only">Student Information</h2>
+        <!-- -start-Student, class and assignment information. Assignment hard-coded, other values from constants.js file-start -->
+        <div class="row" aria-labelledby="student-info">
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label for="FirstName" class="text-dark">First Name:</label>
+                    <input class="form-control"
+                        name="FirstName"
+                        id="FirstName"
+                        type="text"
+                        readonly
+                        aria-readonly="true"
+                        autocomplete="given-name"
+                        aria-label="First Name"
+                        tabindex="0" />
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label for="LastName" class="text-dark">Last Name:</label>
+                    <input class="form-control"
+                        name="LastName"
+                        id="LastName"
+                        type="text"
+                        readonly
+                        aria-readonly="true"
+                        autocomplete="family-name"
+                        aria-label="Last Name"
+                        tabindex="0" />
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label for="StarID" class="text-dark">StarID:</label>
+                    <input class="form-control"
+                        name="StarID"
+                        id="StarID"
+                        type="text"
+                        readonly
+                        aria-readonly="true"
+                        autocomplete="username"
+                        aria-label="StarID"
+                        tabindex="0" />
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label for="email" class="text-dark">Email:</label>
+                    <input class="form-control"
+                        name="email"
+                        id="email"
+                        type="email"
+                        readonly
+                        aria-readonly="true"
+                        autocomplete="email"
+                        aria-label="Email"
+                        tabindex="0" />
+                </div>
+            </div>
+        </div>
+        <input name="pin" id="pin" type="hidden" aria-hidden="true" />
+
+        <h2 id="course-info" class="sr-only">Course Information</h2>
+        <div class="row" aria-labelledby="course-info">
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label for="Semester" class="text-dark">Semester:</label>
+                    <input class="form-control"
+                        name="Semester"
+                        id="Semester"
+                        type="text"
+                        readonly
+                        aria-readonly="true"
+                        aria-label="Semester"
+                        tabindex="0" />
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label for="Class" class="text-dark">Class:</label>
+                    <input class="form-control"
+                        name="Class"
+                        id="Class"
+                        type="text"
+                        readonly
+                        aria-readonly="true"
+                        aria-label="Class"
+                        tabindex="0" />
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label for="Section" class="text-dark">Section:</label>
+                    <input class="form-control"
+                        name="Section"
+                        id="Section"
+                        type="text"
+                        readonly
+                        aria-readonly="true"
+                        aria-label="Section"
+                        tabindex="0" />
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label for="assignment" class="text-dark">Assignment:</label>
+                    <input class="form-control"
+                        name="assignment"
+                        id="assignment"
+                        type="text"
+                        readonly
+                        value="Summative07"
+                        aria-readonly="true"
+                        aria-label="Assignment"
+                        tabindex="0" />
+                </div>
+            </div>
+        </div>
+
+        <!-- -end-Student, class and assignment information-end -->
+
+        <div class="col-lg-12">
+            <br />
+            <input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit">
+            <br />
+        </div>
+
+        <div class="col-lg-12 h3 text-danger">
+            500 Points
+            <hr />
+        </div>
+
+        <!-- -start-objectives-start -->
+        <div class="col-lg-12"><a href="#Objectives" class="btn btn-info" data-toggle="collapse">Learning Objectives</a></div>
+        <div id="Objectives" class=" collapse in col-lg-12">
+
+            <!--Above this line similar except for Assignment number and title   -->
+
+
+            <h2 >Learning Objectives</h2>
+            <ol start="1" type="1">
+                <li  ><b>Design complex reports with appropriate data sources, sorting, and grouping.</b>  
+                    <ul type="circle">
+                        <li  ><i>Example</i>: A manufacturing company designs a report to group production data by plant location and sort by output volume for operational analysis.  </li>
+                    </ul>
+                </li>
+                <li  ><b>Format reports to highlight duplicate values and display dates and page numbers.</b>  
+                    <ul type="circle">
+                        <li  ><i>Example</i>: An educational institution formats reports to highlight duplicate student enrollments and include dates for academic records.  </li>
+                    </ul>
+                </li>
+                <li  ><b>Create professional titles and mailing labels within reports.</b>  
+                    <ul type="circle">
+                        <li  ><i>Example</i>: A publisher generates mailing labels for book shipments, ensuring accuracy and professional presentation.  </li>
+                    </ul>
+                </li>
+            </ol>
+
+            <hr />
+            <h2 >Concepts</h2>
+
+            <p>Sample focus question: What are the benefits of creating custom reports?</p>
+            <p>Sample concept list (not exclusive-refer to the chapter introduction for additional concepts):</p>
+            <ul>
+                <li>Report design</li>
+                <li>Data source-query</li>
+                <li>Data source-sql statement</li>
+                <li>Sorting data</li>
+                <li>Grouping data</li>
+                <li>Formatting</li>
+                <li>Duplicate values</li>
+                <li>Dates</li>
+                <li>Page numbers</li>
+                <li>Titles</li>
+                <li>Mailing labels</li>
+            </ul>
+            <hr />
+            <hr />
+
+
+        </div>
+
+
+
+        <!--Exercise 1-->
+
+
+        <div class=" col-lg-12"><a href="#Exercise01" class="btn btn-info" data-toggle="collapse">Exercise 1-Tires Report</a></div>
+
+        <div id="Exercise01" class="collapse in  col-lg-12">
+            <br />
+
+            <p>
+                Data Files needed for the Tutorial Project:<br />
+                <a href="LuckyTire.accdb" class="bg-info text-white" target="_blank">LuckyTire06.accdb</a>
+                <br />
+                Answer the following questions using a copy of the <strong>LuckyTire06.accdb</strong> database file also located on the class network drive at:  \\store\classes\ YearTerm&nbsp; &amp; courseid &amp; &quot;\ReadOnly\&quot; ) 
+                <br />
+            </p>
+
+            <p>
+                Len Phan is  the owner of Lucky Tire, a chain of tire and auto service centers. Len would  like to create a of couple of reports. You&rsquo;ll do so by completing the following:<br />
+                &nbsp;
+            </p>
+
+            <ul>
+                <li>Open the <strong>LuckyTire06 </strong>database.</li>
+            </ul>
+
+            <ul>
+                <li>Use the figure below and the       following steps to modify the <strong>rptTiresReport </strong>report:</li>
+
+                <li>Resize the columns as necessary.</li>
+                <li>Insert        a space before &ldquo;ID&rdquo; in the <strong>PartID </strong>column        heading. </li>
+                <li>Apply        the alternate background color setting, using the Alternate Row color        (row 1, column 8) in the Access Theme Colors palette. </li>
+                <li>Group        the report by Manufacturer, and then display the average unit price for        each manufacturer. </li>
+                <li>Add a conditional formatting        rule for the UnitPrice field to display the price in green, bold, italic        font when the unit price is greater than $60.</li>
+            </ul>
+
+            <p>
+                <img src="TiresReport.jpg" alt="screen shot 2" class="img-responsive" /><br />
+                <br />
+            </p>
+
+            <p>
+                Print all pages of the report as a .pdf file.
+
+                <!--  PgP 2/4/2018 create path using constants and current document assignment -->
+                (50) 1. Save the report  as &quot;Ex1&quot; in your ' 
+                <code><span id="Path1"></span></code>
+                ' folder.<br />
+                <br />
+            </p>
+        </div>
+
+        <div class="col-lg-12 text-danger">
+            <h2>Ex1.pdf</h2>
+            <hr />
+        </div>
+
+        <!--Exercise 2-->
+
+        <div class=" col-lg-12"><a href="#Exercise02" class="btn btn-info" data-toggle="collapse">Exercise 2-Tire Type Query</a></div>
+
+        <div id="Exercise02" class="collapse in  col-lg-12">
+            <br />
+
+            <ul>
+                <li>Create a query that displays the       CustID, First and Last name fields from the tblCustomer table,
+                    <br />
+                    the PartID       and Quantity fields from the tblSales table,
+                    <br />
+                    and the ModelName,       Manufacturer, TireType, and UnitPrice fields from the tblTires table.
+                    <br />
+                    Sort       in ascending order by the TireType, Manufacturer, and Last name, and then       save the query as <strong>qryTireType</strong>.  </li>
+            </ul>
+            <p>
+                Save and close the query.<br />
+
+
+                (<strong>50</strong>) 2. Provide the sql statement for the query in the text box.<br />
+                Make sure to remove line breaks.
+            </p>
+
+            <!-- Enter your answer in the VALUE field below   GROK -->
+            <input name="q2" id="q2" size="120" maxlength="120" class="form-control" value="SQL: " type="text">
+            <br />
+
+        </div>
+
+        <hr />
+
+        <!--Exerise 3-->
+
+        <div class=" col-lg-12"><a href="#Exercise03" class="btn btn-info" data-toggle="collapse">Exercise 3- Custom Report</a></div>
+
+        <div id="Exercise03" class="collapse in  col-lg-12">
+            <br />
+
+            <p>
+                Create a custom report based on the qryTireType query.
+                <br />
+                The following figure shows a sample of the last       page of the completed report.
+                <br />
+                Refer to the figure below as you create the report.
+            </p>
+
+            <ul>
+                <li>Save the report as <strong>rptTireType</strong>.</li>
+                <li>Add the fields in the following        order: TireType, Manufacturer, ModelName, UnitPrice, Last, First, and        Quantity.</li>
+                <li>TireType and Manufacturer        fields are grouping fields.</li>
+                <li>UnitPrice and Last fields are sort        fields.</li>
+                <li>Show the total quantity in the        group footer for both the TireType and Manufacturer groups.</li>
+                <li>Add a horizontal line in the        Page Header, below the column labels.</li>
+                <li>Add the title <strong>Quantity of Tires by Type</strong> and        insert the date in the upper right.</li>
+                <li>Add the page number, using the        page N of M format, to the Page Footer, and right-align the number.</li>
+
+            </ul>
+
+            <p>
+                <img src="rptTireType.png" alt="tire type" class="img-responsive" /><br />
+            </p>
+
+            <p>
+                <!--  PgP 2/4/2018 create path using constants and current document assignment -->
+                (50) 3. Print the report  as &quot;Ex3.pdf&quot; and place in your ' 
+                 <code><span id="Path2"></span></code>
+                ' folder.<br />
+                <br />
+            </p>
+        </div>
+
+        <div class="col-lg-12 text-danger">
+            <h2>Ex3.pdf</h2>
+            <hr />
+        </div>
+
+
+
+        <!--Exercise 4-->
+
+        <div class=" col-lg-12"><a href="#Exercise04" class="btn btn-info" data-toggle="collapse">Exercise 4- Mailing Labels</a></div>
+
+        <div id="Exercise04" class="collapse in  col-lg-12">
+            <br />
+
+            <p>Create a mailing label report according to the following instructions:</p>
+
+            <ul>
+                <li>Use the tblCustomer table as        the record source.</li>
+                <li>Use Avery C2160 labels, use a        larger font size and a heavier font weight, and use the other default        font and color options.</li>
+                <li>For the prototype label, place        CustID on the first line, First, a space, and Last on the second line;        Address on the third line; and City, a comma, State, a space, and Zip on        the fourth line.</li>
+                <li>Sort by Zip, and then by Last,        and then enter the report name <strong>rptCustomerMailingLabels</strong>.</li>
+                <li>Make sure the mailing label        layout displays across and then down.</li>
+            </ul>
+            <br />
+
+            <p>
+                <!--  PgP 2/4/2018 create path using constants and current document assignment -->
+                (50) 4. Print the mailing labels  as &quot;Ex4.pdf&quot; and place in your ' 
+                <code><span id="Path3"></span></code>
+                ' folder.<br />
+                <br />
+            </p>
+        </div>
+
+        <div class="col-lg-12 text-danger">
+            <h2>Ex4.pdf</h2>
+            <hr />
+        </div>
+
+
+
+        <!--Exercise 5-->
+
+        <div class=" col-lg-12"><a href="#Exercise05" class="btn btn-info" data-toggle="collapse">Exercise 5-Database Reports</a></div>
+
+        <div id="Exercise05" class="collapse in  col-lg-12">
+            <br />
+
+            <p>
+                Compact and repair the LuckyTire database.<br />
+                Close the database.<br />
+                Exit Access.
+            </p>
+
+            <p>
+                (<strong>50</strong>) 5. Briefly explain why the ability to create custom or ad-hoc database reports (not just in  Access) is a valuable skill to learn in advancing your career.<br />
+            </p>
+
+            <!-- Enter your answer in the VALUE field below   GROK -->
+            <input name="q5" id="q5" size="120" maxlength="120" class="form-control" value="Report Skill Valuable: " type="text">
+            <br />
+
+        </div>
+
+
+
+        <!--Exercise 6-->
+
+        <div class="col-lg-12"><a href="#ExercisePDF" class="btn btn-info" data-toggle="collapse">Exercise-PDF File Creation</a></div>
+
+        <div id="ExercisePDF" class="collapse in  col-lg-12">
+            <p>
+                Use a web browser to verify that you have published your website to https://classes.winona.edu/...
+                <br />
+                Check that your name, StarID, email, class, semester, section and all of your answers are correct and visible.
+                <br />
+                From the menu choose File&gt;Print... and using &quot;Microsoft Print to PDF&quot; save a copy of this assignment as a .pdf file in your   ' 
+                 <code><span id="Path4"></span></code>
+                ' folder.<br />
+            </p>
+            <br />
+
+            <p>
+                (50) 6. Save your file 'WebPage.pdf' to the ' 
+                <code><span id="Path5"></span></code>
+                ' folder.<br />
+
+
+            </p>
+
+            <div class="text-danger">
+                <h2>WebPage.pdf</h2>
+                <hr />
+            </div>
+
+			<p>
+				Create a .pdf file named &#39;screenshots.pdf&#39; by combining the above screenshots.
+			</p>
+
+            <h2>ScreenShots->Snipping Tool + OneNote</h2>
+            <ol>
+                <li>Open <strong>Microsoft OneNote</strong> on your laptop.</li>
+                <li>Create a new page and name it <code>Screenshots</code></li>
+                <li>Save this <code>Screenshots.pdf</code> file into your ' <code><span id="Path7"></span></code>
+                    ' folder.<br />
+                </li>
+                <li>Use the <strong>Snipping Tool</strong> to take each required screenshot </li>
+                <li>After each snip, press <code>Ctrl + V</code> to paste the screenshot into your OneNote page.</li>
+                <li>Label each screenshot clearly (e.g., "Ex10NYT &hyphen; New York Times").</li>
+                <li>Once all images are added, go to <strong>File &gt; Print</strong> and choose <strong>Microsoft Print to PDF</strong>.</li>
+                <li>When all screenshots are done you will upload the PDF file to the appropriate D2L Assignment folder.</li>
+            </ol>
+            <hr>
+
+
+            <p>
+                (50) 7. Save your file 'ScreenShots.pdf' to the ' 
+                <code><span id="Path8"></span></code>
+                ' folder.<br />
+
+            </p>
+
+            <div class="text-danger">
+                <h2>ScreenShots.pdf</h2>
+                <hr />
+            </div>
+
+
+            <p>&nbsp;</p>
+            <p>
+                Use PDFill to merge the <strong>WebPage.pdf</strong> file with the <strong>ScreenShots.pdf </strong>file, and save it as &#39;<strong>Summative07.pdf</strong>&#39; in ' 
+                 <code><span id="Path9"></span></code>
+                ' folder.<br />
+
+            </p>
+
+
+            <p>(50) 8. Upload your file 'Summative07.pdf' to the D2L 'Summative07' Assignment folder.</p>
+
+            <div class="text-danger">
+                <h2>Summative07.pdf</h2>
+            </div>
+            <hr />
+
+        </div>
+
+
+
+
+        <div class="col-lg-12"><a href="#ExerciseAssignmentSubmission" class="btn btn-info" data-toggle="collapse">Exercise-Assignment Submission</a></div>
+
+        <div id="ExerciseAssignmentSubmission" class="collapse in  col-lg-12">
+            <p>
+                Use a browser to view your completed and published website at: https://classes.winona.edu/...     
+                <br />
+                Ensure that you have linked this assignment on your home page.
+                Note that your screen shots do not have to be completed to perform this step.<br>
+            </p>
+
+            (50) 9. Home Page Hyperlink<br />
+            Check and verify that this assignment is hyperlinked on your home page.<br />
+            <br />
+
+            (50) 10. Assignment submission<br />
+            Press the Submit button at the top or bottom of this page.
+                Read and follow instructions on the confirmation page.&nbsp; Correct any errors.
+        </div>
+        <hr />
+
+
+
+        <div class="col-lg-12">
+            <br />
+            <input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit">
+            <br />
+        </div>
+
+
+    </form>
+
+
+
+
+    <!-- PgP 5/31/2025 place js code at end to prevent race conditions -->
+
+    <!-- Creative Commons License Info -->
+    <footer>
+        <div id="licenseInfo" class="col-lg-12 text-muted"></div>
+        <div id="footerText" class="col-lg-12 text-muted"></div>
+    </footer>
+
+    <!-- ========== Script Includes (Order is Critical) ========== -->
+    <script src="../../ReadOnly/jquery-1.js"></script>
+    <script src="../../ReadOnly/bootstrap.js"></script>
+    <script src="../studentConstants.js"></script>
+    <script src="../../ReadOnly/courseConstants.js"></script>
+    <script src="../../ReadOnly/domForms.js"></script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

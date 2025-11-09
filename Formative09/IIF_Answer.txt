@@ -1,0 +1,3 @@
+SELECT MSysObjects.Name, IIf([type]=-32768,"Form","Report") AS [Output]
+FROM MSysObjects
+WHERE (((MSysObjects.Type)=-32768)) OR (((MSysObjects.Type)=-32764));

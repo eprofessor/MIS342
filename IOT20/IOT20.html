@@ -1,0 +1,616 @@
+<!doctype html>
+<html lang="en">
+
+
+
+<head>
+    <title>IOT20</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- PgP 7/11/2019 summative assignment for Raspberry Pi, Arduino Uno, micro:bit -->
+    <!-- Bootstrap -->
+    <link href="../../ReadOnly/bootstrap.css" rel="stylesheet">
+
+    <!-- constant file for student firstname, lastname, starid on students' pages -->
+    <script src="../constants.js"></script>
+
+    <!-- course constant file that contains semester, class, section pages -->
+    <script src="../../ReadOnly/CourseConstants.js"></script>
+
+</head>
+
+<body>
+
+    <form class="container-fluid" action="https://eprofessor.azurewebsites.net/code/ProcessFormData.asp" method="post" name="frmAssignment" id="frmAssignment">
+
+        <input name="InstID" id="InstID" value="00617282" type="hidden">
+        <!-- had to put assignment here, because it is used in the path calculation -->
+        <!-- <input  name="assignment" id="assignment" value="Formative00" type="hidden" > -->
+
+        <hr />
+		<h1 class="text-center">Sensors &amp; Actuators on Raspberry Pi</h1>
+
+<h2 id="student-info" class="sr-only">Student Information</h2>
+<div class="row" aria-labelledby="student-info">
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="form-group">
+            <label for="FirstName" class="text-dark">First Name:</label>
+            <input class="form-control"
+                   name="FirstName"
+                   id="FirstName"
+                   type="text"
+                   readonly
+                   aria-readonly="true"
+                   autocomplete="given-name"
+                   aria-label="First Name"
+                   tabindex="0" />
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="form-group">
+            <label for="LastName" class="text-dark">Last Name:</label>
+            <input class="form-control"
+                   name="LastName"
+                   id="LastName"
+                   type="text"
+                   readonly
+                   aria-readonly="true"
+                   autocomplete="family-name"
+                   aria-label="Last Name"
+                   tabindex="0" />
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="form-group">
+            <label for="StarID" class="text-dark">StarID:</label>
+            <input class="form-control"
+                   name="StarID"
+                   id="StarID"
+                   type="text"
+                   readonly
+                   aria-readonly="true"
+                   autocomplete="username"
+                   aria-label="StarID"
+                   tabindex="0" />
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="form-group">
+            <label for="email" class="text-dark">Email:</label>
+            <input class="form-control"
+                   name="email"
+                   id="email"
+                   type="email"
+                   readonly
+                   aria-readonly="true"
+                   autocomplete="email"
+                   aria-label="Email"
+                   tabindex="0" />
+        </div>
+    </div>
+</div>
+<input name="pin" id="pin" type="hidden" aria-hidden="true" />
+
+<h2 id="course-info" class="sr-only">Course Information</h2>
+<div class="row" aria-labelledby="course-info">
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="form-group">
+            <label for="Semester" class="text-dark">Semester:</label>
+            <input class="form-control"
+                   name="Semester"
+                   id="Semester"
+                   type="text"
+                   readonly
+                   aria-readonly="true"
+                   aria-label="Semester"
+                   tabindex="0" />
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="form-group">
+            <label for="Class" class="text-dark">Class:</label>
+            <input class="form-control"
+                   name="Class"
+                   id="Class"
+                   type="text"
+                   readonly
+                   aria-readonly="true"
+                   aria-label="Class"
+                   tabindex="0" />
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="form-group">
+            <label for="Section" class="text-dark">Section:</label>
+            <input class="form-control"
+                   name="Section"
+                   id="Section"
+                   type="text"
+                   readonly
+                   aria-readonly="true"
+                   aria-label="Section"
+                   tabindex="0" />
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="form-group">
+            <label for="assignment" class="text-dark">Assignment:</label>
+            <input class="form-control"
+                   name="assignment"
+                   id="assignment"
+                   type="text"
+                   readonly
+                   value="IOT20"
+                   aria-readonly="true"
+                   aria-label="Assignment"
+                   tabindex="0" />
+        </div>
+    </div>
+</div>
+
+        <div class="col-lg-12">
+            <br />
+            <input class=" text-danger btn-block btn-lg" type="submit" name="Submit" value="SUBMIT -once you have completed this assignment- SUBMIT"/><br />
+        </div>
+
+        <div class="h3 text-danger col-lg-12">
+            100 Points<hr />
+        </div>
+
+
+        <div class="col-lg-12"><a href="#Objectives" class="btn btn-info" data-toggle="collapse">Learning Objectives</a></div>
+        <div id="Objectives" class=" collapse in col-lg-12">
+
+
+            <p>
+                These instructions will show you how to use Microsoft Access to link to a MySQL/Maria database server on a Raspberry Pi.<br />
+                This provides the foundation for collecting data from sensors and programs on a Raspberry Pi, storing the data in a MySQL database on the Raspberry Pi, then viewing the data remotely across a network.<br />
+                <br />
+
+                More information on <a href="https://pimylifeup.com/raspberry-pi-mysql/" class="bg-info text-white" target="_blank">MySQL</a> is available online.<br />
+
+            </p>
+            <p>After completing this assignment you will be able to:</p>
+            <ol>
+                <li>Investigate ODBC for Access to MySQL</li>
+                <li>Run MySQL</li>
+                <li>Use Microsoft Access on a network to view data stored on a MySQL database on a Raspberry Pi </li>
+            </ol>
+            <hr />
+        </div>
+
+
+
+        <div class="col-lg-12"><a href="#Overview" class="btn btn-info" data-toggle="collapse">Assignment Overview</a></div>
+			<h3>When you encounter technical issues, please first review <a href="../IOT00/IOT00.html"  class="bg-info text-white" target="_blank" >IOT00</a>.    </h3>
+
+        <div id="Overview" class="collapse in  col-lg-12">
+            Before doing this assignment you should review <a href="../IOT10/IOT10.html" class="bg-info text-white" target="_blank"  >IOT10</a>, MySQL on Raspberry Pi.<br />
+            It is assumed you are using a Raspberry Pi that already has installed and configured the following:<br />
+
+            <ol>
+                <li>Maria/MySQL database</li>
+                <li>PhpMyAdmin</li>
+            </ol>
+            This assignment reviews basic computer concepts that you will need in this course and throughout your career.
+            <br />
+            <p>
+                You are expected to have a working knowledge of SBC hardware and software.<br />
+                If you do not understand how to use an item, perform a Google Search, 
+                refer to the <a href="https://learn.winona.edu/WSU_Technology_Knowledge_Base" class="bg-info text-white" target="_blank"  >WSU Technology Knowledge Base</a>,&nbsp; ask a teaching assistant, or ask the instructor.
+            </p>
+
+            <hr />
+        </div>
+
+
+
+
+        <!--Exercise 1-->
+
+        <div class="col-lg-12"><a href="#Exercise01" class="btn btn-info" data-toggle="collapse">Exercise 1-Start MySQL</a><a href="#Exercise01"></a></div>
+
+        <div id="Exercise01" class="collapse in  col-lg-12">
+
+
+        <p>MySQL/MariaDB is already installed on the Raspberry Pi, see IOT10.</p>
+
+
+        <ol>
+
+            <li>These steps are performed on the Raspberry Pi</li>
+
+
+            <li>Start VNC to retrieve your Raspberry Pi IP address. <br />
+                In the next exercise you will need to enter it into the TCP/IP field to establish a connection from your computer to the Raspberry Pi.<br />
+
+                    <p>
+                        <a href="images/RPiNetwork.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/RPiNetwork.PNG', 'popup'); return false;">
+                            <img src="images/RPiNetwork.PNG" width="200" alt="RPi Network" class="img-responsive img-responsive" /></a>Rasbberry Pi TCP/IP Server Address<br />
+                    </p> 
+            </li>
+
+            <li>Open a Terminal Window</li>
+
+                <li>Log into the MySQL installation, the default password is blank. 
+                    <br />
+                    In the terminal window type:<br />
+                    <code>sudo mysql -u root -p -h localhost</code>
+                    <br />
+                    Press Enter when prompted for the password.
+               <br />
+                    Type <code>status</code>  to see MySQL settings.
+                    <br />
+                    <a href="images/MySQL.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/MySQL.PNG', 'popup'); return false;">
+                        <img src="images/MySQL.PNG" width="300" alt="MySQL status" class="img-responsive img-responsive" /></a> MySQL status<br />
+                </li>
+
+                <li>Note:  Once MySQL is running, to verify it is working, in a Terminal Window type:<br />
+                    <code>sudo /etc/init.d/mysql status</code><br />
+                    <a href="images/MySQLRunning.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/MySQLRunning.PNG', 'popup'); return false;">
+                        <img src="images/MySQLRunning.PNG" width="300" alt="MySQL" class="img-responsive img-responsive" /></a> MySQL running successfully<br />
+                </li>
+
+            <li>
+               Once MySQL is running, verify that the world database is installed and tables with data are available by entering the following in the MySQL command line/Terminal Window:<br />
+                <code>
+                    use world
+                </code>
+
+                <p>
+                    <a href="images/UseWorld.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/UseWorld.PNG', 'popup'); return false;">
+                        <img src="images/UseWorld.PNG" width="300" alt="MySQL using world database" class="img-responsive img-responsive" /></a> MySQL Using World Database<br />
+                </p>
+
+            </li>
+
+
+
+
+                <li>Run the  <code> show tables  </code>  command, you should see three tables:<br />
+                    <code>MariaDB [world]&gt; show tables;<br />
+                        +-----------------+
+                        <br />
+                        | Tables_in_world |<br />
+                        +-----------------+
+                        <br />
+                        | city |
+                        <br />
+                        | country |
+                        <br />
+                        | countrylanguage |
+                        <br />
+                        +-----------------+
+                        <br />
+                        3 rows in set (0.001 sec)<br />
+
+                    </code>
+                </li>
+
+                <li>Experiment with commands you learned in Project 3 to retrieve data from these tables:<br />
+                    <code>SELECT COUNT(*) FROM city;<br />
+                        SELECT * FROM country;
+
+                    </code>
+
+                </li>
+
+                <li>Congratulatons! Your Raspberry Pi is running the MySQL/Maria database server correctly.<br />
+                    With a little more work, you can use this database to collect information from sensors attached to your Raspberry Pi.
+                </li>
+
+
+            </ol>      
+
+        <hr />
+
+     
+ </div>
+
+
+
+
+
+
+        <!--Exercise 2-->
+
+
+        <div class="col-lg-12"><a href="#Exercise02" class="btn btn-info" data-toggle="collapse">Exercise 2-Connect With ODBC</a></div>
+
+        <div id="Exercise02" class="collapse in  col-lg-12">
+
+            <p>
+                These steps are performed on your computer.
+            </p>
+
+
+
+
+
+        <p>WSU laptops use 64-bit Windows with 64-bit Microsoft Access.<br />
+            You must install and use the 64-bit ODBC MySQL connector<br />
+            See MIS342 <a href="../Project2/Project2.html" class="bg-info text-white" target="_blank" >Project 2, Part 1 </a>for details.
+        </p>
+
+        <p>In this exercise learn to connect to the Raspberry Pi MySQL database from Microsoft Access on another computer over a network.</p>
+
+        <ol>
+            <li>Log into D2L.<br />
+                From the Course Info widget click the &#39;OneDrive ReadOnly Files&#39; link and browse to:<br />
+                OneDrive - MNSCU/ReadOnly/IoT/ODBC_Installer_MySQL folder.<br />
+                There you will find the 64-bit MySQL ODBC .msi file.<br />
+                Download it to your computer.<br />
+                <p>
+                <a href="images/ODBC_Connector.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/ODBC_Connector.PNG', 'popup'); return false;">
+                    <img src="images/ODBC_Connector.PNG" width="200" alt="ODBC connector" class="img-responsive img-responsive" /></a> Retrieve ODBC Connector<br />
+
+                </p>
+
+
+
+                
+                Note:&nbsp; for the most recent version of the .msi package browse to this url, install the <a href="https://dev.mysql.com/doc/connector-odbc/en/connector-odbc-installation-binary-windows.html" class="bg-info text-white" target="_blank"  >appropriate ODBC version for MySQL</a> , making sure to follow the instructions carefully:<br />
+                <code><a href="https://dev.mysql.com/doc/connector-odbc/en/connector-odbc-installation-binary-windows.html">https://dev.mysql.com/doc/connector-odbc/en/connector-odbc-installation-binary-windows.html</a>&nbsp; </code><br />
+
+                <p>
+                <a href="images/ODBC_Installer.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/ODBC_Installer.PNG', 'popup'); return false;">
+                    <img src="images/ODBC_Installer.PNG" width="300" alt="ODBC installer" class="img-responsive img-responsive" /></a> ODBC Installer<br />
+
+                </p>
+
+                <p>
+                <a href="images/MySQL_Installer.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/MySQL_Installer.PNG', 'popup'); return false;">
+                    <img src="images/MySQL_Installer.PNG" width="300" alt="MySQL installer" class="img-responsive img-responsive" /></a> MySQL Installer<br />
+                Note that you do not have to set up an account, just download and run the installer.<br />
+
+                </p>
+
+            </li>
+
+            <li>
+                Locate the .msi file, double click to begin the installation process and do a &#39;Typical&#39; install.<br />
+
+                <p>
+                <a href="images/Typical.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/Typical.PNG', 'popup'); return false;">
+                    <img src="images/Typical.PNG" width="200" alt="typical install" class="img-responsive img-responsive" /></a> Choose Typical Install<br />
+
+                </p>
+
+                <br />
+                Make sure to use the 64-bit version of ODBC and the 64-bit MySQL connector<br />
+            </li>
+
+            <li>Once installed, click Start, type in &#39;ODBC&#39;, find the 64-bit version and click to start.   </li>
+
+            <li>Under the System DSN tab, Add a new Data Source, using the MySQL ODBC 8 Unicode driver.<br />
+                note: ANSI driver does not work on all systems, but Unicode seems to
+                <p>
+                <a href="images/ODBC_SystemDSN.png" class="img-responsive img-rounded" target="popup" onclick="window.open('images/ODBC_SystemDSN.PNG', 'popup'); return false;">
+                    <img src="images/ODBC_SystemDSN.png" width="300" alt="ODBC installer" class="img-responsive img-responsive" /></a> ODBC Installer<br />
+
+                </p>
+            </li>
+
+            <li>Set the following parameters to establish your connection to the world database on the Raspberry Pi<br />
+                The TCP/IP Server value will be different, and was retrieved in the previous Exercise.<br />
+              
+
+
+                Username: <code>user</code> <br />
+                Password: <code>user</code> <br />
+                Database: <code>world</code> <br />
+
+                <p>  
+
+                <a href="images/ODBC_setup.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/ODBC_Setup.PNG', 'popup'); return false;">
+                    <img src="images/ODBC_setup.PNG" width="300" alt="ODBC setup Drive" class="img-responsive img-responsive" /></a> ODBC Setup<br />
+
+                </p>
+             </li>
+
+            <li>
+                Troubleshoot as needed, and once you have demonstrated a successful connection click &#39;OK&#39; to dismiss the dialog boxes. </li>
+
+            <li>
+                Create a new Microsoft Access Database, name it &#39;world&#39; and save it as  &quot;world.accdb&quot; in your ' 
+             <code><span id="Path1"></span></code>
+                    ' folder.<br />
+            </li>
+
+
+            <li>
+                From the menu choose External Data&gt;New Data Source&gt; From Other Sources&gt;ODBC Database: and complete the steps to setup the connection to the World database on the Raspberry Pi: <br />
+                <a href="images/AccessToMySqlODBC.JPG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/AccessToMySqlODBC.JPG', 'popup'); return false;">
+                    <img src="images/AccessToMySqlODBC.JPG" width="300" alt="Access and ODBC" class="img-responsive img-responsive" /></a> Access ODBC connection<br />
+
+            </li>
+
+
+            <li>In the navigation pane you will see the three tables from the world database: city, country and country language.<br />
+                    <a href="images/AccessMysql.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/AccessMysql.PNG', 'popup'); return false;">
+                        <img src="images/AccessMysql.PNG" width="300" alt="access to MySQL on RPi" class="img-responsive img-responsive" /></a> Access linked to MySQL on Raspberry Pi!</li>
+
+            <li>Use Acccess to add a record to the city table.<br />
+                Do not specify an ID value.<br />
+                Name: Winona<br />
+                CountryCode: USA<br />
+                District: Minnesota<br />
+                Population: 25000<br />
+
+                Take a screen shot of it showing this new record in the Raspberry Pi MySQL world database<br />
+
+            </li>
+
+        </ol>
+
+        <hr />
+
+    </div>
+
+
+
+
+        <!--Exercise 3-->
+
+
+        <div class="col-lg-12"><a href="#Exercise03" class="btn btn-info" data-toggle="collapse">Exercise 3-Screenshot</a></div>
+
+        <div id="Exercise03" class="collapse in  col-lg-12">
+
+            <p>
+                These steps are done on your laptop using VNC.
+            </p>
+
+            <ol>
+                <li>Save your screenshot of the Raspberry Pi MySQL world database displaying the new city record depicted above, showing Winona in the output.<br />
+                    Note: this can be done using the Snipping Tool.
+                </li>
+
+                <li>On your laptop save the screenshot  as &quot;IOT20&quot; in your ' 
+             <code><span id="Path2"></span></code>
+                    ' folder.<br />
+                    </li>
+            </ol>
+            <hr />
+        </div>
+
+
+        <div class="col-lg-12 text-danger">
+            <h2>Screenshot IOT20</h2>
+            <hr />
+        </div>
+
+
+
+
+
+        <div class="col-lg-12"><a href="#UploadScreenShot" class="btn btn-info" data-toggle="collapse">Upload Screenshot</a></div>
+
+        <div id="UploadScreenShot" class="collapse in  col-lg-12">
+            <p>
+                Submit to the appropriate D2L Assignment folder a screenshot that documents your work.<br />
+            </p>
+            <br />
+        </div>
+
+        <div class="col-lg-12 text-primary">
+            <p>
+                (50) 1. Upload your screenshot to the &#39;IOT20&#39; D2L Assignment Folder.
+            </p>
+            <hr />
+        </div>
+
+
+
+
+		<!--Exercise 4-->
+
+		<div class="col-lg-12"><a href="#Exercise04" class="btn btn-info" data-toggle="collapse">Exercise 4-Reflections</a></div>
+
+		<div id="Exercise04" class="collapse in  col-lg-12">
+
+			<p>
+				Based on your experience in this exercise, consider the value of MySQL databases that can be accessed over the network, for organizations, especially those needing to collect and analyze information.<br />
+				Think about what type of problems a Raspberry Pi equipped with a relational database could solve, and whether it could be cost-effective.<br />
+				Businesses are deploying IoT 'solutions'-how can MySQL equipped Raspberry Pis support or automate these efforts?<br />
+				<br />
+				References:<br />
+				MySQL on Pi: <a href="https://pimylifeup.com/raspberry-pi-mysql/" class="bg-info text-white" target="_blank"  >&nbsp;Pi MyLifeUp website</a><br />
+
+				W3 Schools:&nbsp; <a class="bg-info text-white" href="https://www.w3schools.com/mySQl/default.asp"  target="_blank">MySQL Tutorial </a>
+
+			</p>
+			<div class="col-lg-12 text-primary">
+				(20) 2. Reflections-value<br />
+				List a specific problem that a low-cost, networked, MySQL relational database could solve.<br />
+
+				<!-- Enter your answer in the VALUE field below   GROK -->
+				<input class="form-control" name="q2" type="text" id="q2" value="specific problem:" />
+				<hr />
+			</div>
+
+
+
+			<div class="col-lg-12 text-primary">
+				(20) 3. Reflections-content<br />
+				Research the internet on the topic of relational databases.<br />	
+                How could an organization&#39;s data adminstrator use MySQL databases readily accessible to workers using Microsoft Access to their organization&#39;s benefit?<br />
+                Hint:  <a href="https://www.123-reg.co.uk/support/servers/what-is-mysql-and-why-do-i-need-it" class="bg-info text-white" target="_blank"  >What is MySQL?</a>
+                
+				<!-- Enter your answer in the VALUE field below   GROK -->				
+				<input class="form-control" name="q3" type="text" id="q3" value="use of MySQL:"/>
+				<hr />
+			</div>
+
+
+		</div>
+
+
+
+
+
+
+
+
+		<div class="col-lg-12"><a href="#ExerciseSubmit" class="btn btn-info" data-toggle="collapse">Submit Assignment</a></div>
+
+
+		<div class="col-lg-12">
+			<p>
+				When all tasks are completed press the Submit button.
+			</p>
+			<hr />
+		</div>
+
+		<div class="col-lg-12 text-primary">
+			(10) 4. Assignment submission<br />
+
+			<!-- Enter your answer in the VALUE field below   GROK -->
+			<input class="form-control" name="q4" type="text" id="q4" value="I have completed all the exercises, and uploaded my screenshot to the D2L Assignment folder IOT20."/>
+			<hr />
+		</div>
+
+
+
+
+
+		<div class="col-lg-12">
+			<p>
+				Congratulations! You have used a relational database application-MySQL/mariadB, on both a Raspberry Pi and a Windows computer running Microsoft Access.                
+			</p>
+			<hr />
+		</div>
+
+
+
+
+
+
+		<div class=" col-lg-12">
+			<br />
+			<input class=" text-danger btn-block btn-lg" type="submit" name="Submit" value="SUBMIT -once you have completed this assignment- SUBMIT"/>
+			<br />
+		</div>
+
+	</form>
+
+    <!-- PgP 5/31/2025 place js code at end to prevent race conditions -->
+
+    <!-- Creative Commons License Info -->
+    <footer>
+        <div id="licenseInfo" class="col-lg-12 text-muted"></div>
+        <div id="footerText" class="col-lg-12 text-muted"></div>
+    </footer>
+
+    <!-- ========== Script Includes (Order is Critical) ========== -->
+    <script src="../../ReadOnly/jquery-1.js"></script>
+    <script src="../../ReadOnly/bootstrap.js"></script>
+    <script src="../studentConstants.js"></script>
+    <script src="../../ReadOnly/courseConstants.js"></script>
+    <script src="../../ReadOnly/domForms.js"></script>
+
+
+</body>
+</html>

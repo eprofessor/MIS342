@@ -1,0 +1,606 @@
+<!doctype html>
+<html lang="en">
+
+<!--
+    PgP 7/30/2025 add LinkedIn Learning as reflective assignment
+	PgP 3/2/2020 updating MIS202 files to align with other assignments 
+-->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap -->
+    <link href="../../ReadOnly/bootstrap.css" rel="stylesheet">
+
+    <!-- model assignment file, version 1 released 2018/02/18 PgP -->
+
+    <title>MIS342Summative09</title>
+</head>
+
+<body class="container-fluid">
+
+    <form class="container-fluid" action="https://eprofessor.azurewebsites.net/code/ProcessFormData.asp" method="post" name="frmAssignment" id="frmAssignment">
+
+        <input name="InstID" id="InstID" value="00617282" type="hidden">
+
+        <!-- had to put assignment here, because it is used in the path calculation -->
+        <!-- <input  name="assignment" id="assignment" value="Formative00" type="hidden" > -->
+
+        <h1 class=" text-center">Action Queries and Advanced Table Relationships </h1>
+
+        <h2 id="student-info" class="sr-only">Student Information</h2>
+        <!-- -start-Student, class and assignment information. Assignment hard-coded, other values from constants.js file-start -->
+        <div class="row" aria-labelledby="student-info">
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label for="FirstName" class="text-dark">First Name:</label>
+                    <input class="form-control"
+                        name="FirstName"
+                        id="FirstName"
+                        type="text"
+                        readonly
+                        aria-readonly="true"
+                        autocomplete="given-name"
+                        aria-label="First Name"
+                        tabindex="0" />
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label for="LastName" class="text-dark">Last Name:</label>
+                    <input class="form-control"
+                        name="LastName"
+                        id="LastName"
+                        type="text"
+                        readonly
+                        aria-readonly="true"
+                        autocomplete="family-name"
+                        aria-label="Last Name"
+                        tabindex="0" />
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label for="StarID" class="text-dark">StarID:</label>
+                    <input class="form-control"
+                        name="StarID"
+                        id="StarID"
+                        type="text"
+                        readonly
+                        aria-readonly="true"
+                        autocomplete="username"
+                        aria-label="StarID"
+                        tabindex="0" />
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label for="email" class="text-dark">Email:</label>
+                    <input class="form-control"
+                        name="email"
+                        id="email"
+                        type="email"
+                        readonly
+                        aria-readonly="true"
+                        autocomplete="email"
+                        aria-label="Email"
+                        tabindex="0" />
+                </div>
+            </div>
+        </div>
+        <input name="pin" id="pin" type="hidden" aria-hidden="true" />
+
+        <h2 id="course-info" class="sr-only">Course Information</h2>
+        <div class="row" aria-labelledby="course-info">
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label for="Semester" class="text-dark">Semester:</label>
+                    <input class="form-control"
+                        name="Semester"
+                        id="Semester"
+                        type="text"
+                        readonly
+                        aria-readonly="true"
+                        aria-label="Semester"
+                        tabindex="0" />
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label for="Class" class="text-dark">Class:</label>
+                    <input class="form-control"
+                        name="Class"
+                        id="Class"
+                        type="text"
+                        readonly
+                        aria-readonly="true"
+                        aria-label="Class"
+                        tabindex="0" />
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label for="Section" class="text-dark">Section:</label>
+                    <input class="form-control"
+                        name="Section"
+                        id="Section"
+                        type="text"
+                        readonly
+                        aria-readonly="true"
+                        aria-label="Section"
+                        tabindex="0" />
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label for="assignment" class="text-dark">Assignment:</label>
+                    <input class="form-control"
+                        name="assignment"
+                        id="assignment"
+                        type="text"
+                        readonly
+                        value="Summative09"
+                        aria-readonly="true"
+                        aria-label="Assignment"
+                        tabindex="0" />
+                </div>
+            </div>
+        </div>
+
+        <!-- -end-Student, class and assignment information-end -->
+
+
+        <div class="col-lg-12">
+            <br />
+            <input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit">
+            <br />
+        </div>
+
+        <div class="col-lg-12 h3 text-danger">
+            700 Points
+            <hr />
+        </div>
+
+        <!-- -start-objectives-start -->
+        <div class="col-lg-12"><a href="#Objectives" class="btn btn-info" data-toggle="collapse">Learning Objectives</a></div>
+        <div id="Objectives" class=" collapse in col-lg-12">
+
+            <!--Above this line similar except for Assignment number and title   -->
+
+<h2 >Learning Objectives</h2>
+
+            <ol start="1" type="1">
+                <li  ><b>Create and execute action queries to make tables, append, delete, and update records.</b>  
+                    <ul type="circle">
+                        <li  ><i>Example</i>: A logistics company uses an append query to add new shipping records to their database from partner systems.  </li>
+                    </ul>
+                </li>
+                <li  ><b>Design advanced table relationships, including many-to-many and one-to-one relationships.</b>  
+                    <ul type="circle">
+                        <li  ><i>Example</i>: An ecommerce platform designs many-to-many relationships to associate products with multiple categories, facilitating flexible browsing options.  </li>
+                    </ul>
+                </li>
+                <li  ><b>Implement table joins and indexes to enhance data retrieval and integrity.</b>  
+                    <ul type="circle">
+                        <li  ><i>Example</i>: A legal firm implements indexes on client and case data to improve search speeds and ensure data accuracy across linked tables.  </li>
+                    </ul>
+                </li>
+            </ol>
+
+            
+            
+            <hr />
+            <h2 >Concepts</h2>
+
+            <p>Sample focus question: How can Action Queries and relationships be used to enhance the functionality of a relational database?</p>
+            <p>Sample concept list (not exclusive-refer to the chapter introduction for additional concepts):</p>
+            <ul>
+                <li>Action queries</li>
+                <li>Make-table</li>
+                <li>Append</li>
+                <li>Delete</li>
+                <li>Update</li>
+                <li>Relationships</li>
+                <li>Many-to-many</li>
+                <li>One-to-one</li>
+                <li>Table joins</li>
+                <li>Inner join</li>
+                <li>Outer join</li>
+                <li>Indexes</li>
+            </ul>
+            <hr />
+
+            <hr />
+
+        </div>
+
+        <!--Exercise 1-->
+
+
+        <div class=" col-lg-12"><a href="#Exercise01" class="btn btn-info" data-toggle="collapse">Exercise 1- Many-to-Many Relationship</a></div>
+
+        <div id="Exercise01" class="collapse in  col-lg-12">
+            <br />
+
+            <p>
+                Data Files needed for the Tutorial Project:<br />
+                <a href="LuckyTire_09.accdb" class="bg-info text-white" target="_blank">LuckyTire09.accdb</a>
+                <br />
+                Answer the following questions using a copy of the <strong>LuckyTire09.accdb</strong> database file also located on the class network drive at:  \\store\classes\ YearTerm&nbsp; &amp; courseid &amp; &quot;\ReadOnly\&quot; ) 
+                <br />
+            </p>
+
+
+
+
+
+
+
+            <hr />
+
+            <p>
+                Len Phan is the owner of  Lucky Tire, a chain of tire and auto service centers.
+                <br />
+                Len has an Access  database named LuckyTire to store information about customers, tires,  manufacturers, invoices, and credit cards.
+                <br />
+                The tblCustomer table contains data  about Lucky Tire&rsquo;s customers;<br />
+                tblTires contains data about the tires stocked by  Lucky Tires;<br />
+                the tblSales contains data about tire sales;<br />
+                the tblEmployee  contains data about Lucky Tire&rsquo;s employees;
+                <br />
+                the tblAssignment contains data  about which invoices which employees worked on;
+                <br />
+                and the tblCreditCard contains  data about the credit cards used to pay invoices.
+                <br />
+                Len asks you to define table  relationships and create some new queries for him.
+                <br />
+                You&rsquo;ll do so by completing  the following:<br />
+                &nbsp;
+            </p>
+
+            <ul>
+                <li>Open the <strong>LuckyTire </strong>database. </li>
+                <li>Change the first record in the <strong>tblCustomer </strong>table datasheet so the       First Name and Last Name columns contain your first and last names.<br />
+                    Close       the table.</li>
+                <li>Define a many-to-many relationship between the       tblSales and tbEmployee tables.<br />
+                    Use the tblAssignment table as the related or intermediate table. 
+            </ul>
+
+            <p>
+                Use the Snipping Tool to provide a screen shot of the Relationships window 
+   showing the three tables.
+            </p>
+            <br />
+
+            <p>
+                It will look something like this, but yours 
+		 must have the appropriate linkages between the tables:
+            </p>
+
+            <img alt="Relationships" src="ManyToManyRelationship.jpg" class="img-responsive" /><br />
+
+            <p>
+                <!--  PgP 2/4/2018 create path using constants and current document assignment -->
+                (50) 1. Save the screen shot  as &quot;Ex1&quot; in your ' 
+                 <code><span id="Path1"></span></code>
+                ' folder.<br />
+                <br />
+            </p>
+        </div>
+
+        <div class="col-lg-12 text-danger">
+            <h2>Screen Shot Ex1</h2>
+            <hr />
+        </div>
+
+
+
+        <!--Exercise 2-->
+
+        <div class=" col-lg-12"><a href="#Exercise02" class="btn btn-info" data-toggle="collapse">Exercise 2- One-to-one Relationship</a></div>
+
+        <div id="Exercise02" class="collapse in  col-lg-12">
+            <br />
+
+            <p>
+                Define a one-to-one relationship between the primary tblCustomer table and the related tblCreditCard table.
+                <br />
+                Select the referential integrity option and the cascade updates option for the       relationships.
+            </p>
+            <br />
+
+            <p>(50) 2. Briefly explain the purpose of a one-to-one relationship.</p>
+
+            <!-- Enter your answer in the VALUE field below   GROK -->
+            <input name="q2" id="q2" size="120" maxlength="120" class="form-control" value="1 to 1: " type="text">
+            <br />
+
+        </div>
+        <hr />
+
+
+        <!--Exercise 3-->
+
+        <div class=" col-lg-12"><a href="#Exercise03" class="btn btn-info" data-toggle="collapse">Exercise 3- Action Queries</a></div>
+
+        <div id="Exercise03" class="collapse in col-lg-12">
+            <br />
+
+            <p>
+                Create a make-table query based on the qryInvoiceTotal query.<br />
+                Select all fields from the query and only those records where the TireType field value is <strong>Performance</strong> or <strong>Truck</strong>.
+                <br />
+                Use <strong>tblSpecialTire </strong>as the new table name.<br />
+                Store the table in the current database.
+                <br />
+                Run the query, and then save the query as qryMake_tblSpecialTire.
+            </p>
+            <br />
+
+
+            <p>(<strong>50</strong>) 3. Remove line breaks and copy the SQL statement for the make table query below</p>
+
+            <!-- Enter your answer in the VALUE field below   GROK -->
+            <input name="q3" id="q3" size="120" maxlength="120" class="form-control" value="SQL: " type="text">
+            <br />
+
+            <p>
+                Create an append query based on the qryInvoiceTotal query.<br />
+                Select all fields and selecting only those records where the ModelName field value is <strong>Harmony</strong>, <strong>Kestral</strong>, or <strong>Peregrine</strong>.                
+                <br />
+                Append the records to the tblSpecialTire table, run the query, and then save the query as qryAppend_tblSpecialTire.
+            </p>
+            <br />
+
+            <p>(<strong>50</strong>) 4. Remove line breaks and copy the SQL statement for the append query below. </p>
+
+            <!-- Enter your answer in the VALUE field below   GROK -->
+            <input name="q4" id="q4" size="120" maxlength="120" class="form-control" value="SQL: " type="text">
+            <br />
+
+            <p>
+                Create an update query to select all records in the tblSpecialTire table where the TireType field value is <strong>Performance</strong>.<br />
+                Change (update) the field value to <strong>PerfPlus</strong>.
+                <br />
+                Run the query, and then save the query as qryUpdate_tblSpecialTire.
+            </p>
+            <br />
+
+            <p>(<strong>50</strong>) 5. Remove line breaks and copy the SQL statement for the update query below </p>
+
+            <!-- Enter your answer in the VALUE field below   GROK -->
+            <input name="q5" id="q5" size="120" maxlength="120" class="form-control" value="SQL: " type="text">
+            <br />
+
+
+            <p>
+                Create a delete query that deletes all records in the tblSpecialTire table in which the UnitPrice field value is less than <strong>30</strong>.    
+                <br />
+                Run the query, and then save the query as qryDelete_UnitPrice. 
+                <br />
+                Open the <strong>tblSpecialTire </strong>table, resize all columns to their best fit, and then save and close the table.<br />
+            </p>
+
+            <p>(<strong>50</strong>) 6. Remove the line breaks and copy the SQL statement for the delete query below</p>
+
+            <!-- Enter your answer in the VALUE field below   GROK -->
+            <input name="q6" id="q6" size="120" maxlength="120" class="form-control" value="SQL: " type="text">
+            <br />
+
+            <p>
+                Create a query that performs an outer join between the tblCustomer and tblCreditCard tables.<br />
+                Select all records from the tblCreditCard table and any matching records from the tblCustomer table.
+                <br />
+                Display the       First and Last fields from the tblCustomer table, and the FirstName and       LastName fields from the tblCreditCard table.<br />
+                Change the column names for       the FirstName and LastName fields from the tblCreditCard table to <strong>Credit First Name </strong>and <strong>Credit Last Name</strong>.
+                <br />
+                Save the query as <strong>qryCustomerCreditCardOuterJoin</strong><br />
+                Run the query, resize all columns to their best fit, and then save and close the query.<br />
+            </p>
+
+            <p>(<strong>50</strong>) 7. Remove line breaks and copy the SQL statement for qryCustomerCreditCardOuterJoin below. </p>
+
+            <!-- Enter your answer in the VALUE field below   GROK -->
+            <input name="q7" id="q7" size="120" maxlength="120" class="form-control" value="SQL: " type="text">
+            <br />
+
+
+        </div>
+        <hr />
+
+        <!--Exercise 4-->
+
+        <div class=" col-lg-12"><a href="#Exercise04" class="btn btn-info" data-toggle="collapse">Exercise 4- Indexes</a></div>
+
+        <div id="Exercise04" class="collapse in  col-lg-12">
+            <br />
+
+
+            <p>
+                Open the <strong>tblSpecialTire </strong>table in Design view.<br />
+                Add an index for the CustID field, allowing duplicates.<br />
+                Add an index for the TireType field, allowing duplicates.<br />
+                Save and close the table.
+            </p>
+            <br />
+
+            <p>
+                Provide a screen shot of the Indexes dialog box, showing the appropriate settings.<br />
+
+                <!--  PgP 2/4/2018 create path using constants and current document assignment -->
+                (50) 8. Save the screen shot  as &quot;Ex8&quot; in your ' 
+                <code><span id="Path2"></span></code>
+                ' folder.<br />
+                <br />
+            </p>
+        </div>
+
+        <div class="col-lg-12 text-danger">
+            <h2>Screen Shot Ex8</h2>
+            <hr />
+        </div>
+
+
+        <!-- Exercise 5-->
+
+
+        <div class=" col-lg-12"><a href="#Exercise05" class="btn btn-info" data-toggle="collapse">Exercise 5- Action Query Dangers</a></div>
+
+        <div id="Exercise05" class="collapse in  col-lg-12">
+            <br />
+
+            <p>Compact and repair the <strong>LuckyTire</strong> database, close the database, and then exit Access.</p>
+
+            <p>
+                (<strong>50</strong>) 9. Briefly explain  the danger in allowing an employee to use Microsoft Access Action Queries in an organization that uses Linked Tables 
+   and other linked data sources.
+            </p>
+
+            <!-- Enter your answer in the VALUE field below   GROK -->
+            <input name="q9" id="q9" size="120" maxlength="120" class="form-control" value="Danger: " type="text">
+            <br />
+
+
+        </div>
+        <hr />
+
+        <!--  From here to end difference question numbers and Summative numbering for PDF of file uploaded to D2L    -->
+
+
+        <div class="col-lg-12"><a href="#ExercisePDF" class="btn btn-info" data-toggle="collapse">Exercise-PDF File Creation</a></div>
+
+        <div id="ExercisePDF" class="collapse in  col-lg-12">
+            <p>
+                Use a web browser to verify that you have published your website to https://classes.winona.edu/...
+                <br />
+                Check that your name, StarID, email, class, semester, section and all of your answers are correct and visible.
+                <br />
+                From the menu choose File&gt;Print... and using &quot;Microsoft Print to PDF&quot; save a copy of this assignment as a .pdf file in your   ' 
+                <code><span id="Path3"></span></code>
+                ' folder.<br />
+            </p>
+            <br />
+
+            <p>
+                (50) 10. Save your file 'WebPage.pdf' to the ' 
+                 <code><span id="Path4"></span></code>
+                ' folder.<br />
+
+
+            </p>
+
+            <div class="text-danger">
+                <h2>WebPage.pdf</h2>
+                <hr />
+            </div>
+
+
+
+			<p>
+				Create a .pdf file named &#39;screenshots.pdf&#39; by combining the above screenshots.
+			</p>
+
+            <h2>ScreenShots->Snipping Tool + OneNote</h2>
+            <ol>
+                <li>Open <strong>Microsoft OneNote</strong> on your laptop.</li>
+                <li>Create a new page and name it <code>Screenshots</code></li>
+                <li>Save this <code>Screenshots.pdf</code> file into your ' <code><span id="Path7"></span></code>
+                    ' folder.<br />
+                </li>
+                <li>Use the <strong>Snipping Tool</strong> to take each required screenshot </li>
+                <li>After each snip, press <code>Ctrl + V</code> to paste the screenshot into your OneNote page.</li>
+                <li>Label each screenshot clearly (e.g., "Ex10NYT &hyphen; New York Times").</li>
+                <li>Once all images are added, go to <strong>File &gt; Print</strong> and choose <strong>Microsoft Print to PDF</strong>.</li>
+                <li>When all screenshots are done you will upload the PDF file to the appropriate D2L Assignment folder.</li>
+            </ol>
+            <hr>
+
+
+            <p>
+                (50) 11. Save your file 'ScreenShots.pdf' in your ' 
+                 <code><span id="Path8"></span></code>
+                ' folder.<br />
+
+            </p>
+
+            <div class="text-danger">
+                <h2>ScreenShots.pdf</h2>
+                <hr />
+            </div>
+
+
+            <p>&nbsp;</p>
+            <p>
+                Use PDFill to merge the <strong>WebPage.pdf</strong> file with the <strong>ScreenShots.pdf </strong>file, and save it as &#39;<strong>Summative09.pdf</strong>&#39; in your ' 
+               <code><span id="Path9"></span></code>
+                ' folder.<br />
+
+            </p>
+
+
+            <p>(50) 12. Upload your file 'Summative09.pdf' to the D2L 'Summative09' Assignment folder.</p>
+
+            <div class="text-danger">
+                <h2>Summative09.pdf</h2>
+            </div>
+            <hr />
+
+        </div>
+
+
+
+
+        <div class="col-lg-12"><a href="#ExerciseAssignmentSubmission" class="btn btn-info" data-toggle="collapse">Exercise-Assignment Submission</a></div>
+
+        <div id="ExerciseAssignmentSubmission" class="collapse in  col-lg-12">
+            <p>
+                Use a browser to view your completed and published website at: https://classes.winona.edu/...     
+                <br />
+                Ensure that you have linked this assignment on your home page.
+                Note that your screen shots do not have to be completed to perform this step.<br>
+            </p>
+
+            (50) 13. Home Page Hyperlink<br />
+            Check and verify that this assignment is hyperlinked on your home page.<br />
+            <br />
+
+            (50) 14. Assignment submission<br />
+            Press the Submit button at the top or bottom of this page.
+                Read and follow instructions on the confirmation page.&nbsp; Correct any errors.
+        </div>
+        <hr />
+
+
+
+        <div class="col-lg-12">
+            <br />
+            <input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit">
+            <br />
+        </div>
+
+
+    </form>
+
+
+
+    <!-- PgP 5/31/2025 place js code at end to prevent race conditions -->
+
+    <!-- Creative Commons License Info -->
+    <footer>
+        <div id="licenseInfo" class="col-lg-12 text-muted"></div>
+        <div id="footerText" class="col-lg-12 text-muted"></div>
+    </footer>
+
+    <!-- ========== Script Includes (Order is Critical) ========== -->
+    <script src="../../ReadOnly/jquery-1.js"></script>
+    <script src="../../ReadOnly/bootstrap.js"></script>
+    <script src="../studentConstants.js"></script>
+    <script src="../../ReadOnly/courseConstants.js"></script>
+    <script src="../../ReadOnly/domForms.js"></script>
+
+</body>
+</html>
+
+
+        

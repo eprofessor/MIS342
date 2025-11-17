@@ -1,0 +1,571 @@
+<!doctype html>
+<html lang="en">
+
+<!--
+    PgP 7/30/2025 add LinkedIn Learning as reflective assignment
+	PgP 3/2/2020 updating MIS202 files to align with other assignments 
+-->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap -->
+    <link href="../../ReadOnly/bootstrap.css" rel="stylesheet">
+
+    <!-- model assignment file, version 1 released 2018/02/18 PgP -->
+
+    <title>MIS342Summative10</title>
+</head>
+
+<body class="container-fluid">
+
+    <form class="container-fluid" action="https://eprofessor.azurewebsites.net/code/ProcessFormData.asp" method="post" name="frmAssignment" id="frmAssignment">
+
+        <input name="InstID" id="InstID" value="00617282" type="hidden">
+
+        <!-- had to put assignment here, because it is used in the path calculation -->
+        <!-- <input  name="assignment" id="assignment" value="Formative00" type="hidden" > -->
+
+        <h1 class=" text-center">Database Applications </h1>
+
+        <h2 id="student-info" class="sr-only">Student Information</h2>
+        <!-- -start-Student, class and assignment information. Assignment hard-coded, other values from constants.js file-start -->
+        <div class="row" aria-labelledby="student-info">
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label for="FirstName" class="text-dark">First Name:</label>
+                    <input class="form-control"
+                        name="FirstName"
+                        id="FirstName"
+                        type="text"
+                        readonly
+                        aria-readonly="true"
+                        autocomplete="given-name"
+                        aria-label="First Name"
+                        tabindex="0" />
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label for="LastName" class="text-dark">Last Name:</label>
+                    <input class="form-control"
+                        name="LastName"
+                        id="LastName"
+                        type="text"
+                        readonly
+                        aria-readonly="true"
+                        autocomplete="family-name"
+                        aria-label="Last Name"
+                        tabindex="0" />
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label for="StarID" class="text-dark">StarID:</label>
+                    <input class="form-control"
+                        name="StarID"
+                        id="StarID"
+                        type="text"
+                        readonly
+                        aria-readonly="true"
+                        autocomplete="username"
+                        aria-label="StarID"
+                        tabindex="0" />
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label for="email" class="text-dark">Email:</label>
+                    <input class="form-control"
+                        name="email"
+                        id="email"
+                        type="email"
+                        readonly
+                        aria-readonly="true"
+                        autocomplete="email"
+                        aria-label="Email"
+                        tabindex="0" />
+                </div>
+            </div>
+        </div>
+        <input name="pin" id="pin" type="hidden" aria-hidden="true" />
+
+        <h2 id="course-info" class="sr-only">Course Information</h2>
+        <div class="row" aria-labelledby="course-info">
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label for="Semester" class="text-dark">Semester:</label>
+                    <input class="form-control"
+                        name="Semester"
+                        id="Semester"
+                        type="text"
+                        readonly
+                        aria-readonly="true"
+                        aria-label="Semester"
+                        tabindex="0" />
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label for="Class" class="text-dark">Class:</label>
+                    <input class="form-control"
+                        name="Class"
+                        id="Class"
+                        type="text"
+                        readonly
+                        aria-readonly="true"
+                        aria-label="Class"
+                        tabindex="0" />
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label for="Section" class="text-dark">Section:</label>
+                    <input class="form-control"
+                        name="Section"
+                        id="Section"
+                        type="text"
+                        readonly
+                        aria-readonly="true"
+                        aria-label="Section"
+                        tabindex="0" />
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label for="assignment" class="text-dark">Assignment:</label>
+                    <input class="form-control"
+                        name="assignment"
+                        id="assignment"
+                        type="text"
+                        readonly
+                        value="Summative10"
+                        aria-readonly="true"
+                        aria-label="Assignment"
+                        tabindex="0" />
+                </div>
+            </div>
+        </div>
+
+        <!-- -end-Student, class and assignment information-end -->
+
+        <div class="col-lg-12">
+            <br />
+            <input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit">
+            <br />
+        </div>
+
+
+
+
+
+        <div class="col-lg-12 h3 text-danger">
+            700 Points
+            <hr />
+        </div>
+
+        <!-- -start-objectives-start -->
+        <div class="col-lg-12"><a href="#Objectives" class="btn btn-info" data-toggle="collapse">Learning Objectives</a></div>
+        <div id="Objectives" class=" collapse in col-lg-12">
+
+            <!--Above this line similar except for Assignment number and title   -->
+
+            <h2>Learning Objectives</h2>
+
+            <ol>
+                <li><b>Develop macros and modules to automate database tasks.</b>
+                    <ul>
+                        <li><i>Example</i>: A retail business creates a macro to automatically generate daily sales reports, saving time and reducing errors.  </li>
+                    </ul>
+                </li>
+                <li><b>Use VBA code and command button macros for form navigation and event handling.</b>
+                    <ul>
+                        <li><i>Example</i>: A hotel management system employs VBA to handle check-in and check-out events, updating room availability in real-time.  </li>
+                    </ul>
+                </li>
+                <li><b>Apply filters and subqueries to refine data views.</b>
+                    <ul>
+                        <li><i>Example</i>: A market researcher uses filters and subqueries to extract and analyze specific demographic data from survey responses.  </li>
+                    </ul>
+                </li>
+                <li><b>Enhance database performance and security using the database splitter and security features.</b>
+                    <ul>
+                        <li><i>Example</i>: An insurance company splits their database to improve performance and implements role-based security to protect sensitive customer data.  </li>
+                    </ul>
+                </li>
+            </ol>
+
+
+
+            <hr />
+            <h2>Concepts</h2>
+
+
+            <hr />
+
+
+            <p>Sample focus question: In what ways can macros and code be used to manage  a relational database?</p>
+            <p>Sample concept list (not exclusive-refer to the chapter introduction for additional concepts):</p>
+            <ul>
+                <li>Macros</li>
+                <li>Actions</li>
+                <li>Command button macros</li>
+                <li>Form navigation</li>
+                <li>VBA code</li>
+                <li>Events</li>
+                <li>Modules</li>
+                <li>Functions</li>
+                <li>Immediate window</li>
+                <li>Filters</li>
+                <li>Subqueries</li>
+                <li>Autonumbers</li>
+                <li>Database performance</li>
+                <li>Database splitter</li>
+                <li>Security</li>
+            </ul>
+            <hr />
+
+        </div>
+
+
+        <!--Exercise 1-->
+
+        <div class=" col-lg-12"><a href="#Exercise01" class="btn btn-info" data-toggle="collapse">Exercise 1-Menus</a></div>
+
+        <div id="Exercise01" class="collapse in  col-lg-12">
+            <br />
+
+            <p>
+                Data Files needed for the Tutorial Project:<br />
+                <a href="LuckyTire10.accdb" class="bg-info text-white" target="_blank">LuckyTire10.accdb</a>
+                <br />
+                Answer the following questions using a copy of the<a href="LuckyTire_10.accdb"> <strong>LuckyTire10.accdb</strong></a> database file also located on the class network drive at:  \\store\classes\ YearTerm&nbsp; &amp; courseid &amp; &quot;\ReadOnly\&quot; ) 
+                <br />
+            </p>
+
+
+
+
+            <p>
+                Hint: turning on '<a href="SysObjects/SysObjects.html">System Objects</a>' can make working with List data sources much easier.<br />
+            </p>
+            <hr />
+            <h2>Part 10</h2>
+            <p>
+                Len Phan wants the  LuckyTire database to include an easy-to-use switchboard interface.<br />
+                You&rsquo;ll  create the interface by completing the following:
+            </p>
+            <ol start="1" type="1">
+                <li>Open the <strong>LuckyTire </strong>database.</li>
+            </ol>
+            <ol start="2" type="1">
+                <li>Design and create a form named <strong>frmQueriesDialogBox</strong>.<br />
+                    Use the figure below and the following descriptions as a guide to create the form.</li>
+            </ol>
+            <p>&nbsp;</p>
+
+            <p class="text-center">
+                <img src="Form_menu.jpg" alt="Form menu" class="img-responsive" />
+            </p>
+
+
+            <ol start="1" type="a">
+                <li>Place the text <strong>Queries </strong>in the form&rsquo;s title bar.<br />
+                    Set the following properties for the form:<br />
+                    set Record Selectors to No;<br />
+                    Navigation Buttons to No;<br />
+                    Auto Resize to No;<br />
+                    Close Button to No;<br />
+                    Modal to yes;<br />
+                    and Shortcut Menu to No.</li>
+            </ol>
+
+            <ol start="2" type="a">
+                <li>Use a list box with a Name property value of <strong>lstQueryList </strong>to display all the query names contained in the LuckyTire database, excluding those queries that start with a &ldquo;~&rdquo; character.<br />
+                    To place the query names in the list box, use an SQL SELECT statement to retrieve the query names from the       MSysObjects table.
+                            <br />
+                    Display the queries in query name order.<br />
+                    Delete the label attached to the list box, and widen the list box to approximately 2.5 inches.<br />
+                    <hr />
+                    <p>(50) 1. Remove line breaks and copy the SQL statement for the lstQueryList SQL statement below:</p>
+
+                    <!-- Enter your answer in the VALUE field below   GROK -->
+                    <input name="q1" id="q1" size="120" maxlength="120" class="form-control" value="SQL: " type="text">
+                    <br />
+                    <hr />
+
+                </li>
+            </ol>
+            <ol start="3" type="a">
+                <li>Use the heading <strong>Available Queries</strong>, formatted with a 14-point, bold font, above the list box.</li>
+            </ol>
+
+            <ol start="4" type="a">
+                <li>Three command buttons appear below the list box.<br />
+                    The left command button displays the Preview icon above the word <strong>Preview</strong>, the middle command        button displays the MS Access Query icon above the word <strong>Display</strong>, and the right command        button displays the CloseWindow icon above the word <strong>Close</strong>.
+                            <br />
+                    Double-clicking a query name has the same effect as selecting a query name in the list box and clicking the middle command button.<br />
+                    Both events cause Access to display the query datasheet for the selected query.<br />
+                    Clicking the left command button opens the selected query  in Print Preview.<br />
+                    (You will add the VBA code for these events in the tutorial project for Part 11.<br />
+                    For now, double-clicking or clicking should cause no action to occur.<br />
+                    Clicking the Close command button causes Access to close the dialog box.</li>
+            </ol>
+
+            <ol start="5" type="a">
+                <li>Resize the form&rsquo;s Detail section in Design view, and then resize the form in Form view.<br />
+                    Set the form&rsquo;s Border Style to Dialog, with the following properties:<br />
+                    Auto Center is Yes;<br />
+                    Fit to Screen is No;<br />
+                    and Scroll Bars is Neither.<br />
+                    Set the background color to any shade of Red in the Standard Colors gallery.<br />
+                    Set the background color of the list box to a lighter shade of red or equivalent.</li>
+            </ol>
+
+            <p>
+                Use the Snipping Tool to provide a screen shot of your form, showing all of the controls that you created.<br />
+
+                <!--  PgP 2/4/2018 create path using constants and current document assignment -->
+                (100) 2. Save the screen shot  as &quot;Ex2&quot; in your ' 
+                  <code><span id="Path1"></span></code>
+                ' folder.<br />
+                <br />
+            </p>
+
+
+        </div>
+
+        <div class="col-lg-12 text-danger">
+            <h2>Screen Shot Ex2</h2>
+            <hr />
+        </div>
+
+        <div>
+
+            <hr />
+
+
+            <h2>Part 11</h2>
+            <p>
+                Len Phan wants you to continue to work on the user interface of the Lucky Tire database.
+                <br />
+                You&rsquo;ll do so  by completing the following:
+            </p>
+
+            <ol start="1" type="1">
+                <li>Open the <strong>LuckyTire </strong>database.</li>
+            </ol>
+
+            <ol start="2" type="1">
+                <li>Create a Form Current event procedure  for the <strong>frmCustomer </strong>form to do the following:</li>
+            </ol>
+
+            <ol start="1" type="a">
+                <li>Display the Year field value in a bold, blue        text when the value is greater than 2005 and in normal, black text for        all other values. </li>
+                <li>Display the message <strong>New </strong>to the right of the Year text box in a bold, blue text only when the Year field value greater than 2005.</li>
+                <li>Test the procedure, and then save your form changes.</li>
+            </ol>
+
+
+            <p>
+                <!--  PgP 2/4/2018 create path using constants and current document assignment -->
+                (100) 3. Print all pages of the form as a .pdf file.<br />
+                Save the report  as &quot;Ex3&quot; in your ' 
+                  <code><span id="Path2"></span></code>
+                ' folder.<br />
+                <br />
+            </p>
+        </div>
+
+        <div class="col-lg-12 text-danger">
+            <h2>Ex3.pdf</h2>
+            <hr />
+        </div>
+
+
+        <div class="col-lg-12">
+
+            <ol start="4" type="1">
+                <li>Complete the <strong>frmQueriesDialogBox </strong>by doing the following: </li>
+            </ol>
+
+            <ol start="1" type="a">
+                <li>Create a Form Open event procedure that moves the        focus to the first query name in the list box when the        frmQueriesDialogBox form opens.</li>
+                <li>Create a <strong>basPreviewQuery </strong>function to open the selected query in the list box in Print Preview        and a <strong>basDisplayQuery </strong>function        to open the selected query in the list box in Datasheet view.</li>
+                <li>Attach the basPreviewQuery function to the On        Click property for the Preview command button in the form.</li>
+                <li>Attach the basDisplayQuery function to the On        Click property for the Display command button in the form and to the On        Dbl Click property for the form list box.</li>
+                <li>Switch to Form view, and then test all the        form&rsquo;s procedures and functions. Save and close the form.</li>
+            </ol>
+
+            <p>
+                <!--  PgP 2/4/2018 create path using constants and current document assignment -->
+                (100) 4. Use the Snipping tool to make a screen shot showing your database window after you have clicked the Preview and Display Command Buttons, so that the queries are visible.<br />
+                Save the screen shot  as &quot;Ex4&quot; in your ' 
+                <code><span id="Path3"></span></code>
+                ' folder.<br />
+                <br />
+            </p>
+        </div>
+
+        <div class="col-lg-12 text-danger">
+            <h2>Ex4.pdf</h2>
+            <hr />
+        </div>
+
+
+        <!-- Upload Access Database -->
+
+        <div class=" col-lg-12"><a href="#ExerciseUpload" class="btn btn-info" data-toggle="collapse">Exercise-Upload Database</a></div>
+
+        <div id="ExerciseUpload" class="collapse in  col-lg-12">
+
+
+            <p>
+                (100) 5. <a href="https://support.office.com/en-us/article/Compact-and-repair-a-database-6EE60F16-AED0-40AC-BF22-85FA9F4005B2" class="bg-info text-white" target="_blank">Compact &amp; Repair</a>, and then upload a copy of your LuckyTire10.accdb file, containing all your linked table settings,  to the D2L Assignment Folder 'Summative10_ACCDB'.<br />
+                Note: failing to compact and repair will result in a loss of points, because you will be uploading a larger .mdb file than necessary.
+            </p>
+
+            <hr />
+
+        </div>
+
+        <div class="text-danger">
+            <h2>Summative10_ACCDB</h2>
+            <hr />
+        </div>
+
+
+
+        <!--  From here to end difference question numbers and Summative numbering for PDF of file uploaded to D2L    -->
+
+
+        <div class="col-lg-12"><a href="#ExercisePDF" class="btn btn-info" data-toggle="collapse">Exercise-PDF File Creation</a></div>
+
+        <div id="ExercisePDF" class="collapse in  col-lg-12">
+            <p>
+                Use a web browser to verify that you have published your website to https://classes.winona.edu/...
+                <br />
+                Check that your name, StarID, email, class, semester, section and all of your answers are correct and visible.
+                <br />
+                From the menu choose File&gt;Print... and using &quot;Microsoft Print to PDF&quot; save a copy of this assignment as a .pdf file in your   ' 
+                 <code><span id="Path4"></span></code>
+                ' folder.<br />
+            </p>
+            <br />
+
+            <p>
+                (50) 6. Save your file 'WebPage.pdf' in your ' 
+                <code><span id="Path5"></span></code>
+                ' folder.<br />
+
+
+            </p>
+
+            <div class="text-danger">
+                <h2>WebPage.pdf</h2>
+                <hr />
+            </div>
+
+            <p>
+                Create a .pdf file named &#39;screenshots.pdf&#39; by combining the above screenshots.
+            </p>
+
+            <h2>ScreenShots->Snipping Tool + OneNote</h2>
+            <ol>
+                <li>Open <strong>Microsoft OneNote</strong> on your laptop.</li>
+                <li>Create a new page and name it <code>Screenshots</code></li>
+                <li>Save this <code>Screenshots.pdf</code> file into your ' <code><span id="Path7"></span></code>
+                    ' folder.<br />
+                </li>
+                <li>Use the <strong>Snipping Tool</strong> to take each required screenshot </li>
+                <li>After each snip, press <code>Ctrl + V</code> to paste the screenshot into your OneNote page.</li>
+                <li>Label each screenshot clearly (e.g., "Ex10NYT &hyphen; New York Times").</li>
+                <li>Once all images are added, go to <strong>File &gt; Print</strong> and choose <strong>Microsoft Print to PDF</strong>.</li>
+                <li>When all screenshots are done you will upload the PDF file to the appropriate D2L Assignment folder.</li>
+            </ol>
+            <hr>
+
+
+            <p>
+                (50) 7. Save your file 'ScreenShots.pdf' in your ' 
+                 <code><span id="Path8"></span></code>
+                ' folder.<br />
+
+            </p>
+
+            <div class="text-danger">
+                <h2>ScreenShots.pdf</h2>
+                <hr />
+            </div>
+
+
+            <p>&nbsp;</p>
+            <p>
+                Use PDFill to merge the <strong>WebPage.pdf</strong> file with the <strong>ScreenShots.pdf </strong>file, and save it as &#39;<strong>Summative10.pdf</strong>&#39; in your ' 
+                 <code><span id="Path9"></span></code>
+                ' folder.<br />
+
+            </p>
+
+
+            <p>(50) 8. Upload your file 'Summative10.pdf' to the D2L 'Summative10' Assignment folder.</p>
+
+            <div class="text-danger">
+                <h2>Summative10.pdf</h2>
+            </div>
+            <hr />
+
+        </div>
+
+
+
+
+        <div class="col-lg-12"><a href="#ExerciseAssignmentSubmission" class="btn btn-info" data-toggle="collapse">Exercise-Assignment Submission</a></div>
+
+        <div id="ExerciseAssignmentSubmission" class="collapse in  col-lg-12">
+            <p>
+                Use a browser to view your completed and published website at: https://classes.winona.edu/...     
+                <br />
+                Ensure that you have linked this assignment on your home page.
+                Note that your screen shots do not have to be completed to perform this step.<br>
+            </p>
+
+            (50) 9. Home Page Hyperlink<br />
+            Check and verify that this assignment is hyperlinked on your home page.<br />
+            <br />
+
+            (50) 10. Assignment submission<br />
+            Press the Submit button at the top or bottom of this page.
+                Read and follow instructions on the confirmation page.&nbsp; Correct any errors.
+        </div>
+        <hr />
+
+
+
+        <div class="col-lg-12">
+            <br />
+            <input class="text-danger btn-block btn-lg" name="Submit" value="Submit" type="submit">
+            <br />
+        </div>
+    </form>
+
+
+
+    <!-- PgP 5/31/2025 place js code at end to prevent race conditions -->
+
+    <!-- Creative Commons License Info -->
+    <footer>
+        <div id="licenseInfo" class="col-lg-12 text-muted"></div>
+        <div id="footerText" class="col-lg-12 text-muted"></div>
+    </footer>
+
+    <!-- ========== Script Includes (Order is Critical) ========== -->
+    <script src="../../ReadOnly/jquery-1.js"></script>
+    <script src="../../ReadOnly/bootstrap.js"></script>
+    <script src="../studentConstants.js"></script>
+    <script src="../../ReadOnly/courseConstants.js"></script>
+    <script src="../../ReadOnly/domForms.js"></script>
+
+</body>
+</html>

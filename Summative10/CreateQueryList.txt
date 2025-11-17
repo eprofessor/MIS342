@@ -1,0 +1,3 @@
+'  SQL to generate list of available Access queries:
+
+SELECT MSysObjects.Name, MSysObjects.Type FROM MSysObjects WHERE (((MSysObjects.Name) Not Like "~*") AND ((MSysObjects.Type)=5));

@@ -1,0 +1,32 @@
+frmCustomer On_current
+
+lblNew.Visible = False
+Year.FontBold = False
+Year.ForeColor = RGB(0, 0, 0)
+
+If Year.Value > 2005 Then
+  Year.ForeColor = RGB(0, 0, 255)
+  Year.FontBold = True
+  lblNew.Visible = True
+End If
+
+
+frmQueriesDialogBox...
+
+Private Sub Form_Load()
+'move focus to list box and then first query on list
+    lstQueryList.SetFocus
+    SendKeys "{Down}"
+
+End Sub
+
+Function basPreviewQuery()
+ 'open selected query in print preview
+    DoCmd.OpenQuery lstQueryList, acViewPreview
+
+End Function
+
+Private Function basDisplayQuery()
+    'open the select query in datasheet view
+    DoCmd.OpenQuery lstQueryList, acViewNormal
+End Function

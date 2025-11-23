@@ -1,0 +1,17 @@
+this is the expression to type into the Access VBA Immediate Window for Northwind.mdb for Formative10
+log(2.7182889) + (17 * 7)^2.8 / 44 + log(34) - 15 mod 6
+answer is:   14727.3235
+
+
+
+below is the Davg function for average value of Freight field where orders table [Ship Country] is Germany
+
+?DAvg("Freight", "Orders", "shipcountry = 'germany'")
+
+
+Here is the function wrapped in a GermanFreight() function:
+Function GermanFreight()
+    GermanFreight = DAvg("Freight", "Orders", "shipcountry = 'germany'")
+	'add formatting
+	GermanFreight = Format(GermanFreight, "$#.##")
+End Function

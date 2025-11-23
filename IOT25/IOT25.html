@@ -1,0 +1,551 @@
+<!doctype html>
+<html lang="en">
+
+
+
+<head>
+    <title>IOT25</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- PgP 7/11/2019 summative assignment for Raspberry Pi, Arduino Uno, micro:bit -->
+    <!-- Bootstrap -->
+    <link href="../../ReadOnly/bootstrap.css" rel="stylesheet">
+
+
+</head>
+
+<body >
+
+
+            <hr />
+ <!-- The bookmark named 'calculator' -->
+    <h2 id="calculator">Enter Your Station </h2>    <label for="stationInput">Somsen 301 station number:</label>
+    <input type="number" id="stationInput" value="5" />
+    
+    <button onclick="calculateConnection()">Calculate Connected Station</button>
+    
+    <h3>Target Station: <span id="resultLabel"></span></h3>
+
+    <script>
+        function calculateConnection() {
+            // Get the station number from the input
+            let stationNumber = parseInt(document.getElementById('stationInput').value);
+
+            // Calculate the connected station using the formula
+            let connectedStation = ((stationNumber + 12 - 1) % 38) + 1;
+
+            // Display the result in the label
+            document.getElementById('resultLabel').textContent = connectedStation;
+        }
+    </script>
+
+
+            <hr />
+
+
+
+
+
+
+    <form class="container-fluid" action="https://eprofessor.azurewebsites.net/code/ProcessFormData.asp" method="post" name="frmAssignment" id="frmAssignment">
+
+        <input name="InstID" id="InstID" value="00617282" type="hidden">
+        <!-- had to put assignment here, because it is used in the path calculation -->
+        <!-- <input  name="assignment" id="assignment" value="Formative00" type="hidden" > -->
+
+        <hr />
+        <h1 class="text-center">Raspberry Pi Sensor Data to MySQL/mariadB<br />
+            View via Web / phpMyAdmin</h1>
+
+<h2 id="student-info" class="sr-only">Student Information</h2>
+<div class="row" aria-labelledby="student-info">
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="form-group">
+            <label for="FirstName" class="text-dark">First Name:</label>
+            <input class="form-control"
+                   name="FirstName"
+                   id="FirstName"
+                   type="text"
+                   readonly
+                   aria-readonly="true"
+                   autocomplete="given-name"
+                   aria-label="First Name"
+                   tabindex="0" />
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="form-group">
+            <label for="LastName" class="text-dark">Last Name:</label>
+            <input class="form-control"
+                   name="LastName"
+                   id="LastName"
+                   type="text"
+                   readonly
+                   aria-readonly="true"
+                   autocomplete="family-name"
+                   aria-label="Last Name"
+                   tabindex="0" />
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="form-group">
+            <label for="StarID" class="text-dark">StarID:</label>
+            <input class="form-control"
+                   name="StarID"
+                   id="StarID"
+                   type="text"
+                   readonly
+                   aria-readonly="true"
+                   autocomplete="username"
+                   aria-label="StarID"
+                   tabindex="0" />
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="form-group">
+            <label for="email" class="text-dark">Email:</label>
+            <input class="form-control"
+                   name="email"
+                   id="email"
+                   type="email"
+                   readonly
+                   aria-readonly="true"
+                   autocomplete="email"
+                   aria-label="Email"
+                   tabindex="0" />
+        </div>
+    </div>
+</div>
+<input name="pin" id="pin" type="hidden" aria-hidden="true" />
+
+<h2 id="course-info" class="sr-only">Course Information</h2>
+<div class="row" aria-labelledby="course-info">
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="form-group">
+            <label for="Semester" class="text-dark">Semester:</label>
+            <input class="form-control"
+                   name="Semester"
+                   id="Semester"
+                   type="text"
+                   readonly
+                   aria-readonly="true"
+                   aria-label="Semester"
+                   tabindex="0" />
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="form-group">
+            <label for="Class" class="text-dark">Class:</label>
+            <input class="form-control"
+                   name="Class"
+                   id="Class"
+                   type="text"
+                   readonly
+                   aria-readonly="true"
+                   aria-label="Class"
+                   tabindex="0" />
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="form-group">
+            <label for="Section" class="text-dark">Section:</label>
+            <input class="form-control"
+                   name="Section"
+                   id="Section"
+                   type="text"
+                   readonly
+                   aria-readonly="true"
+                   aria-label="Section"
+                   tabindex="0" />
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="form-group">
+            <label for="assignment" class="text-dark">Assignment:</label>
+            <input class="form-control"
+                   name="assignment"
+                   id="assignment"
+                   type="text"
+                   readonly
+                   value="IOT25"
+                   aria-readonly="true"
+                   aria-label="Assignment"
+                   tabindex="0" />
+        </div>
+    </div>
+</div>
+
+
+        <div class="col-lg-12">
+            <br />
+            <input class=" text-danger btn-block btn-lg" type="submit" name="Submit" value="SUBMIT -once you have completed this assignment- SUBMIT" /><br />
+        </div>
+
+        <div class="h3 text-danger col-lg-12">
+            350 Points<hr />
+        </div>
+
+
+        <div class="col-lg-12"><a href="#Objectives" class="btn btn-info" data-toggle="collapse">Learning Objectives</a></div>
+        <div id="Objectives" class=" collapse in col-lg-12">
+
+
+            <p>
+                These exercises will guide you through the process of gathering Raspberry Pi sensor data in a MySQL/Maria database server on the Raspberry Pi.<br />
+                Then you will use 
+                a web browser and connect to the phpMyAdmin application on a remote Raspberry Pi to run a SQL statement to retrieve specific data.<br />
+                <br />
+
+                More information on setting up <a href="https://pimylifeup.com/raspberry-pi-mysql/" class="bg-info text-white" target="_blank">MySQL</a> is available online.<br />
+
+            </p>
+            <p>After completing this assignment you will be able to:</p>
+            <ol>
+                <li>Connect to remote Raspberry Pi&nbsp; to view MySQL sensor data</li>
+                <li>Use phpMyAdmin to view a remote MySQL database</li>
+                <li>Use phpMyAdmin to submit SQL statements to answer specific questions. </li>
+            </ol>
+            <hr />
+        </div>
+
+
+
+        <div class="col-lg-12"><a href="#Overview" class="btn btn-info" data-toggle="collapse">Assignment Overview</a></div>
+        <h3>When you encounter technical issues, please first review <a href="../IOT00/IOT00.html" class="bg-info text-white" target="_blank">IOT00</a>.    </h3>
+
+        <div id="Overview" class="collapse in  col-lg-12">
+
+            <h3>Prerequisites
+            </h3>
+
+            Before doing this assignment review <a href="../IOT10/IOT10.html" class="bg-info text-white" target="_blank">IOT10</a>- MySQL on Raspberry Pi, <a href="../IOT20/IOT20.html" class="bg-info text-white" target="_blank">IOT20</a>-Linking Microsoft Access to MySQL using ODBC, and <a href="../IOT21/IOT21.html">IOT21</a>-Sensor Data to MySQL. 
+            <br />
+
+            You must be using a Raspberry Pi that has the following installed and configured:<br />
+
+            <ol>
+                <li>Maria/MySQL database (using mariadb, so install required mariadb ODBC Unicode connector)</li>
+                <li>phpMyAdmin</li>
+                <li>GrovePi, Raspberry Pi with DHT11 temperature and humidity sensor</li>
+            </ol>
+
+
+            <p>
+                References:<br />
+                MySQL on Pi: <a href="https://pimylifeup.com/raspberry-pi-mysql/" class="bg-info text-white" target="_blank">&nbsp;Pi MyLifeUp website</a><br />
+
+                W3 Schools:&nbsp; <a class="bg-info text-white" href="https://www.w3schools.com/mySQl/default.asp" target="_blank">MySQL Tutorial </a>
+                <br />
+
+                GUI for MySQL:    <a href="https://www.packtpub.com/product/mastering-phpmyadmin-3-4-for-effective-mysql-management/9781849517782" class="bg-info text-white" target="_blank"  >Mastering phpMyAdmin 3.4 </a>
+                <br />
+
+
+            </p>
+
+            You must also be using a Windows computer with the following installed:<br />
+
+            <ol>
+                <li>Microsoft Access</li>
+                <li>MySQL ODBC 8 Unicode driver (see <a href="../IOT20/IOT20.html" class="bg-info text-white" target="_blank">IOT20</a>)</li>
+
+            </ol>
+
+
+
+
+
+
+            This assignment reviews basic computer concepts that you will need in this course and throughout your career.
+            <br />
+            <p>
+                You are expected to have a working knowledge of SBC hardware and software.<br />
+                If you do not understand how to use an item, perform a Google Search, 
+                refer to the <a href="https://learn.winona.edu/WSU_Technology_Knowledge_Base" class="bg-info text-white" target="_blank">WSU Technology Knowledge Base</a>,&nbsp; ask a teaching assistant, or ask the instructor.
+            </p>
+            <p>
+                &nbsp;
+            </p>
+            <h2>
+                Outline
+            </h2>
+
+            <p>
+                1. Determine the remote Raspberry Pi to connect via VNC.<br />
+                Refer to the <a href="#calculator" class="bg-info text-white" target="_blank" >Calculator</a> at the top of this assignment.
+
+            </p>
+
+
+            <p>
+                2. Determine the IP address of the station you will connect to.<br />
+                Use the ip_list.html page on any Raspberry Pi in Somsen 301.<br />
+
+                Or go look at the station and find the IP address in the upper right hand corner of the desktop:<br />
+
+            </p>
+
+            
+                                <p>
+                                    <a href="images/ipList.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/ipList.PNG', 'popup'); return false;">
+                                        <img src="images/ipList.PNG" width="200" alt="IP List" class="img-responsive img-responsive" /></a>IP List of Addresses<br />
+                                </p>
+
+            
+                                <p>
+                                    <a href="images/ipAddress.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/ipAddress.PNG', 'popup'); return false;">
+                                        <img src="images/ipAddress.PNG" width="200" alt="IP Address" class="img-responsive img-responsive" /></a>IP Address<br />
+                                </p>
+
+
+
+            <p>
+                3. Use a web browser to connect to the your Target Station at <code>
+                    http://10.19.x.x/
+                                                                              </code><br />
+                The page that appears will show the 25 most recent data points.<br />
+                Check to make sure the data appears reasonable.<br />
+                Check that the most recent data is no more than 30 minutes old<br />
+                Why are you doing this?
+                To make sure the target station is working properly.<br />
+                If your target station is not working, either troubleshoot it or select another station to connect to.<br />
+                Do NOT connect to the same Raspberry Pi on the same station as you are using for this assignment.<br />
+            </p>
+                                <p>
+                                    <a href="images/SensorDataOnWeb.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/SensorDataOnWeb.PNG', 'popup'); return false;">
+                                        <img src="images/SensorDataOnWeb.PNG" width="200" alt="Sensor Data" class="img-responsive img-responsive" /></a>Sensor Data<br />
+                                </p>           
+            
+            
+            <p> 4. Once you are sure the data appears reasonable and the target Rasbperry Pi is working corrrectly, next connect to the Target Station's instance of phpMyAdmin.<br />
+                Open a web browser to:<br />
+                <code>
+                    http://TargetIP/phpmyadmin
+                </code>
+                <br />
+                The phpMyAdmin username and password are on the Raspberry Pi Desktop.<br />
+
+            </p>
+
+            <p>
+                5. Login to phpMyAdmin, then go to the 'sensor' database and open the 'GroveSensors' table.<br />
+                Make sure you can see data in the 'GroveSensors' table<br />
+                Then click on the 'SQL' tab:                
+
+            </p>
+
+
+
+            <p>
+                                <p>
+                                    <a href="images/phpMyAdmin_SQL_view.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/phpMyAdmin_SQL_view.PNG', 'popup'); return false;">
+                                        <img src="images/phpMyAdmin_SQL_view.PNG" width="200" alt="phpMyAdmin Data" class="img-responsive img-responsive" /></a>phpMyAdmin Sensor Data<br />
+                                </p>           
+            
+            </p>
+
+            <hr />
+        </div>
+
+
+
+
+        <!--Exercise 1-->
+
+        <div class="col-lg-12"><a href="#Exercise01" class="btn btn-info" data-toggle="collapse">Exercise 1-SQL Code </a><a href="#Exercise01"></a></div>
+
+        <div id="Exercise01" class="collapse in  col-lg-12">
+
+            <p>Use the 'sensor' database; 'GroveSensors' table to answer the following questions.</p>
+
+               <div class="col-lg-12 text-primary">
+
+            (50) 1. Using phpMyAdmin, write a SQL statement that will return the complete record th the maximum temperature that the target station has encountered since it began taking data.<br />
+                Enter your SQL statement below.<br />
+              
+            
+
+                <!-- Enter your answer in the VALUE field below   GROK -->
+                <input class="form-control" name="q1" type="text" id="q1" value="max temp,SQL,:" />
+                <hr />
+            </div>
+
+
+
+            <hr />
+               <div class="col-lg-12 text-primary">
+
+            (50) 2. Using phpMyAdmin, write a SQL statement that will return the maximum 'Humidity' value and the date/time that it occurred.<br />
+                Enter your SQL statement below.<br />
+              
+            
+
+                <!-- Enter your answer in the VALUE field below   GROK -->
+                <input class="form-control" name="q2" type="text" id="q2" value="max humidity,SQL:" />
+                <hr />
+            </div>
+
+
+
+            <hr />
+
+            
+               <div class="col-lg-12 text-primary">
+
+            (50) 3. Using phpMyAdmin, write a SQL statement that will return the number of records in the 'GroveSensors' table.<br />
+                Enter your SQL statement below.<br />
+              
+            
+
+                <!-- Enter your answer in the VALUE field below   GROK -->
+                <input class="form-control" name="q3" type="text" id="q3" value="num records,SQL:" />
+                <hr />
+            </div>
+
+
+
+<hr />
+                           <div class="col-lg-12 text-primary">
+
+            (50) 4. Using phpMyAdmin, write a SQL statement that will return the average temperature from the 'Temperature_F' field records in the 'GroveSensors' table.<br />
+                Enter your SQL statement below.<br />
+              
+            
+
+                <!-- Enter your answer in the VALUE field below   GROK -->
+                <input class="form-control" name="q4" type="text" id="q4" value="avg temp,SQL:" />
+                <hr />
+            </div>
+
+
+
+                   </div>
+
+
+
+
+
+
+
+        <!--Exercise 4-->
+
+
+        <div class="col-lg-12"><a href="#Exercise04" class="btn btn-info" data-toggle="collapse">Exercise 4-Screenshot</a></div>
+
+        <div id="Exercise04" class="collapse in  col-lg-12">
+
+            <p>
+                These steps are done on your laptop using VNC.
+            </p>
+
+                                <p>
+                                    <a href="images/sql.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/sql.PNG', 'popup'); return false;">
+                                        <img src="images/sql.PNG" width="200" alt="phpMyAdmin SQL Data" class="img-responsive img-responsive" /></a>phpMyAdmin SQL Data<br />
+                                </p>           
+            <ol>
+                <li>Save a screenshot that shows both your browser connection to 'phpMyAdmin' on the 'Target Station' AND shows a VNC connection to the 'Target Station'.<br />
+                    Use the Snipping Tool.
+                </li>
+
+                <li>On your laptop save the screenshot  as &quot;IOT25&quot; in your ' 
+             <code><span id="Path1"></span></code>
+                     ' folder.<br />
+                </li>
+            </ol>
+            <hr />
+        </div>
+
+
+        <div class="col-lg-12 text-danger">
+            <h2>Screenshot IOT25</h2>
+            <hr />
+        </div>
+
+
+
+
+
+        <div class="col-lg-12"><a href="#UploadScreenShot" class="btn btn-info" data-toggle="collapse">Upload Screenshot</a></div>
+
+        <div id="UploadScreenShot" class="collapse in  col-lg-12">
+            <p>
+                Submit to the appropriate D2L Assignment folder a screenshot that documents your work.<br />
+            </p>
+            <br />
+        </div>
+
+        <div class="col-lg-12 text-primary">
+            <p>
+                (100) 5. Upload your screenshot to the &#39;IOT25&#39; D2L Assignment Folder.
+            </p>
+            <hr />
+        </div>
+
+
+
+
+
+
+
+        <div class="col-lg-12"><a href="#ExerciseSubmit" class="btn btn-info" data-toggle="collapse">Submit Assignment</a></div>
+
+
+        <div class="col-lg-12">
+            <p>
+                When all tasks are completed press the Submit button.
+            </p>
+            <hr />
+        </div>
+
+        <div class="col-lg-12 text-primary">
+            (50) 6. Assignment submission<br />
+
+            <!-- Enter your answer in the VALUE field below   GROK -->
+            <input class="form-control" name="q6" type="text" id="q6" value="I have completed all the exercises, and uploaded my screenshot to the D2L Assignment folder IOT25." />
+            <hr />
+        </div>
+
+
+
+
+
+        <div class="col-lg-12">
+            <p>
+                Congratulations! You have collected sensor data from a Raspberry Pi in a relational database application-MySQL/mariadB on the Raspberry Pi, and viewed that data in a web browser using phpMyAdmin.                
+            </p>
+            <hr />
+        </div>
+
+
+
+
+
+
+        <div class=" col-lg-12">
+            <br />
+            <input class=" text-danger btn-block btn-lg" type="submit" name="Submit" value="SUBMIT -once you have completed this assignment- SUBMIT" />
+            <br />
+        </div>
+
+    </form>
+
+    <!-- PgP 5/31/2025 place js code at end to prevent race conditions -->
+
+    <!-- Creative Commons License Info -->
+    <footer>
+        <div id="licenseInfo" class="col-lg-12 text-muted"></div>
+        <div id="footerText" class="col-lg-12 text-muted"></div>
+    </footer>
+
+    <!-- ========== Script Includes (Order is Critical) ========== -->
+    <script src="../../ReadOnly/jquery-1.js"></script>
+    <script src="../../ReadOnly/bootstrap.js"></script>
+    <script src="../studentConstants.js"></script>
+    <script src="../../ReadOnly/courseConstants.js"></script>
+    <script src="../../ReadOnly/domForms.js"></script>
+
+
+</body>
+</html>

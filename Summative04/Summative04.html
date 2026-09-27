@@ -2,8 +2,8 @@
 <html lang="en">
 
 <!--
-PgP 8/16/2026 MIS342 Summative02 redesign
-- aligned to LuckyTire Formative02
+PgP 8/16/2026 MIS342 Summative04 redesign
+- aligned to LuckyTire Formative04
 - structure based on approved modified MIS342 Summative01
 - maximum three exercises, maximum two questions per exercise
 - Digital Artifact Notebook evidence limited to one screenshot per exercise
@@ -14,15 +14,7 @@ PgP 8/16/2026 MIS342 Summative02 redesign
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="../../ReadOnly/bootstrap.css" rel="stylesheet">
-    <title>MIS342 Summative02</title>
-    <style type="text/css">
-        .auto-style1 {
-            width: 959px;
-        }
-        .auto-style2 {
-            width: 815px;
-        }
-    </style>
+    <title>MIS342 Summative04</title>
 </head>
 
 <body class="container-fluid">
@@ -30,12 +22,12 @@ PgP 8/16/2026 MIS342 Summative02 redesign
     <form class="container-fluid" action="https://eprofessor.azurewebsites.net/codex/ProcessAICall.aspx" method="post" name="frmAssignment" id="frmAssignment">
 
         <input name="InstID" id="InstID" value="00617282" type="hidden">
-        <input name="assignmentVersion" id="assignmentVersion" value="Summative02-FA2026-v1" type="hidden">
+        <input name="assignmentVersion" id="assignmentVersion" value="Summative04-FA2026-v1" type="hidden">
         <input name="reflectionQuestion" id="reflectionQuestion" value="7" type="hidden">
 
-        <textarea id="datasetContext" name="datasetContext" readonly hidden>Assignment: MIS342 Summative02 — LuckyTire Relational Structure and Data Integrity. Aligned with Formative02. Students compare a flat LuckyTire sales file with normalized customer, tire, and sales tables; import the normalized CSVs into Access; assign primary keys and appropriate data types; create one-to-many relationships; enforce referential integrity; and deliberately test an invalid foreign-key value to verify that Access rejects an orphan sales record. Three exercises, six concise answers, Screenshot A/B/C, one final reflection, and standard DAN/web/D2L completion total 700 points. Direct Mode is standard; Personal Hermes Agent is not used yet. Reward analysis of redundancy, primary/foreign keys, compatible data types, one-to-many cardinality, referential integrity, and normalization through 3NF.</textarea>
+        <textarea id="datasetContext" name="datasetContext" readonly hidden>Assignment: MIS342 Summative04 — LuckyTire Forms, Subforms, and Reports. Aligned with Formative04. Students use a clean normalized LuckyTire database to create and test a customer form, a customer-sales main form/subform, and a grouped tire/sales report with a summary calculation. Personal Hermes becomes available in Summative04 but is optional; Direct Mode remains valid. No AI screenshot is required. Three exercises, six short answers, Screenshot A/B/C, one reflection and standard DAN/web/D2L completion total 700 points. Reward correct form-to-table behavior, one-to-many subform linkage, useful report grouping/summary, and independent verification.</textarea>
 
-        <h1 class="text-center">LuckyTire Relational Structure and Data Integrity</h1>
+        <h1 class="text-center">LuckyTire Forms, Subforms, and Reports</h1>
 
         <h2 id="student-info" class="sr-only">Student Information</h2>
         <div class="row" aria-labelledby="student-info">
@@ -75,7 +67,7 @@ PgP 8/16/2026 MIS342 Summative02 redesign
             </div></div>
             <div class="col-xs-12 col-sm-6 col-md-3"><div class="form-group">
                 <label for="assignment" class="text-dark">Assignment:</label>
-                <input class="form-control" name="assignment" id="assignment" type="text" readonly value="Summative02" aria-readonly="true" aria-label="Assignment" tabindex="0" />
+                <input class="form-control" name="assignment" id="assignment" type="text" readonly value="Summative04" aria-readonly="true" aria-label="Assignment" tabindex="0" />
             </div></div>
         </div>
 
@@ -91,15 +83,21 @@ PgP 8/16/2026 MIS342 Summative02 redesign
         </div>
 
         
-        <!-- ========== AI Work Context / Direct Mode ========== -->
+        <!-- ========== Hermes Agent Work Context ========== -->
         <div class="col-lg-12">
-            <a href="#AIWorkContext" class="btn btn-info" data-toggle="collapse" aria-expanded="true" aria-controls="AIWorkContext">AI Work Context — Direct Mode</a>
+            <a href="#HermesWorkContext" class="btn btn-info" data-toggle="collapse" aria-expanded="true" aria-controls="HermesWorkContext">Hermes Agent Work Context</a>
         </div>
-        <div id="AIWorkContext" class="collapse in col-lg-12">
-            <p><strong>Direct Mode is the standard workflow for Summative02.</strong> Complete the required hands-on work directly in Microsoft Access and Visual Studio, and verify the results yourself.</p>
-            <p>The instructor-provided MIS342 course AI assistant may be used for explanation, planning, or troubleshooting. Treat AI output as a candidate solution until you verify it in Access.</p>
-            <p><strong>Personal Hermes Agent is not used in Summative02.</strong> Personal Hermes Agent use begins with Summative04. When Hermes is introduced, Direct Mode will remain an acceptable option.</p>
-            <p>Do not include AI chat screenshots merely to prove AI use. The required evidence for this assignment is your database work.</p>
+        <div id="HermesWorkContext" class="collapse in col-lg-12">
+            <p><strong>Active profile:</strong> use your course-specific Hermes profile <code>mis342</code> when you choose to use Hermes.</p>
+            <p><strong>Hermes session:</strong></p>
+            <pre>First use:  /new Summative04
+Return later: /resume Summative04
+When finished using Hermes: /quit</pre>
+            <p><strong>Hermes is available for explanation, planning, troubleshooting, alternatives, review, or verification, but its use is not mandatory.</strong></p>
+            <p><strong>Direct Mode:</strong> You may complete routine or entire assignment steps directly in Microsoft Access and the other required course software when you understand the task. You must still verify the result yourself.</p>
+            <p><strong>Suggested Hermes checkpoint:</strong> Ask Hermes to review one form/subform or report design choice and identify one usability or verification check. Test the suggestion in Access before deciding whether to use it.</p>
+            <p>Hermes is a coach. It does not replace Microsoft Access, independent verification, Digital Artifact Notebook evidence, or your final judgment. Do not add a Hermes screenshot merely to prove use.</p>
+            <p><strong>Safety and verification:</strong> do not place passwords, API keys, ODBC passwords, private information, or restricted data in prompts. Treat agent output as a candidate solution until you verify it in Access or the target DBMS.</p>
             <hr />
         </div>
 
@@ -131,16 +129,16 @@ PgP 8/16/2026 MIS342 Summative02 redesign
             <a href="#Purpose" class="btn btn-info" data-toggle="collapse">Assignment Purpose and Learning Outcomes</a>
         </div>
         <div id="Purpose" class="collapse in col-lg-12">
-            <p>Formative02 introduced the difference between a flat file and normalized LuckyTire tables. Summative02 requires you to build and test the relational structure independently and demonstrate that the database prevents an invalid relationship.</p>
+            <p>Formative04 introduced user-facing forms/subforms and management reports. Summative04 requires you to build, test, and explain those objects more independently for LuckyTire.</p>
             <p>After completing this assignment, you will be able to:</p>
             <ol>
-                <li>Configure normalized customer, tire, and sales tables with appropriate primary keys and data types.</li>
-<li>Analyze repeated facts in a flat file and explain how normalization reduces redundancy.</li>
-<li>Create one-to-many relationships using compatible primary and foreign keys.</li>
-<li>Enforce and test referential integrity.</li>
-<li>Evaluate the business value of a normalized relational structure.</li>
+                <li>Create and test a form for LuckyTire customer data.</li>
+<li>Create a main form/subform representing a one-to-many relationship.</li>
+<li>Create a grouped report with an appropriate summary calculation.</li>
+<li>Verify that form edits affect the intended data and that report totals are correct.</li>
+<li>Evaluate the different business purposes of forms and reports.</li>
             </ol>
-            <p><strong>Primary course learning-outcome alignment:</strong> CLO 3, with supporting evidence for CLOs 2 and 8.</p>
+            <p><strong>Primary course learning-outcome alignment:</strong> CLOs 5 and 6, with supporting evidence for CLOs 8 and 11.</p>
             <p>Questions 1 through 6 require concise answers of no more than 500 characters. The Final Assignment Reflection allows a longer response.</p>
             <hr />
         </div>
@@ -151,14 +149,17 @@ PgP 8/16/2026 MIS342 Summative02 redesign
         </div>
         <div id="Resources" class="collapse in col-lg-12">
             <ul>
-                <li>Review your completed MIS342 Formative02.</li>
+                <li>Review your completed MIS342 Formative04.</li>
                 <li>Use the assigned Cengage MindTap/eBook material for the Access topics in this assignment.</li>
                 <li>Use Microsoft Access in Microsoft 365.</li>
                 <li>Use Visual Studio Enterprise 2026 to edit and publish this HTML assignment.</li>
-                <li>Download <a href="LuckyTire_FlatSales.csv" class="bg-info text-white">LuckyTire_FlatSales.csv</a>.</li>
-<li>Download <a href="LuckyTire_tblCustomer.csv" class="bg-info text-white">LuckyTire_tblCustomer.csv</a>, <a href="LuckyTire_tblTires.csv" class="bg-info text-white">LuckyTire_tblTires.csv</a>, and <a href="LuckyTire_tblSales.csv" class="bg-info text-white">LuckyTire_tblSales.csv</a>.</li>
+                <li>Download <a href="LuckyTire_Normalized_Summative04.accdb" class="bg-info text-white">LuckyTire_Normalized_Summative04.accdb</a>.</li>
             </ul>
             
+            <p>Hermes in the <code>mis342</code> profile is optional. Direct Mode is always available unless an instructor later states otherwise.</p>
+            <p>Suggested Hermes prompt:<br><code>I am completing MIS342 Summative04. I am building a LuckyTire customer form, customer/sales main form with subform, and grouped report. Give me one usability check and one independent data-verification check. I will perform the checks in Access.</code></p>
+            <p>Hermes does not automatically receive your Access database. Provide only the non-sensitive object names, SQL, VBA, or error text needed for the question, then verify the recommendation in the actual software.</p>
+
             <hr />
         </div>
 
@@ -166,43 +167,42 @@ PgP 8/16/2026 MIS342 Summative02 redesign
         
         <!-- ========== Exercise 1 ========== -->
         <div class="col-lg-12">
-            <a href="#Exercise01" class="btn btn-info" data-toggle="collapse">Exercise 1 — Table Structure and Normalization</a>
+            <a href="#Exercise01" class="btn btn-info" data-toggle="collapse">Exercise 1 — Customer Form and Data Entry</a>
         </div>
         <div id="Exercise01" class="collapse in col-lg-12">
             <ol>
-                <li>Open LuckyTire_FlatSales.csv and identify customer and tire facts repeated across multiple sales rows.</li>
-<li>Create a blank database named <strong>Summative02_LuckyTire.accdb</strong>.</li>
-<li>Import LuckyTire_tblCustomer.csv as <strong>tblCustomer</strong>; set CustID as the primary key.</li>
-<li>Import LuckyTire_tblTires.csv as <strong>tblTires</strong>; set PartID as the primary key and verify UnitPrice is Currency.</li>
-<li>Import LuckyTire_tblSales.csv as <strong>tblSales</strong>; set Invoice as the primary key and verify InvoiceDate, CustID, PartID, Quantity, and InvoicePaid use appropriate data types.</li>
-<li>Open tblSales in Design View and verify that CustID and PartID are compatible with the related primary-key data types.</li>
+                <li>Download LuckyTire_Normalized_Summative04.accdb and save a working copy as <strong>Summative04_LuckyTire.accdb</strong>.</li>
+<li>Use the Form Wizard to create a form based on the customer table using the major customer fields. Save it as <strong>frmCustomer</strong>.</li>
+<li>Improve the title/layout enough that the business purpose is clear.</li>
+<li>Use Find to locate an existing customer and make one harmless test edit in the working copy.</li>
+<li>Verify in the underlying customer table that the same value changed, then restore the original value.</li>
             </ol>
             
             <p>
                 <label for="q1"><strong>(50) Question 1</strong></label>
-                <textarea class="auto-style1" id="q1" name="q1" rows="4" readonly aria-readonly="true">Identify one fact repeated in LuckyTire_FlatSales.csv that is stored only once in the normalized tables. Why is that an improvement?</textarea>
+                <textarea class="form-control" id="q1" name="q1" rows="4" readonly aria-readonly="true">How did you verify that editing frmCustomer changed the underlying customer record rather than a separate copy?</textarea>
                 <br />
                 <label for="a1"><strong>Your answer:</strong></label>
                 <input name="a1" id="a1" size="500" maxlength="500" class="form-control"
-                    value="customer information like first name is repeated often" type="text"><br />
+                    value="[Replace this text with your answer]" type="text"><br />
             </p>
 
             <p>
                 <label for="q2"><strong>(50) Question 2</strong></label>
-                <textarea class="auto-style2" id="q2" name="q2" rows="4" readonly aria-readonly="true">Why must tblSales.CustID and tblCustomer.CustID use compatible data types even though one is a foreign key and the other is a primary key?</textarea>
+                <textarea class="form-control" id="q2" name="q2" rows="4" readonly aria-readonly="true">Identify one form design choice that makes customer data easier or safer for a LuckyTire employee to use.</textarea>
                 <br />
                 <label for="a2"><strong>Your answer:</strong></label>
                 <input name="a2" id="a2" size="500" maxlength="500" class="form-control"
-                    value="access and other rdbms require this to enforce referential integritry, which is impossible if data types are not compatible" type="text"><br />
+                    value="[Replace this text with your answer]" type="text"><br />
             </p>
 
             
-            <h2><strong> Screenshot A — Sales Table Design</strong></h2>
-            <p>Capture <strong>tblSales in Design View</strong> with Invoice, CustID, PartID, Quantity, InvoicePaid, and their data types visible.</p>
-            <p>Paste <strong>(50) Screenshot A</strong> directly into <strong>Section 1 - Task Evidence</strong> on your OneNote page named <code><span class="SummativeID"></span></code>. Label it <strong>Task Evidence A - Sales Table Design</strong>.</p>
+            <h2><strong> Screenshot A — Customer Form</strong></h2>
+            <p>Capture <strong>frmCustomer in Form View</strong> showing a complete customer record and a readable form title.</p>
+            <p>Paste <strong>(50) Screenshot A</strong> directly into <strong>Section 1 - Task Evidence</strong> on your OneNote page named <code><span class="SummativeID"></span></code>. Label it <strong>Task Evidence A - Customer Form</strong>.</p>
             <ul>
-                <li><strong>Verification:</strong> Explain what the screenshot proves about the table's key and field design.</li>
-                <li><strong>Business or course relevance:</strong> Explain why correct keys/data types are necessary before LuckyTire can create reliable relationships.</li>
+                <li><strong>Verification:</strong> Explain what the screenshot proves about the form's record source and usability.</li>
+                <li><strong>Business or course relevance:</strong> Explain why a controlled form is preferable to exposing the raw table for many employee tasks.</li>
             </ul>
 
             <hr />
@@ -211,20 +211,20 @@ PgP 8/16/2026 MIS342 Summative02 redesign
 
         <!-- ========== Exercise 2 ========== -->
         <div class="col-lg-12">
-            <a href="#Exercise02" class="btn btn-info" data-toggle="collapse">Exercise 2 — Relationships and Referential Integrity</a>
+            <a href="#Exercise02" class="btn btn-info" data-toggle="collapse">Exercise 2 — Customer Main Form and Sales Subform</a>
         </div>
         <div id="Exercise02" class="collapse in col-lg-12">
             <ol>
-                <li>Open Database Tools &gt; Relationships and add tblCustomer, tblSales, and tblTires.</li>
-<li>Create a one-to-many relationship from tblCustomer.CustID to tblSales.CustID and enforce referential integrity.</li>
-<li>Create a one-to-many relationship from tblTires.PartID to tblSales.PartID and enforce referential integrity.</li>
-<li>Verify that each relationship displays <strong>1</strong> on the parent side and <strong>∞</strong> on the tblSales side.</li>
-<li>Save the Relationships layout.</li>
+                <li>Create a main form based on the customer table and a subform based on the related sales table/query.</li>
+<li>Link the main form and subform through the customer key field using the wizard or properties.</li>
+<li>Save the main form as <strong>frmCustomerSales</strong>.</li>
+<li>Move among at least three customers and confirm that the subform changes to show only each customer's related sales.</li>
+<li>Use Hermes optionally, or Direct Mode, to identify one relationship/usability check and perform it in Access.</li>
             </ol>
             
             <p>
                 <label for="q3"><strong>(50) Question 3</strong></label>
-                <textarea class="form-control" id="q3" name="q3" rows="4" readonly aria-readonly="true">Why are the customer-to-sales and tire-to-sales relationships one-to-many rather than one-to-one?</textarea>
+                <textarea class="form-control" id="q3" name="q3" rows="4" readonly aria-readonly="true">Why is a subform appropriate for showing one LuckyTire customer and that customer's many sales?</textarea>
                 <br />
                 <label for="a3"><strong>Your answer:</strong></label>
                 <input name="a3" id="a3" size="500" maxlength="500" class="form-control"
@@ -233,7 +233,7 @@ PgP 8/16/2026 MIS342 Summative02 redesign
 
             <p>
                 <label for="q4"><strong>(50) Question 4</strong></label>
-                <textarea class="form-control" id="q4" name="q4" rows="4" readonly aria-readonly="true">What does enforcing referential integrity prevent LuckyTire employees from doing with tblSales?</textarea>
+                <textarea class="form-control" id="q4" name="q4" rows="4" readonly aria-readonly="true">What did you do to verify that the subform displayed only the sales related to the current customer?</textarea>
                 <br />
                 <label for="a4"><strong>Your answer:</strong></label>
                 <input name="a4" id="a4" size="500" maxlength="500" class="form-control"
@@ -241,12 +241,12 @@ PgP 8/16/2026 MIS342 Summative02 redesign
             </p>
 
             
-            <h2><strong> Screenshot B — Relationships Window</strong></h2>
-            <p>Capture the <strong>Relationships window</strong> showing tblCustomer, tblSales, tblTires, both relationship lines, and the 1/∞ symbols.</p>
-            <p>Paste <strong>(50) Screenshot B</strong> directly into <strong>Section 1 - Task Evidence</strong> on your OneNote page named <code><span class="SummativeID"></span></code>. Label it <strong>Task Evidence B - Relationships Window</strong>.</p>
+            <h2><strong> Screenshot B — Customer Sales Subform</strong></h2>
+            <p>Capture <strong>frmCustomerSales in Form View</strong> with one customer and that customer's related sales visible in the subform.</p>
+            <p>Paste <strong>(50) Screenshot B</strong> directly into <strong>Section 1 - Task Evidence</strong> on your OneNote page named <code><span class="SummativeID"></span></code>. Label it <strong>Task Evidence B - Customer Sales Subform</strong>.</p>
             <ul>
-                <li><strong>Verification:</strong> Explain how the screenshot proves the intended cardinality and referential-integrity structure.</li>
-                <li><strong>Business or course relevance:</strong> Explain why these relationships let LuckyTire connect sales to customer/tire facts without duplicating those facts.</li>
+                <li><strong>Verification:</strong> Explain how the screenshot proves the main/subform relationship is working.</li>
+                <li><strong>Business or course relevance:</strong> Explain how this interface supports an employee task that would be harder in separate raw tables.</li>
             </ul>
 
             <hr />
@@ -255,21 +255,21 @@ PgP 8/16/2026 MIS342 Summative02 redesign
 
         <!-- ========== Exercise 3 ========== -->
         <div class="col-lg-12">
-            <a href="#Exercise03" class="btn btn-info" data-toggle="collapse">Exercise 3 — Test the Integrity Rule</a>
+            <a href="#Exercise03" class="btn btn-info" data-toggle="collapse">Exercise 3 — Grouped Management Report</a>
         </div>
         <div id="Exercise03" class="collapse in col-lg-12">
             <ol>
-                <li>Make a backup copy of Summative02_LuckyTire.accdb before testing.</li>
-<li>Open tblSales and begin a new record using a unique Invoice value.</li>
-<li>Enter <strong>CustID 999</strong>, which does not exist in tblCustomer, plus otherwise valid values.</li>
-<li>Attempt to save the record. Access should reject the record because referential integrity would create an orphan sale.</li>
-<li>Capture the Access message, then cancel/delete the incomplete test record so no invalid record remains.</li>
-<li>Verify that all original sales records are still present.</li>
+                <li>Create a report based on tire/sales data using the existing related tables or an appropriate query.</li>
+<li>Include fields that identify the tire and sale plus Quantity and/or UnitPrice.</li>
+<li>Group by a meaningful field such as Manufacturer or TireType.</li>
+<li>Add a summary calculation such as total Quantity or average UnitPrice.</li>
+<li>Save the report as <strong>rptLuckyTireSales</strong>.</li>
+<li>Open Print Preview and independently verify one group total or average against the source query/table.</li>
             </ol>
             
             <p>
                 <label for="q5"><strong>(50) Question 5</strong></label>
-                <textarea class="form-control" id="q5" name="q5" rows="4" readonly aria-readonly="true">What happened when you tried to save a sale for CustID 999, and what database rule caused that result?</textarea>
+                <textarea class="form-control" id="q5" name="q5" rows="4" readonly aria-readonly="true">How does rptLuckyTireSales serve a different business purpose from frmCustomerSales?</textarea>
                 <br />
                 <label for="a5"><strong>Your answer:</strong></label>
                 <input name="a5" id="a5" size="500" maxlength="500" class="form-control"
@@ -278,7 +278,7 @@ PgP 8/16/2026 MIS342 Summative02 redesign
 
             <p>
                 <label for="q6"><strong>(50) Question 6</strong></label>
-                <textarea class="form-control" id="q6" name="q6" rows="4" readonly aria-readonly="true">Why is the extra complexity of normalized tables and relationships worth it for LuckyTire as the database grows?</textarea>
+                <textarea class="form-control" id="q6" name="q6" rows="4" readonly aria-readonly="true">What total or average did you verify, and what source evidence showed that the report calculation was correct?</textarea>
                 <br />
                 <label for="a6"><strong>Your answer:</strong></label>
                 <input name="a6" id="a6" size="500" maxlength="500" class="form-control"
@@ -286,12 +286,12 @@ PgP 8/16/2026 MIS342 Summative02 redesign
             </p>
 
             
-            <h2><strong> Screenshot C — Referential Integrity Test</strong></h2>
-            <p>Capture the <strong>Access message rejecting the invalid CustID 999 sales record</strong>. Do not leave the invalid record in the table.</p>
-            <p>Paste <strong>(50) Screenshot C</strong> directly into <strong>Section 1 - Task Evidence</strong> on your OneNote page named <code><span class="SummativeID"></span></code>. Label it <strong>Task Evidence C - Referential Integrity Test</strong>.</p>
+            <h2><strong> Screenshot C — Grouped Report</strong></h2>
+            <p>Capture <strong>rptLuckyTireSales in Print Preview</strong> with a group heading and summary calculation visible.</p>
+            <p>Paste <strong>(50) Screenshot C</strong> directly into <strong>Section 1 - Task Evidence</strong> on your OneNote page named <code><span class="SummativeID"></span></code>. Label it <strong>Task Evidence C - Grouped Report</strong>.</p>
             <ul>
-                <li><strong>Verification:</strong> Explain what the error proves about referential integrity.</li>
-                <li><strong>Business or course relevance:</strong> Explain why preventing orphan records protects LuckyTire's data quality.</li>
+                <li><strong>Verification:</strong> Explain how you verified the shown summary.</li>
+                <li><strong>Business or course relevance:</strong> Explain why grouped summaries are useful to LuckyTire management.</li>
             </ul>
 
             <hr />
@@ -305,7 +305,7 @@ PgP 8/16/2026 MIS342 Summative02 redesign
         <div id="FinalReflection" class="collapse in col-lg-12">
             <p>Complete and publish the assignment before responding.</p>
             <label for="q7"><strong>(50) Question 7 — Final Reflection</strong></label>
-            <textarea class="form-control" style="font-weight: bold;" id="q7" name="q7" rows="6" maxlength="3000" readonly aria-readonly="true">Considering the flat file, normalized tables, keys, relationships, and referential-integrity test, what is the most important improvement the relational design gives LuckyTire? Explain how your work demonstrated that improvement.</textarea>
+            <textarea class="form-control" style="font-weight: bold;" id="q7" name="q7" rows="6" maxlength="3000" readonly aria-readonly="true">Considering the form, subform, and report work, what is the most important way a database application's user interface can improve LuckyTire's data quality or decision making? Refer to at least one test you performed.</textarea>
             <br />
             <div class="alert alert-warning" role="alert">
                 Complete this reflection in the published webpage. Your response is submitted to the web database but is not saved back into your HTML file. Draft or copy your reflection before submitting. You may use the same reflection in your Digital Artifact Notebook.
@@ -349,7 +349,7 @@ PgP 8/16/2026 MIS342 Summative02 redesign
             <p><strong>(50 points) D2L PDF submission:</strong> Upload <code><span class="SummativeID"></span>.pdf</code> to the matching D2L assignment folder.</p>
 
             <h2>4. Complete the Web Submission Requirements</h2>
-            <p><strong>(50 points) Home Page Hyperlink:</strong> Verify that Summative02 is linked correctly from your MIS342 course home page.</p>
+            <p><strong>(50 points) Home Page Hyperlink:</strong> Verify that Summative04 is linked correctly from your MIS342 course home page.</p>
             <p><strong>(50 points) Web Database Submission:</strong> Press the Submit button at the top or bottom of this page. Your answers are saved to the web database and sent for formative AI feedback.</p>
             <ul>
                 <li>The AI feedback is not a grade.</li>

@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="en">
+
+<!--
+PgP 8/16/2026 MIS342 Summative05 redesign
+- aligned to LuckyTire Formative05
+- structure based on approved modified MIS342 Summative01
+- maximum three exercises, maximum two questions per exercise
+- Digital Artifact Notebook evidence limited to one screenshot per exercise
+- Personal Hermes Agent optional beginning with Summative04; Direct Mode remains available
+-->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="../../ReadOnly/bootstrap.css" rel="stylesheet">
+    <title>MIS342 Summative05</title>
+</head>
+
+<body class="container-fluid">
+
+    <form class="container-fluid" action="https://eprofessor.azurewebsites.net/codex/ProcessAICall.aspx" method="post" name="frmAssignment" id="frmAssignment">
+
+        <input name="InstID" id="InstID" value="00617282" type="hidden">
+        <input name="assignmentVersion" id="assignmentVersion" value="Summative05-FA2026-v1" type="hidden">
+        <input name="reflectionQuestion" id="reflectionQuestion" value="7" type="hidden">
+
+        <textarea id="datasetContext" name="datasetContext" readonly hidden>Assignment: MIS342 Summative05 — LuckyTire Advanced Queries and Data Validation. Aligned with Formative05. Students use a clean LuckyTire starter to configure one data-quality rule, create/test parameter and unmatched/duplicate queries, and create a totals or crosstab query while inspecting Access SQL. Hermes is optional and Direct Mode remains valid. Three exercises, six short answers, three DAN screenshots, one reflection and standard completion total 700 points. Reward appropriate validation, business-focused advanced query design, Access SQL awareness, and explicit verification.</textarea>
+
+        <h1 class="text-center">LuckyTire Advanced Queries and Data Validation</h1>
+
+        <h2 id="student-info" class="sr-only">Student Information</h2>
+        <div class="row" aria-labelledby="student-info">
+            <div class="col-xs-12 col-sm-6 col-md-3"><div class="form-group">
+                <label for="FirstName" class="text-dark">First Name:</label>
+                <input class="form-control" name="FirstName" id="FirstName" type="text" readonly aria-readonly="true" autocomplete="given-name" aria-label="First Name" tabindex="0" />
+            </div></div>
+            <div class="col-xs-12 col-sm-6 col-md-3"><div class="form-group">
+                <label for="LastName" class="text-dark">Last Name:</label>
+                <input class="form-control" name="LastName" id="LastName" type="text" readonly aria-readonly="true" autocomplete="family-name" aria-label="Last Name" tabindex="0" />
+            </div></div>
+            <div class="col-xs-12 col-sm-6 col-md-3"><div class="form-group">
+                <label for="StarID" class="text-dark">StarID:</label>
+                <input class="form-control" name="StarID" id="StarID" type="text" readonly aria-readonly="true" autocomplete="username" aria-label="StarID" tabindex="0" />
+            </div></div>
+            <div class="col-xs-12 col-sm-6 col-md-3"><div class="form-group">
+                <label for="email" class="text-dark">Email:</label>
+                <input class="form-control" name="email" id="email" type="email" readonly aria-readonly="true" autocomplete="email" aria-label="Email" tabindex="0" />
+            </div></div>
+        </div>
+
+        <input name="pin" id="pin" type="hidden" />
+
+        <h2 id="course-info" class="sr-only">Course Information</h2>
+        <div class="row" aria-labelledby="course-info">
+            <div class="col-xs-12 col-sm-6 col-md-3"><div class="form-group">
+                <label for="Semester" class="text-dark">Semester:</label>
+                <input class="form-control" name="Semester" id="Semester" type="text" readonly aria-readonly="true" aria-label="Semester" tabindex="0" />
+            </div></div>
+            <div class="col-xs-12 col-sm-6 col-md-3"><div class="form-group">
+                <label for="Class" class="text-dark">Class:</label>
+                <input class="form-control" name="Class" id="Class" type="text" readonly aria-readonly="true" aria-label="Class" tabindex="0" />
+            </div></div>
+            <div class="col-xs-12 col-sm-6 col-md-3"><div class="form-group">
+                <label for="Section" class="text-dark">Section:</label>
+                <input class="form-control" name="Section" id="Section" type="text" readonly aria-readonly="true" aria-label="Section" tabindex="0" />
+            </div></div>
+            <div class="col-xs-12 col-sm-6 col-md-3"><div class="form-group">
+                <label for="assignment" class="text-dark">Assignment:</label>
+                <input class="form-control" name="assignment" id="assignment" type="text" readonly value="Summative05" aria-readonly="true" aria-label="Assignment" tabindex="0" />
+            </div></div>
+        </div>
+
+        <div class="col-lg-12">
+            <br />
+            <input class="btn btn-danger btn-block btn-lg" name="Submit" value="Submit to the web database and receive AI feedback" type="submit">
+            <br />
+        </div>
+
+        <div class="col-lg-12 h3 text-danger">
+            700 Points
+            <hr />
+        </div>
+
+        
+        <!-- ========== Hermes Agent Work Context ========== -->
+        <div class="col-lg-12">
+            <a href="#HermesWorkContext" class="btn btn-info" data-toggle="collapse" aria-expanded="true" aria-controls="HermesWorkContext">Hermes Agent Work Context</a>
+        </div>
+        <div id="HermesWorkContext" class="collapse in col-lg-12">
+            <p><strong>Active profile:</strong> use your course-specific Hermes profile <code>mis342</code> when you choose to use Hermes.</p>
+            <p><strong>Hermes session:</strong></p>
+            <pre>First use:  /new Summative05
+Return later: /resume Summative05
+When finished using Hermes: /quit</pre>
+            <p><strong>Hermes is available for explanation, planning, troubleshooting, alternatives, review, or verification, but its use is not mandatory.</strong></p>
+            <p><strong>Direct Mode:</strong> You may complete routine or entire assignment steps directly in Microsoft Access and the other required course software when you understand the task. You must still verify the result yourself.</p>
+            <p><strong>Suggested Hermes checkpoint:</strong> Paste the Access SQL from one advanced query into Hermes and ask it to explain the logic and propose one verification test. Keep the dialect explicitly Microsoft Access SQL.</p>
+            <p>Hermes is a coach. It does not replace Microsoft Access, independent verification, Digital Artifact Notebook evidence, or your final judgment. Do not add a Hermes screenshot merely to prove use.</p>
+            <p><strong>Safety and verification:</strong> do not place passwords, API keys, ODBC passwords, private information, or restricted data in prompts. Treat agent output as a candidate solution until you verify it in Access or the target DBMS.</p>
+            <hr />
+        </div>
+
+
+        <!-- ========== Completion Sequence ========== -->
+        <div class="col-lg-12">
+            <h2>Assignment Completion Sequence</h2>
+            <p>Use this sequence as the main checklist for completing the assignment.</p>
+            <ol>
+                <li>Review all three exercises, six concise questions, and required <strong>Screenshot A, Screenshot B, and Screenshot C</strong> before beginning.</li>
+                <li>Create the <code><span class="SummativeID"></span></code> page in your OneNote Digital Artifact Notebook and copy the
+                    <a href="../DigitalArtifactNotebook/ArtifactTemplate.html" class="bg-info text-white" target="_blank">Digital Artifact Notebook Template</a> to that page.</li>
+                <li>Complete the Access/database work. Capture each required screenshot when the related exercise is correct.</li>
+                <li>For each screenshot, add a verification statement explaining what it proves and a business or course relevance statement explaining why it matters.</li>
+                <li>Enter the six short answers into the HTML file in Visual Studio. Publish the assignment and verify the published webpage.</li>
+                <li>Complete the Final Assignment Reflection in the published webpage at least once and keep a copy for the DAN page.</li>
+                <li>Submit the published webpage for formative AI feedback. Revise and republish when feedback identifies a meaningful issue.</li>
+                <li>Follow <strong>Complete and Submit the Assignment</strong> to insert <code>WebPage.pdf</code>, export the DAN page, upload the PDF to D2L, and complete the web submission.</li>
+            </ol>
+            <div class="alert alert-info" role="note">
+                <strong>Two separate submissions are required:</strong> the web-database submission and the D2L upload of <code><span class="SummativeID"></span>.pdf</code>.
+            </div>
+        </div>
+
+        <hr />
+
+        <!-- ========== Purpose ========== -->
+        <div class="col-lg-12">
+            <a href="#Purpose" class="btn btn-info" data-toggle="collapse">Assignment Purpose and Learning Outcomes</a>
+        </div>
+        <div id="Purpose" class="collapse in col-lg-12">
+            <p>Formative05 introduced advanced Access queries and validation. Summative05 requires you to choose appropriate query types and controls for LuckyTire business questions and prove that generated results are correct.</p>
+            <p>After completing this assignment, you will be able to:</p>
+            <ol>
+                <li>Configure an appropriate validation or input rule.</li>
+<li>Create and test a parameter query.</li>
+<li>Use duplicate or unmatched query logic for a data-quality/business question.</li>
+<li>Create a totals or crosstab query for management analysis.</li>
+<li>Inspect Access SQL and verify generated-query results.</li>
+            </ol>
+            <p><strong>Primary course learning-outcome alignment:</strong> CLOs 4 and 8, with supporting evidence for CLO 11.</p>
+            <p>Questions 1 through 6 require concise answers of no more than 500 characters. The Final Assignment Reflection allows a longer response.</p>
+            <hr />
+        </div>
+
+        
+        <div class="col-lg-12">
+            <a href="#Resources" class="btn btn-info" data-toggle="collapse" aria-expanded="true" aria-controls="Resources">Resources and Help</a>
+        </div>
+        <div id="Resources" class="collapse in col-lg-12">
+            <ul>
+                <li>Review your completed MIS342 Formative05.</li>
+                <li>Use the assigned Cengage MindTap/eBook material for the Access topics in this assignment.</li>
+                <li>Use Microsoft Access in Microsoft 365.</li>
+                <li>Use Visual Studio Enterprise 2026 to edit and publish this HTML assignment.</li>
+                <li>Download <a href="LuckyTire_Normalized_Summative05.accdb" class="bg-info text-white">LuckyTire_Normalized_Summative05.accdb</a>.</li>
+            </ul>
+            
+            <p>Hermes in the <code>mis342</code> profile is optional. Direct Mode is always available unless an instructor later states otherwise.</p>
+            <p>Suggested Hermes prompt:<br><code>I am completing MIS342 Summative05. I will paste Microsoft Access SQL from an advanced LuckyTire query. Explain the query logic and give me one independent verification test. Keep the dialect as Microsoft Access SQL.</code></p>
+            <p>Hermes does not automatically receive your Access database. Provide only the non-sensitive object names, SQL, VBA, or error text needed for the question, then verify the recommendation in the actual software.</p>
+
+            <hr />
+        </div>
+
+
+        
+        <!-- ========== Exercise 1 ========== -->
+        <div class="col-lg-12">
+            <a href="#Exercise01" class="btn btn-info" data-toggle="collapse">Exercise 1 — Data Validation</a>
+        </div>
+        <div id="Exercise01" class="collapse in col-lg-12">
+            <ol>
+                <li>Download LuckyTire_Normalized_Summative05.accdb and save a working copy as <strong>Summative05_LuckyTire.accdb</strong>.</li>
+<li>Choose one field where invalid values could harm LuckyTire data quality, such as Quantity, UnitPrice, Year, State, Phone, or another appropriate field in the starter.</li>
+<li>Create an appropriate Validation Rule, Required setting, input mask, or indexed/no-duplicates rule.</li>
+<li>Enter a harmless invalid test value in the working copy and confirm that Access prevents or flags it.</li>
+<li>Restore the valid value and verify that normal entry still works.</li>
+            </ol>
+            
+            <p>
+                <label for="q1"><strong>(50) Question 1</strong></label>
+                <textarea class="form-control" id="q1" name="q1" rows="4" readonly aria-readonly="true">What data-quality rule did you add, what bad value did it prevent, and why is that rule appropriate for LuckyTire?</textarea>
+                <br />
+                <label for="a1"><strong>Your answer:</strong></label>
+                <input name="a1" id="a1" size="500" maxlength="500" class="form-control"
+                    value="[Replace this text with your answer]" type="text"><br />
+            </p>
+
+            <p>
+                <label for="q2"><strong>(50) Question 2</strong></label>
+                <textarea class="form-control" id="q2" name="q2" rows="4" readonly aria-readonly="true">What is one limitation of relying only on field validation to guarantee correct business data?</textarea>
+                <br />
+                <label for="a2"><strong>Your answer:</strong></label>
+                <input name="a2" id="a2" size="500" maxlength="500" class="form-control"
+                    value="[Replace this text with your answer]" type="text"><br />
+            </p>
+
+            
+            <h2><strong> Screenshot A — Validation Rule</strong></h2>
+            <p>Capture the relevant <strong>table Design View/field properties</strong> showing the validation, Required, input-mask, or index setting you implemented.</p>
+            <p>Paste <strong>(50) Screenshot A</strong> directly into <strong>Section 1 - Task Evidence</strong> on your OneNote page named <code><span class="SummativeID"></span></code>. Label it <strong>Task Evidence A - Validation Rule</strong>.</p>
+            <ul>
+                <li><strong>Verification:</strong> Explain what rule the screenshot proves is configured.</li>
+                <li><strong>Business or course relevance:</strong> Explain what type of data-quality problem the rule helps LuckyTire prevent.</li>
+            </ul>
+
+            <hr />
+        </div>
+
+
+        <!-- ========== Exercise 2 ========== -->
+        <div class="col-lg-12">
+            <a href="#Exercise02" class="btn btn-info" data-toggle="collapse">Exercise 2 — Parameter and Exception Query</a>
+        </div>
+        <div id="Exercise02" class="collapse in col-lg-12">
+            <ol>
+                <li>Create a parameter query that asks for a meaningful LuckyTire value such as City, Manufacturer, TireType, or another field present in the starter. Save it as <strong>qryLuckyTireParameter</strong>.</li>
+<li>Run it with at least two valid parameter values and one value that returns no rows.</li>
+<li>Use Find Unmatched or Find Duplicates Query Wizard where the data support a meaningful question, such as customers without sales or repeated business activity.</li>
+<li>Save the second query as <strong>qryLuckyTireException</strong>.</li>
+<li>Verify at least one returned or absent record against the source tables.</li>
+            </ol>
+            
+            <p>
+                <label for="q3"><strong>(50) Question 3</strong></label>
+                <textarea class="form-control" id="q3" name="q3" rows="4" readonly aria-readonly="true">What business question does your parameter query answer, and how did testing multiple parameter values help verify it?</textarea>
+                <br />
+                <label for="a3"><strong>Your answer:</strong></label>
+                <input name="a3" id="a3" size="500" maxlength="500" class="form-control"
+                    value="[Replace this text with your answer]" type="text"><br />
+            </p>
+
+            <p>
+                <label for="q4"><strong>(50) Question 4</strong></label>
+                <textarea class="form-control" id="q4" name="q4" rows="4" readonly aria-readonly="true">What exception did qryLuckyTireException identify or test for, and how did you confirm the result against source data?</textarea>
+                <br />
+                <label for="a4"><strong>Your answer:</strong></label>
+                <input name="a4" id="a4" size="500" maxlength="500" class="form-control"
+                    value="[Replace this text with your answer]" type="text"><br />
+            </p>
+
+            
+            <h2><strong> Screenshot B — Advanced Query Result</strong></h2>
+            <p>Capture the <strong>result of qryLuckyTireParameter or qryLuckyTireException</strong> with the query name and relevant records visible.</p>
+            <p>Paste <strong>(50) Screenshot B</strong> directly into <strong>Section 1 - Task Evidence</strong> on your OneNote page named <code><span class="SummativeID"></span></code>. Label it <strong>Task Evidence B - Advanced Query Result</strong>.</p>
+            <ul>
+                <li><strong>Verification:</strong> Explain the source-table check used to verify the result.</li>
+                <li><strong>Business or course relevance:</strong> Explain why the parameter/exception query is useful to a LuckyTire employee or manager.</li>
+            </ul>
+
+            <hr />
+        </div>
+
+
+        <!-- ========== Exercise 3 ========== -->
+        <div class="col-lg-12">
+            <a href="#Exercise03" class="btn btn-info" data-toggle="collapse">Exercise 3 — Totals or Crosstab Analysis</a>
+        </div>
+        <div id="Exercise03" class="collapse in col-lg-12">
+            <ol>
+                <li>Create a totals or crosstab query that summarizes a numeric measure such as Quantity or sales amount by one or two meaningful business dimensions.</li>
+<li>Save it as <strong>qryLuckyTireSummary</strong>.</li>
+<li>Run the query and verify one displayed total by checking the underlying records.</li>
+<li>Open SQL View and identify the aggregate/grouping logic; for a crosstab, identify the Access TRANSFORM/PIVOT structure.</li>
+<li>Optionally ask Hermes to explain the SQL, then confirm the explanation by returning to Design View and the source data.</li>
+            </ol>
+            
+            <p>
+                <label for="q5"><strong>(50) Question 5</strong></label>
+                <textarea class="form-control" id="q5" name="q5" rows="4" readonly aria-readonly="true">What dimensions and measure does qryLuckyTireSummary compare or summarize, and what business question does it answer?</textarea>
+                <br />
+                <label for="a5"><strong>Your answer:</strong></label>
+                <input name="a5" id="a5" size="500" maxlength="500" class="form-control"
+                    value="[Replace this text with your answer]" type="text"><br />
+            </p>
+
+            <p>
+                <label for="q6"><strong>(50) Question 6</strong></label>
+                <textarea class="form-control" id="q6" name="q6" rows="4" readonly aria-readonly="true">How did you verify one summary value, and why is that verification necessary even when Access or AI generated part of the query?</textarea>
+                <br />
+                <label for="a6"><strong>Your answer:</strong></label>
+                <input name="a6" id="a6" size="500" maxlength="500" class="form-control"
+                    value="[Replace this text with your answer]" type="text"><br />
+            </p>
+
+            
+            <h2><strong> Screenshot C — Summary Query</strong></h2>
+            <p>Capture <strong>qryLuckyTireSummary in Datasheet View</strong> with row/column headings or grouped totals clearly readable.</p>
+            <p>Paste <strong>(50) Screenshot C</strong> directly into <strong>Section 1 - Task Evidence</strong> on your OneNote page named <code><span class="SummativeID"></span></code>. Label it <strong>Task Evidence C - Summary Query</strong>.</p>
+            <ul>
+                <li><strong>Verification:</strong> Explain the calculation/source-record check supporting one displayed value.</li>
+                <li><strong>Business or course relevance:</strong> Explain why summarized information is more useful than raw rows for the selected LuckyTire question.</li>
+            </ul>
+
+            <hr />
+        </div>
+
+
+        <!-- ========== Final Reflection ========== -->
+        <div class="col-lg-12">
+            <a href="#FinalReflection" class="btn btn-info" data-toggle="collapse">Final Assignment Reflection</a>
+        </div>
+        <div id="FinalReflection" class="collapse in col-lg-12">
+            <p>Complete and publish the assignment before responding.</p>
+            <label for="q7"><strong>(50) Question 7 — Final Reflection</strong></label>
+            <textarea class="form-control" style="font-weight: bold;" id="q7" name="q7" rows="6" maxlength="3000" readonly aria-readonly="true">Access Wizards and Hermes can both generate candidate database solutions. What should a LuckyTire employee verify before trusting a generated query or validation rule, and what evidence from this assignment supports your answer?</textarea>
+            <br />
+            <div class="alert alert-warning" role="alert">
+                Complete this reflection in the published webpage. Your response is submitted to the web database but is not saved back into your HTML file. Draft or copy your reflection before submitting. You may use the same reflection in your Digital Artifact Notebook.
+            </div>
+            <label for="a7"><strong>Your final reflection:</strong></label>
+            <textarea class="form-control" id="a7" name="a7" rows="12" maxlength="3000" placeholder="Type or paste your final reflection here..."></textarea>
+            <small id="charCount-a7" class="text-muted">Maximum: 3000 characters. AI feedback is formative feedback, not a grade.</small>
+            <hr />
+        </div>
+
+        <!-- ========== Complete and Submit ========== -->
+        <div class="col-lg-12">
+            <a href="#CompleteSubmission" class="btn btn-info" data-toggle="collapse" aria-expanded="true" aria-controls="CompleteSubmission">Complete and Submit the Assignment</a>
+        </div>
+        <div id="CompleteSubmission" class="collapse in col-lg-12">
+            <h2>1. Complete the Digital Artifact Notebook Page</h2>
+            <ol>
+                <li>Open OneNote to the correct MIS342 course and assignment section.</li>
+                <li>Confirm that the page is named <code><span class="SummativeID"></span></code> and contains the
+                    <a href="../DigitalArtifactNotebook/ArtifactTemplate.html" class="bg-info text-white" target="_blank">Digital Artifact Notebook Template</a>.</li>
+                <li>Confirm that <strong>Screenshot A, Screenshot B, and Screenshot C</strong> are visible, readable, and correctly labeled.</li>
+                <li>For each screenshot, include a verification statement and a business or course relevance statement.</li>
+                <li>Complete the reflection section in the DAN. You may use the same reflection entered in the published webpage.</li>
+            </ol>
+
+            <h2>2. Create and Insert WebPage.pdf</h2>
+            <ol>
+                <li>Open the final published webpage at your course website.</li>
+                <li>Verify your name, StarID, email, course information, and all six exercise answers.</li>
+                <li>Press <code>Ctrl + P</code>, or use the browser Print menu, and save the webpage as <code>WebPage.pdf</code> in <code><span id="Path6"></span></code>.</li>
+                <li>In OneNote, use <strong>Insert &gt; File Printout</strong> to insert <code>WebPage.pdf</code>. Do not insert only a link or file icon.</li>
+            </ol>
+            <p><strong>(50 points) WebPage.pdf:</strong> The readable webpage printout is included in the Digital Artifact Notebook.</p>
+
+            <h2>3. Export and Verify the Final PDF</h2>
+            <ol>
+                <li>Export or print the completed OneNote page as <code><span class="SummativeID"></span>.pdf</code> and save it in <code><span id="Path7"></span></code>.</li>
+                <li>Open the exported PDF and confirm that all screenshots, labels, verification statements, relevance statements, reflection content, and WebPage.pdf are visible and readable.</li>
+                <li>Correct the OneNote page and export again if anything is missing, cut off, too small, or unreadable.</li>
+            </ol>
+            <p><strong>(50 points) D2L PDF submission:</strong> Upload <code><span class="SummativeID"></span>.pdf</code> to the matching D2L assignment folder.</p>
+
+            <h2>4. Complete the Web Submission Requirements</h2>
+            <p><strong>(50 points) Home Page Hyperlink:</strong> Verify that Summative05 is linked correctly from your MIS342 course home page.</p>
+            <p><strong>(50 points) Web Database Submission:</strong> Press the Submit button at the top or bottom of this page. Your answers are saved to the web database and sent for formative AI feedback.</p>
+            <ul>
+                <li>The AI feedback is not a grade.</li>
+                <li>Complete the Final Assignment Reflection on at least one web submission.</li>
+                <li>Additional submissions are optional but permitted; the reflection does not have to be submitted again.</li>
+                <li>Read the confirmation page and correct or resubmit work when appropriate.</li>
+            </ul>
+            <div class="alert alert-warning" role="alert">
+                <strong>Final check:</strong> The D2L PDF upload and the web-database submission are separate requirements. Complete both.
+            </div>
+            <div class="sr-only" aria-hidden="true"><span id="Path8"></span><span id="Path9"></span></div>
+        </div>
+
+        <hr />
+
+        <div class="col-lg-12">
+            <br />
+            <input class="btn btn-danger btn-block btn-lg" name="Submit" value="Submit to the web database and receive AI feedback" type="submit">
+            <br />
+        </div>
+
+    </form>
+
+    <footer>
+        <div id="licenseInfo" class="col-lg-12 text-muted"></div>
+        <div id="footerText" class="col-lg-12 text-muted"></div>
+    </footer>
+
+    <script src="../../ReadOnly/jquery-1.js"></script>
+    <script src="../../ReadOnly/bootstrap.js"></script>
+    <script src="../studentConstants.js"></script>
+    <script src="../../ReadOnly/courseConstants.js"></script>
+    <script src="../../ReadOnly/domForms.js"></script>
+
+    <script>
+    (function () {
+        var box = document.getElementById('a7');
+        var count = document.getElementById('charCount-a7');
+        if (!box || !count) { return; }
+        function updateCount() { count.textContent = box.value.length + ' / 3000 characters'; }
+        updateCount();
+        box.addEventListener('input', updateCount);
+    })();
+    </script>
+
+</body>
+</html>

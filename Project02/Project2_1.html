@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="../../ReadOnly/bootstrap.css" rel="stylesheet">
+    <title>MIS342 Project02 Part 1 — Access and MariaDB/MySQL ODBC</title>
+</head>
+<body class="container-fluid">
+
+    <form class="container-fluid" action="https://eprofessor.azurewebsites.net/codex/ProcessAICall.aspx" method="post" name="frmAssignment" id="frmAssignment">
+        <input name="InstID" id="InstID" value="00617282" type="hidden">
+        <input name="assignmentVersion" id="assignmentVersion" value="Project02_1-FA2026-v1" type="hidden">
+        <input name="reflectionQuestion" id="reflectionQuestion" value="7" type="hidden">
+        <textarea id="datasetContext" name="datasetContext" readonly hidden>Assignment: MIS342 Project02 Part 1 — LuckyTire Access and MariaDB/MySQL ODBC. Students connect Microsoft Access 365 to an instructor-provided LuckyTire MariaDB/MySQL database through the approved 64-bit ODBC configuration, link tables rather than import them, verify linked-table indicators and source data, create a multi-table Access query against linked tables, and safely verify that a change in a student-specific sandbox is visible from both Access and the server-side database tool. Personal Hermes Agent is optional; Direct Mode is valid. Credentials and connection secrets must not be shown or submitted. The project supports CLOs 4, 8, 9, and 11. Reward clear client/server reasoning, safe ODBC practices, query verification, and evidence that students understand where linked data physically reside.</textarea>
+
+        <h1 class="text-center">Project02 Part 1 — LuckyTire Access and MariaDB/MySQL ODBC</h1>
+        
+        <h2 id="student-info" class="sr-only">Student Information</h2>
+        <div class="row" aria-labelledby="student-info">
+            <div class="col-xs-12 col-sm-6 col-md-3"><div class="form-group">
+                <label for="FirstName">First Name:</label>
+                <input class="form-control" name="FirstName" id="FirstName" type="text" readonly aria-readonly="true" autocomplete="given-name">
+            </div></div>
+            <div class="col-xs-12 col-sm-6 col-md-3"><div class="form-group">
+                <label for="LastName">Last Name:</label>
+                <input class="form-control" name="LastName" id="LastName" type="text" readonly aria-readonly="true" autocomplete="family-name">
+            </div></div>
+            <div class="col-xs-12 col-sm-6 col-md-3"><div class="form-group">
+                <label for="StarID">StarID:</label>
+                <input class="form-control" name="StarID" id="StarID" type="text" readonly aria-readonly="true" autocomplete="username">
+            </div></div>
+            <div class="col-xs-12 col-sm-6 col-md-3"><div class="form-group">
+                <label for="email">Email:</label>
+                <input class="form-control" name="email" id="email" type="email" readonly aria-readonly="true" autocomplete="email">
+            </div></div>
+        </div>
+        <input name="pin" id="pin" type="hidden">
+
+        <h2 id="course-info" class="sr-only">Course Information</h2>
+        <div class="row" aria-labelledby="course-info">
+            <div class="col-xs-12 col-sm-6 col-md-3"><div class="form-group">
+                <label for="Semester">Semester:</label>
+                <input class="form-control" name="Semester" id="Semester" type="text" readonly aria-readonly="true">
+            </div></div>
+            <div class="col-xs-12 col-sm-6 col-md-3"><div class="form-group">
+                <label for="Class">Class:</label>
+                <input class="form-control" name="Class" id="Class" type="text" readonly aria-readonly="true">
+            </div></div>
+            <div class="col-xs-12 col-sm-6 col-md-3"><div class="form-group">
+                <label for="Section">Section:</label>
+                <input class="form-control" name="Section" id="Section" type="text" readonly aria-readonly="true">
+            </div></div>
+            <div class="col-xs-12 col-sm-6 col-md-3"><div class="form-group">
+                <label for="assignment">Assignment:</label>
+                <input class="form-control" name="assignment" id="assignment" type="text" value="Project02_1" readonly aria-readonly="true">
+            </div></div>
+        </div>
+
+
+        <div class="col-lg-12"><br><input class="btn btn-danger btn-block btn-lg" name="Submit" value="Submit to the web database and receive AI feedback" type="submit"><br></div>
+        <div class="col-lg-12 h3 text-danger">600 Points<hr></div>
+
+        
+        <div class="col-lg-12">
+            <a href="#HermesWorkContext" class="btn btn-info" data-toggle="collapse" aria-expanded="true" aria-controls="HermesWorkContext">Hermes Agent Work Context</a>
+        </div>
+        <div id="HermesWorkContext" class="collapse in col-lg-12">
+            <p><strong>Hermes is optional.</strong> Use the course-specific <code>mis342</code> profile when Hermes would help with explanation, planning, troubleshooting, alternatives, review, or verification.</p>
+            <pre>First use:  /new Project02_1
+Return later: /resume Project02_1
+When finished: /quit</pre>
+            <p><strong>Direct Mode:</strong> You may complete routine or entire project steps directly in Access, MariaDB/MySQL tools, Visual Studio, or other required software when you understand the task. You must still verify the result yourself.</p>
+            <p><strong>Suggested Hermes checkpoint:</strong> Ask Hermes to explain the difference between an Access local table and an ODBC-linked MariaDB/MySQL table, or to help interpret a non-secret ODBC error message. Verify every recommendation in the actual software.</p>
+            <p>Hermes is a coach. It does not replace hands-on work, independent testing, required project files, or your final judgment. No Hermes screenshot or transcript is required.</p>
+            <p><strong>Security:</strong> never place passwords, API keys, ODBC passwords, private connection strings, or restricted data in prompts, screenshots, source files, GitHub, or the project webpage.</p>
+            <hr>
+        </div>
+
+
+        <div class="col-lg-12">
+            <a href="#Purpose" class="btn btn-info" data-toggle="collapse">Project Purpose and Learning Outcomes</a>
+        </div>
+        <div id="Purpose" class="collapse in col-lg-12">
+            <p>Project02 applies the ODBC/client-server concepts introduced in Formative08 and Summative08. LuckyTire will continue using Access as a familiar employee-facing application while selected shared data reside in MariaDB/MySQL.</p>
+            <p>After completing Part 1, you will be able to:</p>
+            <ol>
+                <li>Connect Access 365 to an external relational DBMS through ODBC.</li>
+                <li>Distinguish linked server tables from local Access tables.</li>
+                <li>Create and verify Access queries against linked data.</li>
+                <li>Verify a controlled data change from both the Access and server perspectives.</li>
+                <li>Explain the security and availability responsibilities introduced by client/server architecture.</li>
+            </ol>
+            <p><strong>Primary CLO alignment:</strong> CLO 9; supporting CLOs 4, 8, and 11.</p>
+            <hr>
+        </div>
+
+        <div class="col-lg-12">
+            <a href="#Resources" class="btn btn-info" data-toggle="collapse">Resources and Required Environment</a>
+        </div>
+        <div id="Resources" class="collapse in col-lg-12">
+            <ul>
+                <li>Microsoft Access in Microsoft 365, 64-bit.</li>
+                <li>The instructor-approved 64-bit MariaDB/MySQL ODBC driver and DSN/connection procedure.</li>
+                <li>The instructor-provided LuckyTire MariaDB/MySQL database and your assigned student credentials.</li>
+                <li>phpMyAdmin, MariaDB command-line client, or another instructor-approved server-side viewer.</li>
+                <li>Your completed Formative08 and Summative08.</li>
+            </ul>
+            <div class="alert alert-warning"><strong>Security:</strong> do not save or publish database passwords. Do not use a root/admin account. Do not include credentials in DAN screenshots, Hermes prompts, GitHub, or HTML.</div>
+            <hr>
+        </div>
+
+        <div class="col-lg-12"><a href="#Exercise01" class="btn btn-info" data-toggle="collapse">Exercise 1 — Link LuckyTire Server Tables</a></div>
+        <div id="Exercise01" class="collapse in col-lg-12">
+            <ol>
+                <li>Create a blank Access database named <strong>Project02_LuckyTire.accdb</strong>.</li>
+                <li>Use External Data &gt; ODBC Database and choose <strong>Link to the data source by creating a linked table</strong>.</li>
+                <li>Use only the approved course ODBC configuration. Link the instructor-designated LuckyTire tables.</li>
+                <li>See IOT20, Exercise 2 or use the AI to configure 64-bit MySQL ODBC 8 Unicode driver</li>
+                <li>Confirm the linked-table indicators in the Navigation Pane.</li>
+                <li>Open at least two linked tables and compare a row count or representative value with the server-side viewer.</li>
+                <li>Do not save a password in a location the instructor has not explicitly approved.</li>
+            </ol>
+            
+            <p>
+                <label for="q1"><strong>Question 1</strong></label>
+                <textarea class="form-control" id="q1" name="q1" rows="4" readonly aria-readonly="true">Where do the actual records in the linked LuckyTire tables physically reside, and what evidence in Access showed that the tables were linked rather than local?</textarea>
+                <br>
+                <label for="a1"><strong>Your answer:</strong></label>
+                <input class="form-control" id="a1" name="a1" type="text" size="500" maxlength="500"
+                    value="[Replace this text with your answer]">
+            </p>
+
+            
+            <p>
+                <label for="q2"><strong>Question 2</strong></label>
+                <textarea class="form-control" id="q2" name="q2" rows="4" readonly aria-readonly="true">What server-side check did you perform to verify that Access was displaying the same LuckyTire data as MariaDB/MySQL?</textarea>
+                <br>
+                <label for="a2"><strong>Your answer:</strong></label>
+                <input class="form-control" id="a2" name="a2" type="text" size="500" maxlength="500"
+                    value="[Replace this text with your answer]">
+            </p>
+
+            
+            <h3>Screenshot A — Linked LuckyTire Tables</h3>
+            <p>Capture the Access Navigation Pane and one linked LuckyTire table with the linked-table indicator and non-sensitive data visible.</p>
+            <p>Paste the screenshot into the project evidence page in OneNote and label it <strong>Screenshot A — Linked LuckyTire Tables</strong>.</p>
+            <ul>
+                <li><strong>Verification:</strong> explain what the screenshot proves.</li>
+                <li><strong>Business/course relevance:</strong> explain why the demonstrated result matters.</li>
+            </ul>
+
+            <hr>
+        </div>
+
+        <div class="col-lg-12"><a href="#Exercise02" class="btn btn-info" data-toggle="collapse">Exercise 2 — Query Linked Data</a></div>
+        <div id="Exercise02" class="collapse in col-lg-12">
+            <ol>
+                <li>Create a multi-table query using linked LuckyTire data. Use the actual key relationships provided by the server schema.</li>
+                <li>Include at least one meaningful criterion, sort, or calculated value.</li>
+                <li>Save the query as <strong>qryProject02LuckyTire</strong>.</li>
+                <li>Run the query and record the returned row count.</li>
+                <li>Verify at least two results against the linked source tables or server-side data.</li>
+                <li>Open SQL View and identify which portions are Access SQL rather than MariaDB/MySQL server SQL.</li>
+            </ol>
+            
+            <p>
+                <label for="q3"><strong>Question 3</strong></label>
+                <textarea class="form-control" id="q3" name="q3" rows="4" readonly aria-readonly="true">What LuckyTire business question does qryProject02LuckyTire answer, and what criterion, join, or calculation makes the query useful?</textarea>
+                <br>
+                <label for="a3"><strong>Your answer:</strong></label>
+                <input class="form-control" id="a3" name="a3" type="text" size="500" maxlength="500"
+                    value="[Replace this text with your answer]">
+            </p>
+
+            
+            <p>
+                <label for="q4"><strong>Question 4</strong></label>
+                <textarea class="form-control" id="q4" name="q4" rows="4" readonly aria-readonly="true">How did you independently verify that the query returned the correct linked-server records?</textarea>
+                <br>
+                <label for="a4"><strong>Your answer:</strong></label>
+                <input class="form-control" id="a4" name="a4" type="text" size="500" maxlength="500"
+                    value="[Replace this text with your answer]">
+            </p>
+
+            
+            <h3>Screenshot B — Linked-Data Query</h3>
+            <p>Capture qryProject02LuckyTire in Datasheet View with the query name and representative results visible.</p>
+            <p>Paste the screenshot into the project evidence page in OneNote and label it <strong>Screenshot B — Linked-Data Query</strong>.</p>
+            <ul>
+                <li><strong>Verification:</strong> explain what the screenshot proves.</li>
+                <li><strong>Business/course relevance:</strong> explain why the demonstrated result matters.</li>
+            </ul>
+
+            <hr>
+        </div>
+
+        <div class="col-lg-12"><a href="#Exercise03" class="btn btn-info" data-toggle="collapse">Exercise 3 — Verify a Controlled Two-Way Change</a></div>
+        <div id="Exercise03" class="collapse in col-lg-12">
+            <ol>
+                <li>Use only the instructor-designated <strong>student-specific sandbox table or row</strong>. Do not modify shared production-like course data.</li>
+                <li>From Access, make one small approved change, such as updating a sandbox note/value or adding a clearly fictional test record.</li>
+                <li>Verify the change in the server-side viewer.</li>
+                <li>Make a second approved change server-side and refresh/reopen the linked table in Access.</li>
+                <li>Verify that Access displays the server-side change.</li>
+                <li>Restore or remove test data if the assignment environment requires cleanup.</li>
+            </ol>
+            
+            <p>
+                <label for="q5"><strong>Question 5</strong></label>
+                <textarea class="form-control" id="q5" name="q5" rows="4" readonly aria-readonly="true">What evidence demonstrated that Access and MariaDB/MySQL were working with the same underlying record rather than separate copies?</textarea>
+                <br>
+                <label for="a5"><strong>Your answer:</strong></label>
+                <input class="form-control" id="a5" name="a5" type="text" size="500" maxlength="500"
+                    value="[Replace this text with your answer]">
+            </p>
+
+            
+            <p>
+                <label for="q6"><strong>Question 6</strong></label>
+                <textarea class="form-control" id="q6" name="q6" rows="4" readonly aria-readonly="true">What is the most important risk of allowing Access users to edit shared linked tables, and what control should LuckyTire use to reduce that risk?</textarea>
+                <br>
+                <label for="a6"><strong>Your answer:</strong></label>
+                <input class="form-control" id="a6" name="a6" type="text" size="500" maxlength="500"
+                    value="[Replace this text with your answer]">
+            </p>
+
+            
+            <h3>Screenshot C — Two-Way Verification</h3>
+            <p>Capture non-sensitive evidence that the same approved sandbox change is visible from Access and the server-side database tool.</p>
+            <p>Paste the screenshot into the project evidence page in OneNote and label it <strong>Screenshot C — Two-Way Verification</strong>.</p>
+            <ul>
+                <li><strong>Verification:</strong> explain what the screenshot proves.</li>
+                <li><strong>Business/course relevance:</strong> explain why the demonstrated result matters.</li>
+            </ul>
+
+            <hr>
+        </div>
+
+        <div class="col-lg-12"><a href="#Reflection" class="btn btn-info" data-toggle="collapse">Final Reflection</a></div>
+        <div id="Reflection" class="collapse in col-lg-12">
+            <label for="q7"><strong>Final Reflection</strong></label>
+            <textarea class="form-control" id="q7" name="q7" rows="6" readonly aria-readonly="true">What is the strongest business reason for LuckyTire to use Access as a front end to MariaDB/MySQL instead of keeping all shared data inside one Access file? Explain one important tradeoff or dependency demonstrated by this project.</textarea>
+            <br>
+            <label for="a7"><strong>Your reflection:</strong></label>
+            <textarea class="form-control" id="a7" name="a7" rows="10" maxlength="3000" placeholder="Type or paste your reflection here..."></textarea>
+            <hr>
+        </div>
+
+        <div class="col-lg-12"><a href="#Submission" class="btn btn-info" data-toggle="collapse">Project Evidence and Submission</a></div>
+        <div id="Submission" class="collapse in col-lg-12">
+            <ol>
+                <li>Create a OneNote page named <strong>Project02_1</strong>.</li>
+                <li>Include Screenshot A, B, and C, each with verification and relevance statements.</li>
+                <li>Print the final published webpage to <strong>WebPage.pdf</strong> and insert it as a readable printout.</li>
+                <li>Export the page as <strong>Project02_1.pdf</strong> and upload it to the matching D2L folder.</li>
+                <li>Submit the published webpage to the web database and review the AI feedback.</li>
+            </ol>
+            <p><strong>Do not submit database credentials or a connection string containing a password.</strong></p>
+            <hr>
+        </div>
+
+        <div class="col-lg-12"><br><input class="btn btn-danger btn-block btn-lg" name="Submit" value="Submit to the web database and receive AI feedback" type="submit"><br></div>
+
+    </form>
+    <footer>
+        <div id="licenseInfo" class="col-lg-12 text-muted"></div>
+        <div id="footerText" class="col-lg-12 text-muted"></div>
+    </footer>
+    <script src="../../ReadOnly/jquery-1.js"></script>
+    <script src="../../ReadOnly/bootstrap.js"></script>
+    <script src="../studentConstants.js"></script>
+    <script src="../../ReadOnly/courseConstants.js"></script>
+    <script src="../../ReadOnly/domForms.js"></script>
+</body>
+</html>

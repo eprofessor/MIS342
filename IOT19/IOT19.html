@@ -1,0 +1,468 @@
+﻿<!doctype html>
+<html lang="en">
+
+<head>
+    <title>IOT19</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- PgP 7/11/2019 summative assignment for Raspberry Pi, Arduino Uno, micro:bit -->
+    <!-- Bootstrap -->
+    <link href="../../ReadOnly/bootstrap.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+    <form class="container-fluid" action="https://eprofessor.azurewebsites.net/code/ProcessFormData.asp" method="post" name="frmAssignment" id="frmAssignment">
+
+        <input name="InstID" id="InstID" value="00617282" type="hidden">
+        <!-- had to put assignment here, because it is used in the path calculation -->
+        <!-- <input  name="assignment" id="assignment" value="Formative00" type="hidden" > -->
+
+        <hr />
+        <h1 class="text-center">Sensor Data to Cloud Using Raspberry Pi</h1>
+
+<h2 id="student-info" class="sr-only">Student Information</h2>
+<div class="row" aria-labelledby="student-info">
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="form-group">
+            <label for="FirstName" class="text-dark">First Name:</label>
+            <input class="form-control"
+                   name="FirstName"
+                   id="FirstName"
+                   type="text"
+                   readonly
+                   aria-readonly="true"
+                   autocomplete="given-name"
+                   aria-label="First Name"
+                   tabindex="0" />
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="form-group">
+            <label for="LastName" class="text-dark">Last Name:</label>
+            <input class="form-control"
+                   name="LastName"
+                   id="LastName"
+                   type="text"
+                   readonly
+                   aria-readonly="true"
+                   autocomplete="family-name"
+                   aria-label="Last Name"
+                   tabindex="0" />
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="form-group">
+            <label for="StarID" class="text-dark">StarID:</label>
+            <input class="form-control"
+                   name="StarID"
+                   id="StarID"
+                   type="text"
+                   readonly
+                   aria-readonly="true"
+                   autocomplete="username"
+                   aria-label="StarID"
+                   tabindex="0" />
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="form-group">
+            <label for="email" class="text-dark">Email:</label>
+            <input class="form-control"
+                   name="email"
+                   id="email"
+                   type="email"
+                   readonly
+                   aria-readonly="true"
+                   autocomplete="email"
+                   aria-label="Email"
+                   tabindex="0" />
+        </div>
+    </div>
+</div>
+<input name="pin" id="pin" type="hidden" aria-hidden="true" />
+
+<h2 id="course-info" class="sr-only">Course Information</h2>
+<div class="row" aria-labelledby="course-info">
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="form-group">
+            <label for="Semester" class="text-dark">Semester:</label>
+            <input class="form-control"
+                   name="Semester"
+                   id="Semester"
+                   type="text"
+                   readonly
+                   aria-readonly="true"
+                   aria-label="Semester"
+                   tabindex="0" />
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="form-group">
+            <label for="Class" class="text-dark">Class:</label>
+            <input class="form-control"
+                   name="Class"
+                   id="Class"
+                   type="text"
+                   readonly
+                   aria-readonly="true"
+                   aria-label="Class"
+                   tabindex="0" />
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="form-group">
+            <label for="Section" class="text-dark">Section:</label>
+            <input class="form-control"
+                   name="Section"
+                   id="Section"
+                   type="text"
+                   readonly
+                   aria-readonly="true"
+                   aria-label="Section"
+                   tabindex="0" />
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="form-group">
+            <label for="assignment" class="text-dark">Assignment:</label>
+            <input class="form-control"
+                   name="assignment"
+                   id="assignment"
+                   type="text"
+                   readonly
+                   value="IOT19"
+                   aria-readonly="true"
+                   aria-label="Assignment"
+                   tabindex="0" />
+        </div>
+    </div>
+</div>
+
+        <div class="col-lg-12">
+            <br />
+            <input class=" text-danger btn-block btn-lg" type="submit" name="Submit" value="SUBMIT -once you have completed this assignment- SUBMIT"><br />
+        </div>
+
+        <div class="h3 text-danger col-lg-12">
+            100 Points<hr />
+        </div>
+
+        <div class="col-lg-12">
+            <h3>This assignment requires a USB flash drive. </h3>
+            <hr />
+        </div>
+
+
+        <div class="col-lg-12"><a href="#Objectives" class="btn btn-info" data-toggle="collapse">Learning Objectives</a></div>
+        <div id="Objectives" class=" collapse in col-lg-12">
+
+
+            <p>
+                These instructions will show you how a Raspberry Pi and GrovePi sensors can retrieve data from the physical world.<br />
+                You send this sensor data to a publicy accessible cloud provider.<br />
+                <br />
+
+                More information on the <a href="https://github.com/adafruit/Adafruit_IO_Python/tree/839e41b494aaefcca047705b3bcbc384f23322de" class="bg-info text-white" target="_blank">Adafruit IO </a>system that you will use is available online.<br />
+
+                These systems allow data collection in the cloud from devices connected to your Raspberry Pi-such as peripherals and connected sensors that measure light level, sound level, temperature level, humidity level and more.
+            </p>
+            <p>After completing this assignment you will be able to:</p>
+            <ol>
+                <li>Investigate sensors</li>
+                <li>Run Python programs on a Raspberry Pi that communicate with sensors and send data to the cloud</li>
+                <li>Understand use of removable USB Flash Drives to store confidential information needed in your Python programs, like passwords and tokens.</li>
+                <li>Discuss uses of Raspberry Pi/Grove Pi devices to solve problems and address opportunities</li>
+            </ol>
+            <hr />
+        </div>
+
+
+
+        <div class="col-lg-12"><a href="#Overview" class="btn btn-info" data-toggle="collapse">Assignment Overview</a></div>
+			<h3>When you encounter technical issues, please first review <a href="../IOT00/IOT00.html"  class="bg-info text-white" target="_blank" >IOT00</a>.    </h3>
+
+        <div id="Overview" class="collapse in  col-lg-12">
+            This assignment reviews Internet of Things concepts that you will need in this course and throughout your career.
+            <br />
+            <p>
+                You are expected to have a working knowledge of SBC hardware and software.<br />
+                If you do not understand how to use an item, perform a Google Search, 
+                refer to the <a href="https://learn.winona.edu/wiki/WSU_Technology_Knowledge_Base" class="bg-info text-white" target="_blank">WSU Technology Knowledge Base</a>,&nbsp; ask a teaching assistant, or ask the instructor.
+            </p>
+
+            <hr />
+        </div>
+
+        <!--Exercise 1-->
+
+        <div class="col-lg-12"><a href="#Exercise01" class="btn btn-info" data-toggle="collapse">Exercise 1-Adafruit IO Account</a><a href="#Exercise01"></a></div>
+
+        <div id="Exercise01" class="collapse in  col-lg-12">
+
+            <ol>
+                <li>These steps are performed on your computer.</li>
+
+                <li>Open a browser.</li>
+
+                <li>Create an Adafruit.io account by logging into <a href="https://accounts.adafruit.com/users/sign_up" class="bg-info text-white" target="_blank">Adafruit IO</a> and following the directions.</li>
+
+                <li>Using your Adafruit account, obtain a Username and Key to connect to your Data Feed<br />
+                    <p>
+                        <a href="images/AdafruitUserKey.png" class="img-responsive img-rounded" target="popup" onclick="window.open('images/AdafruitUserKey.png', 'popup'); return false;">
+                            <img src="images/AdafruitUserKey.png" width="200" alt="Adafruit username and key" class="img-responsive img-responsive" /></a>Obtaining Adafruit Username and Key<br />
+                    </p>
+                </li>
+
+                <li>
+                    Insert a USB Flash Drive into your computer.
+                </li>
+
+                <li>
+                    Open Notepad and create a text file named &#39;config.txt&#39;
+                </li>
+                <li>
+                    On the first line type in your Adafruit account &#39;Username&#39;</li>
+                <li>
+                    Copy your Adafruit account &#39;Key&#39; and paste it on the second line</li>
+
+                <li>Save the file as &#39;config.txt&#39; to the root of the USB Flash Drive</li>
+                <li>Using Windows File Explorer right click the USB Flash Drive and rename it:&nbsp; &#39;MYDATA&#39;<br />
+                    <br />
+                    <p>
+                        <a href="images/RenameDrive.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/RenameDrive.png', 'popup'); return false;">
+                        <img src="images/RenameDrive.PNG" width="200" alt="rename flash drive" class="img-responsive img-responsive" /></a>Renaming USB Flash Drive<br />
+                    </p>
+                </li>
+
+                <li>Close File Explorer, eject the USB Flash Drive, and then remove it from your computer.  </li>
+
+                <li>Insert the USB Flash Drive, named &#39;MYDATA&#39; and containing the file &#39;config.txt&#39; into the Raspberry Pi.</li>
+                <li>Use VNC to transfer the file &#39;<a href="adafruit.py">adafruit.py</a>&#39; from your computer to the Raspberry Pi, and place it in the folder &#39;/home/pi/Desktop/IoT_Files&#39;<br />
+                     Note- a copy can be found in the OneDrive - MNSCU/ReadOnly/IoT/IoT_PythonFiles folder.
+                </li>
+
+             </ol>
+
+        </div>
+
+
+
+        <!--Exercise 2-->
+
+        <div class="col-lg-12"><a href="#Exercise02" class="btn btn-info" data-toggle="collapse">Exercise 2-Send Sensor Data to the Cloud</a></div>
+
+        <div id="Exercise02" class="collapse in  col-lg-12">
+
+            <ol>
+                <li>These steps are performed on your Raspberry Pi.</li>
+
+                <li>Launch a Terminal window</li>
+
+                <li>Run the following command to ensure the Python Package installer is present.<br />
+                    <code>sudo apt-get install python3-pip</code>
+                </li>
+
+                <li>Run the following command to ensure that the Networkscan library is installed.<br />
+                    <code>pip3 install </code>
+                    adafruit-io
+                </li>
+
+
+                <li>Launch Thonny</li>
+
+                <li>Load the program /home/pi/Desktop/IoT_Files/adafruit.py </li>
+
+                <li>Run the program a<code>dafruit.py</code>> </li>
+
+
+
+                <li>   Examine the output shell to make sure that temperature and humidity data appears.  </li>
+
+
+                <li> Review the program <code>adafruit.py</code> and think about improvements that could be made.  </li>
+
+            </ol>
+            <hr />
+        </div>
+
+
+
+
+        <!--Exercise 3-->
+
+
+        <div class="col-lg-12"><a href="#Exercise03" class="btn btn-info" data-toggle="collapse">Exercise 3-Screenshot</a></div>
+
+        <div id="Exercise03" class="collapse in  col-lg-12">
+
+            <p>
+                These steps are done on your laptop using a web browser.
+            </p>
+
+
+            <ol>
+
+                <li>Login to your <a href="https://accounts.adafruit.com/users/sign_in"  class="bg-info text-white" target="_blank" >Adafruit account</a>, click on &#39;IO&#39;, then click on &#39;Feeds&#39;</li>
+
+                <li>Use the Snipping tool to take a screenshot of the Adafruit IO data feed of either the temperature or humidity reading and current date.<br />
+
+                    <p>
+                        <a href="images/AdafruitIO_Data.PNG" class="img-responsive img-rounded" target="popup" onclick="window.open('images/AdafruitIO_Data.PNG', 'popup'); return false;">
+                            <img src="images/AdafruitIO_Data.PNG" width="400" alt="Adafruit IO" class="img-responsive img-responsive" /></a>Adafruit IO output<br />
+                    </p>
+                </li>
+
+                <li>On your laptop save the screenshot  as &quot;IOT19&quot; in your ' <code><span id="Path1"></span></code>
+
+                    ' folder.<br />
+
+            </ol>
+            <hr />
+        </div>
+
+
+        <div class="col-lg-12 text-danger">
+            <h2>Screenshot IOT19</h2>
+            <hr />
+        </div>
+
+
+
+        <div class="col-lg-12"><a href="#UploadScreenShot" class="btn btn-info" data-toggle="collapse">Upload Screenshot</a></div>
+
+        <div id="UploadScreenShot" class="collapse in  col-lg-12">
+            <p>
+                Submit to the appropriate D2L Assignment folder a screenshot that documents your work.<br />
+            </p>
+            <br />
+        </div>
+
+        <div class="col-lg-12 text-primary">
+            <p>
+                (50) 1. Upload your screenshot to the &#39;IOT19&#39; D2L Assignment Folder.
+            </p>
+            <hr />
+        </div>
+
+
+
+
+        <!--Exercise 4-->
+
+        <div class="col-lg-12"><a href="#Exercise04" class="btn btn-info" data-toggle="collapse">Exercise 4-Reflections</a></div>
+
+        <div id="Exercise04" class="collapse in  col-lg-12">
+
+            <p>
+                Reflect on the value of IoT devices that send data to the cloud, for organizations, especially those needing to collect and share information.<br />
+                Think about what type of problems a Raspberry Pi equipped with sensors could solve, and whether it could be cost-effective and robust.<br />
+                Businesses are deploying IoT 'solutions'-how can sensor equipped Raspberry Pis support these efforts?<br />
+                <br />
+                References:<br />
+                Adafruit IO: <a href="https://io.adafruit.com/">&nbsp;Overview</a><br />
+
+                Adafruit Industries background:&nbsp; <a href="https://en.wikipedia.org/wiki/Adafruit_Industries">Wikipedia</a>
+            </p>
+            <div class="col-lg-12 text-primary">
+                (20) 2. Reflections-opportunities<br />
+                List a specific business opportunity that a GrovePi equipped Raspberry Pi that sends data to the cloud could provide.<br />
+
+                <!-- Enter your answer in the VALUE field below   GROK -->
+                <input class="form-control" name="q2" type="text" id="q2" value="opportunity:">
+                <hr />
+            </div>
+
+
+
+            <div class="col-lg-12 text-primary">
+                (20) 3. Reflections-content<br />
+                Research the internet on the topic of cloud data repositories.<br />
+                Provide one example of a cloud based data repository besides Adafruit.io<br />
+
+                <!-- Enter your answer in the VALUE field below   GROK -->
+                <input class="form-control" name="q3" type="text" id="q3" value="cloud repository: ">
+                <hr />
+            </div>
+
+
+        </div>
+
+
+
+
+
+
+
+
+        <div class="col-lg-12"><a href="#ExerciseSubmit" class="btn btn-info" data-toggle="collapse">Submit Assignment</a></div>
+
+
+        <div class="col-lg-12">
+            <p>
+                When all tasks are completed press the Submit button.
+            </p>
+            <hr />
+        </div>
+
+        <div class="col-lg-12 text-primary">
+            (10) 4. Assignment submission<br />
+            <!-- Enter your answer in the VALUE field below   GROK -->
+            <input class="form-control" name="q4" type="text" id="q4" value="I have completed all the exercises, and uploaded my screenshot to the D2L Assignment folder IOT19.">
+            <hr />
+        </div>
+
+
+
+
+
+        <div class="col-lg-12">
+            <p>
+                Congratulations! You have used the GrovePi system, an interface to sensors and actuators, on a Raspberry Pi single board computer, and sent data to the cloud.                
+            </p>
+            <hr />
+        </div>
+
+
+
+
+        <div class="col-lg-12 text-danger text-center">
+            <hr />
+            <h1>  !  REMOVE YOUR USB FLASH DRIVE ! </h1>
+            <hr />
+        </div>
+        <hr />
+
+
+        <div class=" col-lg-12">
+            <br />
+            <input class=" text-danger btn-block btn-lg" type="submit" name="Submit" value="SUBMIT -once you have completed this assignment- SUBMIT">
+            <br />
+        </div>
+
+    </form>
+
+    <!-- PgP 5/31/2025 place js code at end to prevent race conditions -->
+
+    <!-- Creative Commons License Info -->
+    <footer>
+        <div id="licenseInfo" class="col-lg-12 text-muted"></div>
+        <div id="footerText" class="col-lg-12 text-muted"></div>
+    </footer>
+
+    <!-- ========== Script Includes (Order is Critical) ========== -->
+    <script src="../../ReadOnly/jquery-1.js"></script>
+    <script src="../../ReadOnly/bootstrap.js"></script>
+    <script src="../studentConstants.js"></script>
+    <script src="../../ReadOnly/courseConstants.js"></script>
+    <script src="../../ReadOnly/domForms.js"></script>
+
+
+</body>
+</html>
+
+
